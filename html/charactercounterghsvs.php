@@ -52,9 +52,6 @@ abstract class JHtmlCharactercounterghsvs
 		$lang->load(static::$basepath, JPATH_PLUGINS . '/system/characterscounterghsvs');
 		
 		$maxCharsDefault = 150;
-
-		$fileNameSuffix      = trim($plgParams->get('fileNameSuffix', ''));
-		$fileNameSuffixCheck = $fileNameSuffix && $plgParams->get('fileNameSuffixCheck', 1) === 1;
 		
 		$paramsJS['chopText'] = empty($paramsJS['chopText']) ? false : true;
 		
@@ -87,11 +84,14 @@ abstract class JHtmlCharactercounterghsvs
 			return;
 		}
 
+		$fileNameSuffix      = trim($plgParams->get('fileNameSuffix', ''));
+		$fileNameSuffixCheck = $fileNameSuffix && $plgParams->get('fileNameSuffixCheck', 1) === 1;
+
 		if (empty(static::$loaded[__METHOD__]['core']))
 		{
 			$file = static::$basepath . '/vcountdownghsvs' . $fileNameSuffix . '.js';
 			
-			if ($plgParams->get('fileNameSuffixCheck', 1))
+			if ($fileNameSuffixCheck)
 			{
 				$foundfile = HTMLHelper::_('script',
 					$file,
@@ -129,7 +129,7 @@ abstract class JHtmlCharactercounterghsvs
 			{
 				$file = static::$basepath . '/vcountdownghsvs' . $fileNameSuffix . '.css';
 
-				if ($plgParams->get('fileNameSuffixCheck', 1))
+				if ($fileNameSuffixCheck)
 				{
 					$foundfile = HTMLHelper::_('stylesheet',
 						$file,
