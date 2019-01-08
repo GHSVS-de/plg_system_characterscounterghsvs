@@ -9,8 +9,8 @@ On edit pages Article, Category, Menu Item of standard Joomla:
 - You can activate/deactivate and configure each counter in the plugin configuration.
 ## Restrictions
 - Only back-end yet
-- Only edit pages article, category, menu item of standard Joomla
-- Tested with nightly build of Joomla! 4.0.0-alpha7-dev but **not** with Joomla 3 yet.
+- Tested only with nightly build of Joomla! 4.0.0-alpha7-dev
+- but **not** with Joomla 3 yet. Try it and report your experiences with Joomla 3!
 ## Special for experts
 - Uses a custom HTMLHelper that you can use somewhere else in your code, too, **if the plugin is enabled**.
 ### Example:
