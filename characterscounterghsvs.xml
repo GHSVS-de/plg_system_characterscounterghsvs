@@ -7,10 +7,12 @@
 	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.ghsvs.de</authorUrl>
-	<version>2018.12.28</version>
+	<version>2019.01.08</version>
 	<versionHistory>
 2018.12.28:
 - First tests with J4.0 alpha 7.
+2019.01.08:
+- Little compromises for Joomla 3.
 </versionHistory>
 	<description>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION</description>
 
