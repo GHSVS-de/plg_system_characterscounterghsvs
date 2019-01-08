@@ -3,7 +3,7 @@
 	<name>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS</name>
 	<author>G@HService Berlin Neukölln, Volkmar Volli Schlothauer, ghsvs.de</author>
 	<creationDate>2018-12-28</creationDate>
- <copyright>Copyright (C) 2018, G@HService Berlin Neukölln, Volkmar Volli Schlothauer. All rights reserved.</copyright>
+ 	<copyright>Copyright (C) 2018, G@HService Berlin Neukölln, Volkmar Volli Schlothauer. All rights reserved.</copyright>
 	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.ghsvs.de</authorUrl>
@@ -20,7 +20,8 @@
 		<filename plugin="characterscounterghsvs">characterscounterghsvs.php</filename>
 		<!--<filename>helper.php</filename>-->
 		<filename>LICENSE.txt</filename>
-		<!--<folder>fields</folder>-->
+		<filename>LICENSE_VCountdown.js.txt</filename>
+		<folder>fields</folder>
 		<folder>html</folder>
 		<folder>language</folder>
 		<!--<folder>layouts</folder>-->
