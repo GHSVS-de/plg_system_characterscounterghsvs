@@ -1,5 +1,7 @@
 # plg_system_characterscounterghsvs
 Joomla plugin that adds charcters counter to some text and textarea fields in back-end.
+JavaScript based upon: VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License.
+
 ## Which fields?
 On edit pages Article, Category, Menu Item of standard Joomla:
 - Field Meta Description
