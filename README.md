@@ -15,7 +15,7 @@ On edit pages Article, Category, Menu Item of standard Joomla:
 - Tested with nightly build of Joomla! 4.0.0-alpha7-dev
 - Target of this plugin is Joomla 4!
 - Have a look in the release tab which versions were tested with Joomla 3, too.
-- Uses NOT Joomla! Update System (no automatic update messages in Joomla back-end) but you can subscribe to the repository watchlist for releases
+- Uses NOT Joomla! Update System (no automatic update messages in Joomla back-end) but you can use the GitHub repository watchlist for releases
 [HowTo subcribe to releases watchlist](https://re-later.eu/plg_system_characterscounterghsvs_Watchlist.jpg)
 ## Special for experts
 - Uses a custom HTMLHelper that you can use somewhere else in your code, too, **if the plugin is enabled**.
