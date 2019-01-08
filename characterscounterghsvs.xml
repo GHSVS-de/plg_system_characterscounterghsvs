@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS</name>
+	<author>G@HService Berlin Neukölln, Volkmar Volli Schlothauer, ghsvs.de</author>
+	<creationDate>2018-12-28</creationDate>
+ <copyright>Copyright (C) 2018, G@HService Berlin Neukölln, Volkmar Volli Schlothauer. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorEmail></authorEmail>
+	<authorUrl>https://www.ghsvs.de</authorUrl>
+	<version>2018.12.28</version>
+	<versionHistory>
+2018.12.28:
+- First tests with J4.0 alpha 7.
+</versionHistory>
+	<description>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION</description>
+
+	<!--<updateservers><server type="extension" priority="1" name="PLG_SYSTEM_CHARACTERCOUNTERGHSVS">http://snapshots.ghsvs.de/updates/joomla/plg_system_characterscounterghsvs.xml</server></updateservers>-->
+
+	<files>
+		<filename plugin="characterscounterghsvs">characterscounterghsvs.php</filename>
+		<!--<filename>helper.php</filename>-->
+		<filename>LICENSE.txt</filename>
+		<!--<folder>fields</folder>-->
+		<folder>html</folder>
+		<folder>language</folder>
+		<!--<folder>layouts</folder>-->
+		<!--<folder>media</folder>-->
+		<folder>myforms</folder>
+		<!--<folder>rule</folder>-->
+		<!--<folder>tmpl</folder>-->
+	</files>
+
+	<media folder="media" destination="plg_system_characterscounterghsvs">
+		<folder>css</folder>
+		<!--<folder>fonts</folder>-->
+		<folder>js</folder>
+		<!--<folder>less</folder>-->
+	</media>
+
+	<config>
+		<fields name="params" addfieldpath="plugins/system/characterscounterghsvs/fields">
+
+			<fieldset name="basic">
+				<field type="hidden" default="1" name="characterscounterghsvsplugin" />
+			</fieldset>
+
+<!--thanks-->
+			<fieldset name="thanks" label="Thanks!&amp;Licence">
+				<field type="spacer" name="spacerthanks"
+				label=""
+				description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SPACERTHANKS" />
+			</fieldset>
+<!--/thanks-->
+
+<!--countersettings-simple-->
+			<fieldset name="countersettings-simple"
+				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_SIMPLE"
+				description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_SIMPLE_DESC">
+<!--ARTICLE EDIT-->
+<fields name="com_content:article|edit">
+
+				<field type="spacer" name="com_content:articlespacer"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_COM_CONTENT_ARTICLE_SPACER" />
+
+				<field name="metadesc" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_META_DESCRIPTION"
+					description="[#jform_metadesc]">
+					<option value="0">JNO</option>
+					<option value="#jform_metadesc">JYES</option>
+				</field>
+
+				<field name="metadesc_maxChars" type="number" min="1" default="150"
+					label="[maxChars]"
+					description=""
+					filter="integer"
+					showon="metadesc:#jform_metadesc" />
+
+				<field name="metadesc_chopText" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="[chopText]"
+					description=""
+					filter="integer"
+					showon="metadesc:#jform_metadesc">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+<field type="spacer" name="metakeyspacerX" hr="true" />
+				<field name="metakey" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_META_KEYWORDS"
+					description="[#jform_metakey]">
+						<option value="0">JNO</option>
+						<option value="#jform_metakey">JYES</option>
+				</field>
+
+				<field name="metakey_maxChars" type="number" min="1" default="150"
+					label="[maxChars]"
+					description=""
+					filter="integer"
+					showon="metakey:#jform_metakey" />
+
+				<field name="metakey_chopText" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="[chopText]"
+					description=""
+					filter="integer"
+					showon="metakey:#jform_metakey">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+<field type="spacer" name="titlespacerHR" hr="true" />
+				<field name="title" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_TITLE"
+					description="[#jform_title]">
+						<option value="0">JNO</option>
+						<option value="#jform_title">JYES</option>
+				</field>
+
+				<field name="title_maxChars" type="number" min="1" default="55"
+					label="[maxChars]"
+					description=""
+					filter="integer"
+					showon="title:#jform_title" />
+
+				<field name="title_chopText" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="[chopText]"
+					description=""
+					filter="integer"
+					showon="title:#jform_title">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+<field type="spacer" name="aliasspacerHR" hr="true" />
+
+				<field name="alias" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_ALIAS"
+					description="[#jform_alias]">
+						<option value="0">JNO</option>
+						<option value="#jform_alias">JYES</option>
+				</field>
+
+				<field name="alias_maxChars" type="number" min="1" default="55"
+					label="[maxChars]"
+					description=""
+					filter="integer"
+					showon="alias:#jform_alias" />
+
+				<field name="alias_chopText" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="[chopText]"
+					description=""
+					filter="integer"
+					showon="alias:#jform_alias">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+</fields>
+
+<field type="spacer" name="spacerXy" hr="true" />
+
+<!--CATEGORY EDIT-->
+<fields name="com_categories:category|edit">
+
+				<field type="spacer" name="com_categories:categoryspacer"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_COM_CATEGORIES_CATEGORY_SPACER" />
+
+				<field name="metadesc" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_META_DESCRIPTION"
+					description="[#jform_metadesc]">
+					<option value="0">JNO</option>
+					<option value="#jform_metadesc">JYES</option>
+				</field>
+
+				<field name="metadesc_maxChars" type="number" min="1" default="150"
+					label="[maxChars]"
+					description=""
+					filter="integer"
+					showon="metadesc:#jform_metadesc" />
+
+				<field name="metadesc_chopText" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="[chopText]"
+					description=""
+					filter="integer"
+					showon="metadesc:#jform_metadesc">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+<field type="spacer" name="metakeyspacerXy" hr="true" />
+				<field name="metakey" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_META_KEYWORDS"
+					description="[#jform_metakey]">
+						<option value="0">JNO</option>
+						<option value="#jform_metakey">JYES</option>
+				</field>
+
+				<field name="metakey_maxChars" type="number" min="1" default="150"
+					label="[maxChars]"
+					description=""
+					filter="integer"
+					showon="metakey:#jform_metakey" />
+
+				<field name="metakey_chopText" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="[chopText]"
+					description=""
+					filter="integer"
+					showon="metakey:#jform_metakey">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+<field type="spacer" name="titlespacerHRx" hr="true" />
+				<field name="title" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_TITLE"
+					description="[#jform_title]">
+						<option value="0">JNO</option>
+						<option value="#jform_title">JYES</option>
+				</field>
+
+				<field name="title_maxChars" type="number" min="1" default="55"
+					label="[maxChars]"
+					description=""
+					filter="integer"
+					showon="title:#jform_title" />
+
+				<field name="title_chopText" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="[chopText]"
+					description=""
+					filter="integer"
+					showon="title:#jform_title">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+<field type="spacer" name="aliasspacerHRx" hr="true" />
+
+				<field name="alias" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_ALIAS"
+					description="[#jform_alias]">
+						<option value="0">JNO</option>
+						<option value="#jform_alias">JYES</option>
+				</field>
+
+				<field name="alias_maxChars" type="number" min="1" default="55"
+					label="[maxChars]"
+					description=""
+					filter="integer"
+					showon="alias:#jform_alias" />
+
+				<field name="alias_chopText" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="[chopText]"
+					description=""
+					filter="integer"
+					showon="alias:#jform_alias">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+</fields>
+
+
+<field type="spacer" name="spacerXyz" hr="true" />
+
+<!--MENU ITEM EDIT-->
+<fields name="com_menus:item|edit">
+
+				<field type="spacer" name="com_menus:itemspacer"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_COM_MENUS_ITEM_SPACER" />
+
+				<field name="metadesc" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_META_DESCRIPTION"
+					description="[#jform_params_menu_meta_description]">
+					<option value="0">JNO</option>
+					<option value="#jform_params_menu_meta_description">JYES</option>
+				</field>
+
+				<field name="metadesc_maxChars" type="number" min="1" default="150"
+					label="[maxChars]"
+					description=""
+					filter="integer"
+					showon="metadesc:#jform_params_menu_meta_description" />
+
+				<field name="metadesc_chopText" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="[chopText]"
+					description=""
+					filter="integer"
+					showon="metadesc:#jform_params_menu_meta_description">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+<field type="spacer" name="metakeyspacerXyz" hr="true" />
+				<field name="metakey" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_META_KEYWORDS"
+					description="[#jform_params_menu_meta_keywords]">
+						<option value="0">JNO</option>
+						<option value="#jform_params_menu_meta_keywords">JYES</option>
+				</field>
+
+				<field name="metakey_maxChars" type="number" min="1" default="150"
+					label="[maxChars]"
+					description=""
+					filter="integer"
+					showon="metakey:#jform_params_menu_meta_keywords" />
+
+				<field name="metakey_chopText" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="[chopText]"
+					description=""
+					filter="integer"
+					showon="metakey:#jform_params_menu_meta_keywords">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+<field type="spacer" name="titlespacerHRxy" hr="true" />
+				<field name="title" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_TITLE"
+					description="[#jform_title]">
+						<option value="0">JNO</option>
+						<option value="#jform_title">JYES</option>
+				</field>
+
+				<field name="title_maxChars" type="number" min="1" default="55"
+					label="[maxChars]"
+					description=""
+					filter="integer"
+					showon="title:#jform_title" />
+
+				<field name="title_chopText" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="[chopText]"
+					description=""
+					filter="integer"
+					showon="title:#jform_title">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+<field type="spacer" name="aliasspacerHRx" hr="true" />
+
+				<field name="alias" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_ALIAS"
+					description="[#jform_alias]">
+						<option value="0">JNO</option>
+						<option value="#jform_alias">JYES</option>
+				</field>
+
+				<field name="alias_maxChars" type="number" min="1" default="55"
+					label="[maxChars]"
+					description=""
+					filter="integer"
+					showon="alias:#jform_alias" />
+
+				<field name="alias_chopText" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="[chopText]"
+					description=""
+					filter="integer"
+					showon="alias:#jform_alias">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+</fields>
+
+
+			</fieldset>
+<!--/countersettings-simple-->
+
+<!--countersettings-where-->
+<!--
+			<fieldset name="countersettings-where"
+				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_WHERE">
+
+				<field name="wheres" type="subform" min="1" max="100" multiple="true"
+					formsource="plugins/system/characterscounterghsvs/myforms/wheres-subform.xml" 
+					label=""
+					description="" />
+			</fieldset>
+-->
+<!--/countersettings-where-->
+
+<!--countersettings-basic-->
+			<fieldset name="countersettings-basic"
+				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_BASIC">
+
+				<field type="text" name="charsTypedLabel" default=""
+					label="[charsTypedLabel]"
+					description="" />
+			
+				<field type="text" name="charsRemainLabel" default=""
+					label="[charsRemainLabel]"
+					description="" />
+			
+				<field type="text" name="charsMaxLabel" default=""
+					label="[charsMaxLabel]"
+					description="" />
+					
+				<field type="radio" name="loadCSS" default="1" class="switcher btn-group btn-group-yesno"
+					label="CSS Load file vcountdownghsvs.css [loadCSS]"
+					description=""
+					filter="integer">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field type="text" name="fileNameSuffix" default=""
+					label="JS/CSS fileNameSuffix"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FILENAMESUFFIX" />
+
+				<field type="radio" name="fileNameSuffixCheck" default="1" class="switcher btn-group btn-group-yesno"
+					label="JS/CSS fileNameSuffix fallback"
+					description="Fall back to JS/CSS standard files if file with fileNameSuffix in filename doesn\'t exist?"
+					showon="fileNameSuffix!:" filter="integer">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				
+				
+				<!--ALWAYS assets at last!!!-->
+				<field type="plgSystemCharactersCounterGhsvs.assetsbe" name="assetsbe" hidden="true" />
+			</fieldset>
+
+		
+		</fields>
+	</config>
+</extension>
