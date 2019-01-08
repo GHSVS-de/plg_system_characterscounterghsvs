@@ -48,8 +48,8 @@
 <!--thanks-->
 			<fieldset name="thanks" label="Thanks!&amp;Licence">
 				<field type="spacer" name="spacerthanks"
-				label=""
-				description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SPACERTHANKS" />
+				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SPACERTHANKS"
+				description="" />
 			</fieldset>
 <!--/thanks-->
 
