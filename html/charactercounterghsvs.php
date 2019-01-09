@@ -4,7 +4,6 @@ defined('JPATH_BASE') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
-#use Joomla\CMS\Application\ApplicationHelper;
 use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\Registry\Registry;
 
@@ -16,7 +15,7 @@ abstract class JHtmlCharactercounterghsvs
 
 	public static function charactercounter(
  		$paramsJS = array(),
-		// For HTMLHelper::_('script' ...
+		// For HTMLHelper::_('script' ... and For HTMLHelper::_('stylesheet' ... 
 		$options = array(),
 		$debug = null
 	){
@@ -54,20 +53,15 @@ abstract class JHtmlCharactercounterghsvs
 		$maxCharsDefault = 150;
 		
 		$paramsJS['chopText'] = empty($paramsJS['chopText']) ? false : true;
-		
-		$jsSafe = true;
 
 		$paramsJS['charsTypedLabel'] = $paramsJS['charsTypedLabel'] ?? 
 			'PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_TYPED_LABEL';
-		Text::script($paramsJS['charsTypedLabel'], $jsSafe);
 
 		$paramsJS['charsRemainLabel'] = $paramsJS['charsRemainLabel'] ?? 
 			'PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REMAIN_LABEL';
-		Text::script($paramsJS['charsRemainLabel'], $jsSafe);
 
 		$paramsJS['charsMaxLabel'] = $paramsJS['charsMaxLabel'] ?? 
 			'PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_MAX_LABEL';
-		Text::script($paramsJS['charsMaxLabel'], $jsSafe);
 
 		$paramsJS['maxChars'] = $paramsJS['maxChars'] ?? $maxCharsDefault;
 		
@@ -84,6 +78,12 @@ abstract class JHtmlCharactercounterghsvs
 			return;
 		}
 
+		// Strings available for JS:
+		$jsSafe = true;
+		Text::script($paramsJS['charsTypedLabel'], $jsSafe);
+		Text::script($paramsJS['charsRemainLabel'], $jsSafe);
+		Text::script($paramsJS['charsMaxLabel'], $jsSafe);
+
 		$fileNameSuffix      = trim($plgParams->get('fileNameSuffix', ''));
 		$fileNameSuffixCheck = $fileNameSuffix && $plgParams->get('fileNameSuffixCheck', 1) === 1;
 
@@ -96,9 +96,6 @@ abstract class JHtmlCharactercounterghsvs
 				$foundfile = HTMLHelper::_('script',
 					$file,
 					array(
-						//'framework' => false,
-	
-						//Allow template overrides in html/plg_system_charactercounterghsvs:
 						'relative' => $options['relative'] ?? true,
 						'pathOnly' => true,
 						'detectBrowser' => $options['detectBrowser'] ?? false,
@@ -115,9 +112,7 @@ abstract class JHtmlCharactercounterghsvs
 			HTMLHelper::_('script',
 				$file,
 				array(
-					//'framework' => false,
-
-					//Allow template overrides in html/plg_system_charactercounterghsvs:
+					//Allow template overrides in js/plg_system_charactercounterghsvs:
 					'relative' => $options['relative'] ?? true,
 					'pathOnly' => false,
 					'detectBrowser' => $options['detectBrowser'] ?? false,
@@ -134,7 +129,6 @@ abstract class JHtmlCharactercounterghsvs
 					$foundfile = HTMLHelper::_('stylesheet',
 						$file,
 						array(
-							//Allow template overrides in html/plg_system_charactercounterghsvs:
 							'relative' => $options['relative'] ?? true,
 							'pathOnly' => true,
 							'detectBrowser' => $options['detectBrowser'] ?? false,
@@ -151,7 +145,7 @@ abstract class JHtmlCharactercounterghsvs
 				HTMLHelper::_('stylesheet',
 					$file,
 					array(
-						//Allow template overrides in html/plg_system_charactercounterghsvs:
+						//Allow template overrides in css/plg_system_charactercounterghsvs:
 						'relative' => $options['relative'] ?? true,
 						'pathOnly' => false,
 						'detectBrowser' => $options['detectBrowser'] ?? false,
@@ -163,9 +157,6 @@ abstract class JHtmlCharactercounterghsvs
 			
 			static::$loaded[__METHOD__]['core'] = true;
 		}
-
-		#$mainWrapperClass = ApplicationHelper::stringURLSafe($paramsJS['target']) . '_counter';
-
 		$paramsJS = json_encode($paramsJS, ($debug && defined('JSON_PRETTY_PRINT') ? JSON_PRETTY_PRINT : false));
 
 		$js = <<<JS
