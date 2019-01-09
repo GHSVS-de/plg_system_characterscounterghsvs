@@ -32,25 +32,25 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 
 	public function onContentPrepareForm(Form $form, $data)
 	{
+		if (!$this->app->isClient('administrator'))
+		{
+			return;
+		}
+
 		$jinput = $this->app->input;
 		$layout = $jinput->get('layout', '');
-		
+
 		if ($layout !== 'edit')
 		{
 			return;
 		}
 
-		if (!$this->app->isClient('administrator'))
-		{
-			return;
-		}
-		
 		$context = $form->getName();
 
 ##########Simple
-		
+
 		// e.g. com_categories.categorycom_content.
-		if (strpos($context, 'com_categories.categorycom_', 0) !== false)
+		if (strpos($context, 'com_categories.categorycom_') === 0)
 		{
 			$context = 'com_categories.category';
 		}
