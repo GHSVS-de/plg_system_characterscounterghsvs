@@ -17,7 +17,8 @@ Edited by ghsvs.de 2018.
 }(this, function () {
     "use strict";
 
-    var VCountdown = function (options) {
+    var VCountdown = function (options)
+    {
         if (!this || !(this instanceof VCountdown)) {
             return new VCountdown(options);
         }
@@ -26,25 +27,26 @@ Edited by ghsvs.de 2018.
             options = {};
         }
 
-				var matches = document.querySelectorAll(options.target);
-
-				if (!matches || !matches.length)
-				{
-					return;
-				}
-
-				options.target   = matches[0];
-
-        if (!options.target) {
-            throw 'Provide a target to count characters';
+	if (!options.target)
+	{
+		throw 'Provide a target to count characters';
         }
+	
+	var matches = document.querySelectorAll(options.target);
+
+	if (!matches || !matches.length)
+	{
+		return;
+	}
+
+	options.target = matches[0];
 
         this.target   = options.target;
         this.maxChars = options.maxChars || 140;
-				this.chopText = options.chopText || false;
-				this.charsTypedLabel = Joomla.JText._(options.charsTypedLabel);
-				this.charsRemainLabel = Joomla.JText._(options.charsRemainLabel);
-				this.charsMaxLabel = Joomla.JText._(options.charsMaxLabel);
+	this.chopText = options.chopText || false;
+	this.charsTypedLabel = Joomla.JText._(options.charsTypedLabel);
+	this.charsRemainLabel = Joomla.JText._(options.charsRemainLabel);
+	this.charsMaxLabel = Joomla.JText._(options.charsMaxLabel);
 
         this.countdown();
     };
