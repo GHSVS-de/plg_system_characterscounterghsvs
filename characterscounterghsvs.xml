@@ -15,6 +15,7 @@
 - Bugfix: https://github.com/GHSVS-de/plg_system_characterscounterghsvs/pull/2
 2019.01.10:
 - Cleanups and smaller optimizations. 2 small bug fixes.
+- New feature: Setting [Required] for Meta Description and Meta Keywords fields.
 </versionHistory>
 	<description>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION</description>
 
@@ -91,6 +92,14 @@
 						<option value="1">JYES</option>
 				</field>
 
+				<field name="metadesc_required" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
+					<option value="0">JNO</option>
+					<option value="metadesc">JYES</option>
+				</field>
+
 <field type="spacer" name="metakeyspacerX" hr="true" />
 				<field name="metakey" type="radio" default="0"
 					class="switcher btn-group btn-group-yesno"
@@ -114,6 +123,14 @@
 					showon="metakey:#jform_metakey">
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
+				</field>
+
+				<field name="metakey_required" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
+					<option value="0">JNO</option>
+					<option value="metakey">JYES</option>
 				</field>
 
 <field type="spacer" name="titlespacerHR" hr="true" />
@@ -200,6 +217,14 @@
 						<option value="1">JYES</option>
 				</field>
 
+				<field name="metadesc_required" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
+					<option value="0">JNO</option>
+					<option value="metadesc">JYES</option>
+				</field>
+
 <field type="spacer" name="metakeyspacerXy" hr="true" />
 				<field name="metakey" type="radio" default="0"
 					class="switcher btn-group btn-group-yesno"
@@ -223,6 +248,14 @@
 					showon="metakey:#jform_metakey">
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
+				</field>
+
+				<field name="metakey_required" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
+					<option value="0">JNO</option>
+					<option value="metakey">JYES</option>
 				</field>
 
 <field type="spacer" name="titlespacerHRx" hr="true" />
@@ -311,6 +344,14 @@
 						<option value="1">JYES</option>
 				</field>
 
+				<field name="metadesc_required" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
+					<option value="0">JNO</option>
+					<option value="menu-meta_description:params">JYES</option>
+				</field>
+
 <field type="spacer" name="metakeyspacerXyz" hr="true" />
 				<field name="metakey" type="radio" default="0"
 					class="switcher btn-group btn-group-yesno"
@@ -334,6 +375,14 @@
 					showon="metakey:#jform_params_menu_meta_keywords">
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
+				</field>
+
+				<field name="metakey_required" type="radio" default="0"
+					class="switcher btn-group btn-group-yesno"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
+					<option value="0">JNO</option>
+					<option value="menu-meta_keywords:params">JYES</option>
 				</field>
 
 <field type="spacer" name="titlespacerHRxy" hr="true" />
