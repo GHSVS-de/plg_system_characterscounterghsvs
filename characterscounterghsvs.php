@@ -85,10 +85,11 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 				{
 					if ($value)
 					{
-						$paramsJS = array();
-						$paramsJS['target'] = $value;
-						$paramsJS['chopText'] = (boolean) $simpleJobs->{$key . '_chopText'};
-						$paramsJS['maxChars'] = (integer) $simpleJobs->{$key . '_maxChars'};
+						$paramsJS = array(
+							'target' => $value,
+							'chopText' => (boolean) $simpleJobs->{$key . '_chopText'},
+							'maxChars' => (integer) $simpleJobs->{$key . '_maxChars'},
+						);
 						$paramsJS = array_merge($paramsJS, $this->labelFields);
 						HTMLHelper::_('charactercounterghsvs.charactercounter', $paramsJS);
 					}
