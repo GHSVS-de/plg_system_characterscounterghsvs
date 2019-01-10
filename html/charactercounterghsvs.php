@@ -46,8 +46,11 @@ abstract class JHtmlCharactercounterghsvs
 			$plgParams = $plgParams->params;
 		}
 		
+		// 2019-01-10: $autoloadLanguage is buggy in current J4 alpha7.
+		// https://github.com/joomla/joomla-cms/issues/17444
+		// Force lang load here!!
+		// Decide later if we need it here, too, or only in plugin.
 		$lang = Factory::getLanguage();
-
 		$lang->load(static::$basepath, JPATH_PLUGINS . '/system/characterscounterghsvs');
 		
 		$maxCharsDefault = 150;
