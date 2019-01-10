@@ -60,7 +60,7 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 
 		// Get object of jobs.
 		$simpleJobs = $this->params->get($fieldsName);
-//echo ' 4654sd48sa7d98sD81s8d71dsa ' . print_r($simpleJobs, true);exit;
+
 		// Build counters for this context. 
 		if (!empty($simpleJobs) && is_object($simpleJobs))
 		{
