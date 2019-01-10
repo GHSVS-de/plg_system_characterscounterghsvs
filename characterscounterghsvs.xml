@@ -16,6 +16,7 @@
 2019.01.10:
 - Cleanups and smaller optimizations. 2 small bug fixes.
 - New feature: Setting [Required] for Meta Description and Meta Keywords fields.
+- Fix for J4 alpha: https://github.com/joomla/joomla-cms/issues/17444.
 </versionHistory>
 	<description>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION</description>
 
