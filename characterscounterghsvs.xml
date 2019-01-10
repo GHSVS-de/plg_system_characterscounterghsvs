@@ -4,7 +4,7 @@
 	<author>G@HService Berlin Neukölln, Volkmar Volli Schlothauer, ghsvs.de</author>
 	<creationDate>2018-12-28</creationDate>
  	<copyright>Copyright (C) 2018, G@HService Berlin Neukölln, Volkmar Volli Schlothauer. All rights reserved.</copyright>
-	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt and LICENSE_VCountdown.js.txt</license>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.ghsvs.de</authorUrl>
 	<version>2019.01.10</version>
@@ -14,9 +14,10 @@
 2019.01.09:
 - Bugfix: https://github.com/GHSVS-de/plg_system_characterscounterghsvs/pull/2
 2019.01.10:
+- Tested with J4 alpha7 nightly. J3.9.2-dev.
 - Cleanups and smaller optimizations. 2 small bug fixes.
 - New feature: Setting [Required] for Meta Description and Meta Keywords fields.
-- Fix for J4 alpha: https://github.com/joomla/joomla-cms/issues/17444.
+- Fix for J4 alpha7: https://github.com/joomla/joomla-cms/issues/17444.
 </versionHistory>
 	<description>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION</description>
 
