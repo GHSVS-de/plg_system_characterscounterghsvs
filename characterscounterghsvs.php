@@ -1,6 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
 use Joomla\CMS\Filter\InputFilter;
 use Joomla\CMS\Form\Form;
 #use Joomla\CMS\Form\FormHelper;
