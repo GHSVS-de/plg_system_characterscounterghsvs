@@ -13,7 +13,13 @@ use Joomla\Registry\Registry;
 class PlgSystemCharacterscounterghsvs extends CMSPlugin
 {
 	protected $app;
-	#protected $autoloadLanguage = true;
+
+	// 2019-01-10: $autoloadLanguage is buggy in current J4 alpha7.
+	// https://github.com/joomla/joomla-cms/issues/17444
+	// Force lang load elsewhere!!
+	protected $autoloadLanguage = true;
+	
+	protected static $basepath = 'plg_system_characterscounterghsvs';
 	
 	// User can enter custom labels in plugin.
 	protected $labelFields = array(
@@ -64,6 +70,13 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 		// Build counters for this context. 
 		if (!empty($simpleJobs) && is_object($simpleJobs))
 		{
+			// 2019-01-10: $autoloadLanguage is buggy in current J4 alpha7.
+			// https://github.com/joomla/joomla-cms/issues/17444
+			// Force lang load here!!
+			// Decide later if we need it here, too, or only in HTMLHelper.
+			$lang = Factory::getLanguage();
+			$lang->load(static::$basepath, JPATH_PLUGINS . '/system/characterscounterghsvs');
+
 			$this->checkLabelFields();
 
 			foreach ($simpleJobs as $key => $value)
