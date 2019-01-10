@@ -57,26 +57,39 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 		
 		// Create name of FIELDS tag in form XML. E.g. "com_content:article|edit"
 		$fieldsName = str_replace('.', ':', $context) . '|' . $layout;
-		
+
 		// Get object of jobs.
 		$simpleJobs = $this->params->get($fieldsName);
-		
+//echo ' 4654sd48sa7d98sD81s8d71dsa ' . print_r($simpleJobs, true);exit;
 		// Build counters for this context. 
 		if (!empty($simpleJobs) && is_object($simpleJobs))
 		{
 			$this->checkLabelFields();
-			
+
 			foreach ($simpleJobs as $key => $value)
 			{
-				$paramsJS = array();
-
-				if (strpos($key, '_') === false && $value)
+				if (strpos($key, '_') === false)
 				{
-					$paramsJS['target'] = $value;
-					$paramsJS['chopText'] = (boolean) $simpleJobs->{$key . '_chopText'};
-					$paramsJS['maxChars'] = (integer) $simpleJobs->{$key . '_maxChars'};
-					$paramsJS = array_merge($paramsJS, $this->labelFields);
-					HTMLHelper::_('charactercounterghsvs.charactercounter', $paramsJS);
+					if ($value)
+					{
+						$paramsJS = array();
+						$paramsJS['target'] = $value;
+						$paramsJS['chopText'] = (boolean) $simpleJobs->{$key . '_chopText'};
+						$paramsJS['maxChars'] = (integer) $simpleJobs->{$key . '_maxChars'};
+						$paramsJS = array_merge($paramsJS, $this->labelFields);
+						HTMLHelper::_('charactercounterghsvs.charactercounter', $paramsJS);
+					}
+
+					if ($required = ($simpleJobs->{$key . '_required'} ?? 0))
+					{
+						$group = null;
+
+						if (strpos($required, ':') !== false)
+						{
+							list($required, $group) = explode(':', $required);
+						}
+						$form->setFieldAttribute($required, 'required', 'true', $group);
+					}
 				}
 			}
 		}
