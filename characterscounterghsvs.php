@@ -73,7 +73,7 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 			// 2019-01-10: $autoloadLanguage is buggy in current J4 alpha7.
 			// https://github.com/joomla/joomla-cms/issues/17444
 			// Force lang load here!!
-			// Decide later if we need it here, too, or only in HTMLHelper.
+			// Decide later if we need it here, too, or only in HTMLHelper or autoloadLanguage is sufficient then.
 			$lang = Factory::getLanguage();
 			$lang->load(static::$basepath, JPATH_PLUGINS . '/system/characterscounterghsvs');
 
