@@ -18,6 +18,7 @@
 - Cleanups and smaller optimizations. 2 small bug fixes.
 - New feature: Setting [Required] for Meta Description and Meta Keywords fields.
 - Fix for J4 alpha7: https://github.com/joomla/joomla-cms/issues/17444.
+- - Custom FormField longdescription.php. Easier compatibility J3 vs J4 with long descriptions.
 </versionHistory>
 	<description>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION</description>
 
@@ -54,9 +55,11 @@
 
 <!--thanks-->
 			<fieldset name="thanks" label="Thanks!&amp;Licence">
-				<field type="spacer" name="spacerthanks"
-				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SPACERTHANKS"
-				description="" />
+				<field name="Thanksspacer" 
+					type="plgSystemCharactersCounterGhsvs.longdescription"
+					hidden="true"
+					additionalClass="thanks-description"
+					descriptiontext="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SPACERTHANKS"/>
 			</fieldset>
 <!--/thanks-->
 
@@ -97,10 +100,16 @@
 				<field name="metadesc_required" type="radio" default="0"
 					class="switcher btn-group btn-group-yesno"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
-					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
+					description="">
 					<option value="0">JNO</option>
 					<option value="metadesc">JYES</option>
 				</field>
+
+				<field name="requiredspacer" 
+					type="plgSystemCharactersCounterGhsvs.longdescription"
+					hidden="true"
+					additionalClass="option-description"
+					descriptiontext="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC"/>
 
 <field type="spacer" name="metakeyspacerX" hr="true" />
 				<field name="metakey" type="radio" default="0"
@@ -130,7 +139,7 @@
 				<field name="metakey_required" type="radio" default="0"
 					class="switcher btn-group btn-group-yesno"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
-					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
+					description="">
 					<option value="0">JNO</option>
 					<option value="metakey">JYES</option>
 				</field>
@@ -222,7 +231,7 @@
 				<field name="metadesc_required" type="radio" default="0"
 					class="switcher btn-group btn-group-yesno"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
-					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
+					description="">
 					<option value="0">JNO</option>
 					<option value="metadesc">JYES</option>
 				</field>
@@ -255,7 +264,7 @@
 				<field name="metakey_required" type="radio" default="0"
 					class="switcher btn-group btn-group-yesno"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
-					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
+					description="">
 					<option value="0">JNO</option>
 					<option value="metakey">JYES</option>
 				</field>
@@ -349,7 +358,7 @@
 				<field name="metadesc_required" type="radio" default="0"
 					class="switcher btn-group btn-group-yesno"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
-					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
+					description="">
 					<option value="0">JNO</option>
 					<option value="menu-meta_description:params">JYES</option>
 				</field>
@@ -382,7 +391,7 @@
 				<field name="metakey_required" type="radio" default="0"
 					class="switcher btn-group btn-group-yesno"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
-					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
+					description="">
 					<option value="0">JNO</option>
 					<option value="menu-meta_keywords:params">JYES</option>
 				</field>
@@ -483,7 +492,13 @@
 
 				<field type="text" name="fileNameSuffix" default=""
 					label="JS/CSS fileNameSuffix"
-					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FILENAMESUFFIX" />
+					description="" />
+
+				<field name="fileNameSuffixspacer" 
+					type="plgSystemCharactersCounterGhsvs.longdescription"
+					hidden="true"
+					additionalClass="option-description"
+					descriptiontext="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FILENAMESUFFIX"/>
 
 				<field type="radio" name="fileNameSuffixCheck" default="1" class="switcher btn-group btn-group-yesno"
 					label="JS/CSS fileNameSuffix fallback"
@@ -492,13 +507,20 @@
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
 				</field>
+			</fieldset>
 
-				
-				
+			<fieldset name="LongDescription"
+				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_LONG_DESCRIPTION">
+
+				<field name="LongDescriptionspacer" 
+					type="plgSystemCharactersCounterGhsvs.longdescription"
+					hidden="true"
+					additionalClass="plugin-description"
+					descriptiontext="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION_LONG"/>
+
 				<!--ALWAYS assets at last!!!-->
 				<field type="plgSystemCharactersCounterGhsvs.assetsbe" name="assetsbe" hidden="true" />
 			</fieldset>
-
 		
 		</fields>
 	</config>
