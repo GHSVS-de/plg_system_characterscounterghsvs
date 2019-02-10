@@ -1,8 +1,8 @@
 <?php
 /**
  * Use in your extension manifest file (any tag is optional!!!!!):
- * <minimumPhp>7.0</minimumPhp>
- * <minimumJoomla>3.9</minimumJoomla>
+ * <minimumPhp>7.0.0</minimumPhp>
+ * <minimumJoomla>3.9.0</minimumJoomla>
  * Yes, use 999999 to match '3.9'. Otherwise comparison will fail.
  * <maximumJoomla>3.9.999999</maximumJoomla>
  * <maximumPhp>7.3.999999</maximumPhp>
