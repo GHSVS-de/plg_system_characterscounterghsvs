@@ -23,9 +23,13 @@
 	<description>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION</description>
 
 	<!--<updateservers><server type="extension" priority="1" name="PLG_SYSTEM_CHARACTERCOUNTERGHSVS">http://snapshots.ghsvs.de/updates/joomla/plg_system_characterscounterghsvs.xml</server></updateservers>-->
+	<scriptfile>installerScript.php</scriptfile>
+	<minimumPhp>7.0.0</minimumPhp>
+	<minimumJoomla>3.9.0</minimumJoomla>
 
 	<files>
 		<filename plugin="characterscounterghsvs">characterscounterghsvs.php</filename>
+		<filename>installerScript.php</filename>
 		<!--<filename>helper.php</filename>-->
 		<filename>LICENSE.txt</filename>
 		<filename>LICENSE_VCountdown.js.txt</filename>
