@@ -20,6 +20,8 @@
 - Fix for J4 alpha7: https://github.com/joomla/joomla-cms/issues/17444.
 - - Custom FormField longdescription.php. Easier compatibility J3 vs J4 with long descriptions.
 </versionHistory>
+	<minimumPhp>7.0</minimumPhp>
+	<minimumJoomla>3.9.0</minimumJoomla>
 	<description>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION</description>
 
 	<!--<updateservers><server type="extension" priority="1" name="PLG_SYSTEM_CHARACTERCOUNTERGHSVS">http://snapshots.ghsvs.de/updates/joomla/plg_system_characterscounterghsvs.xml</server></updateservers>-->
