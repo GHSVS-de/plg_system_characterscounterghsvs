@@ -9,12 +9,12 @@ On edit pages Article, Category, Menu Item of standard Joomla:
 - Field Meta Keywords
 - Field Title
 - Field Alias
+- Required setting for each field
 - You can activate/deactivate and configure each counter in the plugin configuration.
 ## Restrictions
-- Only back-end yet
-- Tested with nightly build of Joomla! 4.0.0-alpha7-dev
-- Target of this plugin is Joomla 4!
-- Have a look in the release tab which versions were tested with Joomla 3, too.
+- Only back-end.
+- I gave up to test it with Joomla 4.
+- I use it in Joomla 3 and live with the ugly display.
 - Uses NOT Joomla! Update System (no automatic update messages in Joomla back-end) but you can use the GitHub repository watchlist for releases
 [HowTo subcribe to releases watchlist](https://re-later.eu/plg_system_characterscounterghsvs_Watchlist.jpg)
 ## Special for experts
@@ -32,7 +32,7 @@ $paramsJS = array(
 
  'chopText' => true, // <i>chopText</i> adds a <i>maxchars</i> attribute to the field.
  'maxChars' => 60, // Number of charcters before you get a warning or text is chopped.
-	
+
  // Optional strings overrides. Use custom language strings if you want to.
  'charsTypedLabel' => 'Typed characters:',
  'charsRemainLabel' => 'SOME_LANGUAGE_STRING',
