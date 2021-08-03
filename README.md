@@ -8,8 +8,9 @@ On edit pages Article, Category, Menu Item of standard Joomla:
 - Field Meta Keywords
 - Field Title
 - Field Alias
-- Required setting for each field
+- `Required` setting for each field (message before save if field empty).
 - You can activate/deactivate and configure each counter in the plugin configuration.
+- Remove core character counter (Joomla 4).
 ## Restrictions
 - Only back-end.
 - I use it in Joomla 3/4 and live with the ugly display.
