@@ -1,65 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="4.0" type="plugin" group="system" method="upgrade">
-	<name>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS</name>
-	<author>G@HService Berlin Neukölln, Volkmar Volli Schlothauer, ghsvs.de</author>
-	<creationDate>2018-12-28</creationDate>
- 	<copyright>Copyright (C) 2018, G@HService Berlin Neukölln, Volkmar Volli Schlothauer. All rights reserved.</copyright>
-	<license>GNU General Public License version 3 or later; see LICENSE.txt and LICENSE_VCountdown.js.txt</license>
-	<authorEmail></authorEmail>
-	<authorUrl>https://www.ghsvs.de</authorUrl>
-	<version>2021.05.28</version>
-	<versionHistory>
-2018.12.28:
-- First tests with J4.0 alpha 7.
-2019.01.09:
-- Bugfix: https://github.com/GHSVS-de/plg_system_characterscounterghsvs/pull/2
-2019.01.10:
-- Tested with J4 alpha7 nightly. J3.9.2-dev.
-- Cleanups and smaller optimizations. 2 small bug fixes.
-- New feature: Setting [Required] for Meta Description and Meta Keywords fields.
-- Fix for J4 alpha7: https://github.com/joomla/joomla-cms/issues/17444.
-- - Custom FormField longdescription.php. Easier compatibility J3 vs J4 with long descriptions.
-</versionHistory>
-	<description>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION</description>
+<extension type="plugin" group="system" method="upgrade">
+	<name>{{nameUpper}}</name>
+	<author>{{authorName}}</author>
+	<creationDate>{{creationDate}}</creationDate>
+	<copyright>{{copyright}}</copyright>
+	<license>{{licenseLong}}</license>
+	<authorUrl>{{authorUrl}}</authorUrl>
+	<version>{{version}}</version>
+	<description>{{nameUpper}}_XML_DESCRIPTION</description>
 
-	<!--<updateservers><server type="extension" priority="1" name="PLG_SYSTEM_CHARACTERCOUNTERGHSVS">http://snapshots.ghsvs.de/updates/joomla/plg_system_characterscounterghsvs.xml</server></updateservers>-->
+	<versionHistory>
+		https://updates.ghsvs.de/changelog.php?file={{name}}
+	</versionHistory>
+
+	<updateservers><server type="extension" priority="1" name="{{nameUpper}}">https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/{{name}}-update.xml</server></updateservers>
+
+	<changelogurl>https://raw.githubusercontent.com/GHSVS-de/upadateservers/master/{{name}}-changelog.xml</changelogurl>
+
+	<infourl>https://github.com/GHSVS-de/{{name}}#readme</infourl>
+
+	<downloadUrl>
+	https://github.com/GHSVS-de/{{name}}/raw/{{version}}/dist/{{zipFilename}}
+	</downloadUrl>
+
+	<versionCompare>
+	https://github.com/GHSVS-de/{{name}}/compare/{{versionCompare}}...{{version}}
+	</versionCompare>
+
 	<scriptfile>installerScript.php</scriptfile>
-	<minimumPhp>7.0.0</minimumPhp>
-	<minimumJoomla>3.9.0</minimumJoomla>
+	<minimumPhp>{{minimumPhp}}</minimumPhp>
+	<maximumPhp>{{maximumPhp}}</maximumPhp>
+	<minimumJoomla>{{minimumJoomla}}</minimumJoomla>
+	<maximumJoomla>{{maximumJoomla}}</maximumJoomla>
+	<allowDowngrades>{{allowDowngrades}}</allowDowngrades>
 
 	<files>
-		<filename plugin="characterscounterghsvs">characterscounterghsvs.php</filename>
+		<filename plugin="{{filename}}">{{filename}}.php</filename>
 		<filename>installerScript.php</filename>
-		<!--<filename>helper.php</filename>-->
-		<filename>LICENSE.txt</filename>
 		<filename>LICENSE_VCountdown.js.txt</filename>
+		<filename>LICENSE.txt</filename>
 		<folder>fields</folder>
 		<folder>html</folder>
 		<folder>language</folder>
-		<!--<folder>layouts</folder>-->
-		<!--<folder>media</folder>-->
 		<folder>myforms</folder>
-		<!--<folder>rule</folder>-->
-		<!--<folder>tmpl</folder>-->
 	</files>
 
-	<media folder="media" destination="plg_system_characterscounterghsvs">
+	<media folder="media" destination="{{name}}">
 		<folder>css</folder>
-		<!--<folder>fonts</folder>-->
 		<folder>js</folder>
-		<!--<folder>less</folder>-->
 	</media>
 
 	<config>
-		<fields name="params" addfieldpath="plugins/system/characterscounterghsvs/fields">
+		<fields name="params" addfieldpath="plugins/system/{{filename}}/fields">
 
 			<fieldset name="basic">
-				<field type="hidden" default="1" name="characterscounterghsvsplugin" />
+				<field type="hidden" default="1" name="{{filename}}plugin" />
 			</fieldset>
 
 <!--thanks-->
 			<fieldset name="thanks" label="Thanks!&amp;Licence">
-				<field name="Thanksspacer" 
+				<field name="Thanksspacer"
 					type="plgSystemCharactersCounterGhsvs.longdescription"
 					hidden="true"
 					additionalClass="thanks-description"
@@ -77,8 +77,7 @@
 				<field type="spacer" name="com_content:articlespacer"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_COM_CONTENT_ARTICLE_SPACER" />
 
-				<field name="metadesc" type="radio" default="0"
-					class="switcher btn-group btn-group-yesno"
+				<field name="metadesc" type="list" default="0" filter="string"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_META_DESCRIPTION"
 					description="[#jform_metadesc]">
 					<option value="0">JNO</option>
@@ -86,38 +85,31 @@
 				</field>
 
 				<field name="metadesc_maxChars" type="number" min="1" default="150"
-					label="[maxChars]"
-					description=""
 					filter="integer"
+					label="[maxChars]"
 					showon="metadesc:#jform_metadesc" />
 
-				<field name="metadesc_chopText" type="radio" default="0"
-					class="switcher btn-group btn-group-yesno"
+				<field name="metadesc_chopText" type="list" default="0" filter="integer"
 					label="[chopText]"
-					description=""
-					filter="integer"
 					showon="metadesc:#jform_metadesc">
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
 				</field>
 
-				<field name="metadesc_required" type="radio" default="0"
-					class="switcher btn-group btn-group-yesno"
-					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
-					description="">
-					<option value="0">JNO</option>
-					<option value="metadesc">JYES</option>
+				<field name="metadesc_required" type="list" default="0" filter="string"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED">
+						<option value="0">JNO</option>
+						<option value="metadesc">JYES</option>
 				</field>
 
-				<field name="requiredspacer" 
+				<field name="requiredspacer"
 					type="plgSystemCharactersCounterGhsvs.longdescription"
 					hidden="true"
 					additionalClass="option-description"
 					descriptiontext="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC"/>
 
 <field type="spacer" name="metakeyspacerX" hr="true" />
-				<field name="metakey" type="radio" default="0"
-					class="switcher btn-group btn-group-yesno"
+				<field name="metakey" type="list" default="0" filter="string"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_META_KEYWORDS"
 					description="[#jform_metakey]">
 						<option value="0">JNO</option>
@@ -125,16 +117,12 @@
 				</field>
 
 				<field name="metakey_maxChars" type="number" min="1" default="150"
-					label="[maxChars]"
-					description=""
 					filter="integer"
+					label="[maxChars]"
 					showon="metakey:#jform_metakey" />
 
-				<field name="metakey_chopText" type="radio" default="0"
-					class="switcher btn-group btn-group-yesno"
+				<field name="metakey_chopText" type="radio" default="0" filter="integer"
 					label="[chopText]"
-					description=""
-					filter="integer"
 					showon="metakey:#jform_metakey">
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
@@ -463,7 +451,7 @@
 				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_WHERE">
 
 				<field name="wheres" type="subform" min="1" max="100" multiple="true"
-					formsource="plugins/system/characterscounterghsvs/myforms/wheres-subform.xml" 
+					formsource="plugins/system/characterscounterghsvs/myforms/wheres-subform.xml"
 					label=""
 					description="" />
 			</fieldset>
@@ -474,49 +462,36 @@
 			<fieldset name="countersettings-basic"
 				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_BASIC">
 
+				<field type="list" name="removeMaxlength" default="0" filter="integer"
+					label="[removeMaxlength]">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
 				<field type="text" name="charsTypedLabel" default=""
 					label="[charsTypedLabel]"
 					description="" />
-			
+
 				<field type="text" name="charsRemainLabel" default=""
 					label="[charsRemainLabel]"
 					description="" />
-			
+
 				<field type="text" name="charsMaxLabel" default=""
 					label="[charsMaxLabel]"
 					description="" />
-					
-				<field type="radio" name="loadCSS" default="1" class="switcher btn-group btn-group-yesno"
-					label="CSS Load file vcountdownghsvs.css [loadCSS]"
-					description=""
-					filter="integer">
+
+				<field type="list" name="loadCSS" default="1" filter="integer"
+					label="[loadCSS] Load vcountdownghsvs.css">
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
 				</field>
 
-				<field type="text" name="fileNameSuffix" default=""
-					label="JS/CSS fileNameSuffix"
-					description="" />
-
-				<field name="fileNameSuffixspacer" 
-					type="plgSystemCharactersCounterGhsvs.longdescription"
-					hidden="true"
-					additionalClass="option-description"
-					descriptiontext="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FILENAMESUFFIX"/>
-
-				<field type="radio" name="fileNameSuffixCheck" default="1" class="switcher btn-group btn-group-yesno"
-					label="JS/CSS fileNameSuffix fallback"
-					description="Fall back to JS/CSS standard files if file with fileNameSuffix in filename doesn\'t exist?"
-					showon="fileNameSuffix!:" filter="integer">
-						<option value="0">JNO</option>
-						<option value="1">JYES</option>
-				</field>
 			</fieldset>
 
 			<fieldset name="LongDescription"
 				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_LONG_DESCRIPTION">
 
-				<field name="LongDescriptionspacer" 
+				<field name="LongDescriptionspacer"
 					type="plgSystemCharactersCounterGhsvs.longdescription"
 					hidden="true"
 					additionalClass="plugin-description"
@@ -525,7 +500,7 @@
 				<!--ALWAYS assets at last!!!-->
 				<field type="plgSystemCharactersCounterGhsvs.assetsbe" name="assetsbe" hidden="true" />
 			</fieldset>
-		
+
 		</fields>
 	</config>
 </extension>

@@ -2,7 +2,7 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\Filter\InputFilter;
+#use Joomla\CMS\Filter\InputFilter;
 use Joomla\CMS\Form\Form;
 #use Joomla\CMS\Form\FormHelper;
 use Joomla\CMS\HTML\HTMLHelper;
@@ -19,17 +19,15 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 	// https://github.com/joomla/joomla-cms/issues/17444
 	// Force lang load elsewhere!!
 	protected $autoloadLanguage = true;
-	
+
 	protected static $basepath = 'plg_system_characterscounterghsvs';
-	
+
 	// User can enter custom labels in plugin.
-	protected $labelFields = array(
-		'charsTypedLabel',
-		'charsRemainLabel',
-		'charsMaxLabel'
-	);
+	protected $labelFields = ['charsTypedLabel', 'charsRemainLabel',
+		'charsMaxLabel'];
+
 	protected $labelFieldsChecked = null;
-	
+
 	function __construct(&$subject, $config = array())
 	{
 		parent::__construct($subject, $config);
@@ -61,14 +59,14 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 		{
 			$context = 'com_categories.category';
 		}
-		
+
 		// Create name of FIELDS tag in form XML. E.g. "com_content:article|edit"
 		$fieldsName = str_replace('.', ':', $context) . '|' . $layout;
 
 		// Get object of jobs.
 		$simpleJobs = $this->params->get($fieldsName);
 
-		// Build counters for this context. 
+		// Build counters for this context.
 		if (!empty($simpleJobs) && is_object($simpleJobs))
 		{
 			// 2019-01-10: $autoloadLanguage is buggy in current J4 alpha7.
@@ -76,7 +74,8 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 			// Force lang load here!!
 			// Decide later if we need it here, too, or only in HTMLHelper or autoloadLanguage is sufficient then.
 			$lang = Factory::getLanguage();
-			$lang->load(static::$basepath, JPATH_PLUGINS . '/system/characterscounterghsvs');
+			$lang->load(static::$basepath,
+				JPATH_PLUGINS . '/system/characterscounterghsvs');
 
 			$this->checkLabelFields();
 
@@ -90,7 +89,10 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 							'target' => $value,
 							'chopText' => (boolean) $simpleJobs->{$key . '_chopText'},
 							'maxChars' => (integer) $simpleJobs->{$key . '_maxChars'},
+							'removeMaxlength' => (boolean) $this->params->get(
+								'removeMaxlength', 0),
 						);
+
 						$paramsJS = array_merge($paramsJS, $this->labelFields);
 						HTMLHelper::_('charactercounterghsvs.charactercounter', $paramsJS);
 					}
@@ -103,6 +105,7 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 						{
 							list($required, $group) = explode(':', $required);
 						}
+
 						$form->setFieldAttribute($required, 'required', 'true', $group);
 					}
 				}
@@ -118,11 +121,11 @@ return;
 		{
 			return;
 		}
-		
+
 		$jinput = $this->app->input;
-		
+
 		$layout = $jinput->get('layout', '');
-		
+
 		$CountersCollected = new stdClass;
 
 		foreach ($CountersOrig as $key => $Counter)
@@ -131,7 +134,7 @@ return;
 			{
 				continue;
 			}
-			
+
 			if (!trim($Counter->target))
 			{
 				continue;
@@ -145,9 +148,9 @@ return;
 			{
 				$parts = explode('|', $Counter->context);
 				@list($Context, $Layout, $test) = $parts;
-				
+
 				$Layout = $Layout ?? '';
-				
+
 				if ($Context !== $context)
 				{
 					continue;
@@ -157,13 +160,13 @@ return;
 				{
 					continue;
 				}
-				
+
 				$CountersCollected->$key = $Counter;
 			}
 		}
-		
+
 		unset($CountersOrig, $Counter);
-		
+
 		if (empty($CountersCollected))
 		{
 			return;
@@ -174,7 +177,7 @@ return;
 		foreach ($checks as $key => $check)
 		{
 			$temp = $this->params->get($check);
-			
+
 			if (!trim($temp))
 			{
 				unset($checks[$key]);
@@ -191,13 +194,13 @@ return;
 				'chopText' => (boolean) $Counter->chopText,
 				'maxChars' => (int) $Counter->maxChars,
 			);
-			
+
 			$paramsJS = array_merge($paramsJS, $checks);
-			
+
 			HTMLHelper::_('charactercounterghsvs.charactercounter', $paramsJS);
 		}
 	}
-	
+
 	protected function checkLabelFields()
 	{
 		if (is_null($this->labelFieldsChecked))
@@ -207,7 +210,7 @@ return;
 			foreach ($this->labelFields as $key => $check)
 			{
 				$temp = $this->params->get($check);
-				
+
 				if (!trim($temp))
 				{
 					unset($this->labelFields[$key]);
@@ -241,7 +244,7 @@ return;
 			{
 				return;
 			}
-			
+
 			$cleans = array(
 				'note' => 'string',
 				'client' => 'string',
@@ -251,7 +254,7 @@ return;
 				'chopText' => 'integer',
 				'maxChars' => 'integer',
 			);
-			
+
 			foreach ($subform as $key => $item)
 			{
 				foreach ($item as $property => $value)
@@ -266,11 +269,11 @@ return;
 					}
 				}
 			}
-			
+
 			$params->set('wheres', $subform);
-			
+
 			$table->params = $params->toString();
-			
+
 			#$log = PHP_EOL . ' $subform after ' . var_export($subform, true) . PHP_EOL;
 			#file_put_contents(JPATH_SITE . '/tmp/counters.txt', $log, FILE_APPEND);
 		}

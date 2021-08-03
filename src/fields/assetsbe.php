@@ -10,21 +10,19 @@ class plgSystemCharactersCounterGhsvsFormFieldAssetsBe extends FormField
 
 	protected function getInput()
 	{
-		$file = 'plg_system_characterscounterghsvs/backend.css';
+		$min = JDEBUG ? '' : '.min';
+		$file = 'plg_system_characterscounterghsvs/backend' . $min . '.css';
 
-		HTMLHelper::_('stylesheet',
-			$file,
-			array(
+		HTMLHelper::_('stylesheet', $file,
+			[
 				//Allow template overrides in css/plg_system_charactercounterghsvs:
 				'relative' => true,
-				//'pathOnly' => false,
-				//'detectBrowser' => false,
-				//'detectDebug' => true,
-			)
+				'version' => $min ? 'auto' : time()
+			]
 		);
 		return '';
 	}
-	
+
 	protected function getLabel()
 	{
 		return '';

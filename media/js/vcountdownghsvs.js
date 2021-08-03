@@ -1,5 +1,172 @@
-/*! 
+/*!
 Based upon: VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License.
 Edited by ghsvs.de 2018.
 */
-!function(e,t){"use strict";"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?module.exports=t():e.VCountdown=t()}(this,function(){"use strict";var e=function(t){if(!(this&&this instanceof e))return new e(t);if(t||(t={}),!t.target)throw"Provide a target to count characters";var s=document.querySelectorAll(t.target);s&&s.length&&(t.target=s[0],this.target=t.target,this.maxChars=t.maxChars||140,this.chopText=t.chopText||!1,this.charsTypedLabel=Joomla.JText._(t.charsTypedLabel),this.charsRemainLabel=Joomla.JText._(t.charsRemainLabel),this.charsMaxLabel=Joomla.JText._(t.charsMaxLabel),this.countdown())};return e.prototype={hasClass:function(e,t){return new RegExp("(\\s|^)"+t+"(\\s|$)").test(e.className)},addClass:function(e,t){this.hasClass(e,t)||(e.className+=(e.className?" ":"")+t)},removeClass:function(e,t){this.hasClass(e,t)&&(e.className=e.className.replace(new RegExp("(\\s|^)"+t+"(\\s|$)")," ").replace(/^\s+|\s+$/g,""))},createEls:function(e,t){var s,a=document.createElement(e);for(s in t)t.hasOwnProperty(s)&&(a[s]=t[s]);return a},insertAfter:function(e,t){e.parentNode.insertBefore(t,e.nextSibling)},update:function(){var e=this.target,t=e.value.length,s=this.maxChars-t;s>10?(this.removeClass(e.nextElementSibling,"warn"),this.removeClass(e.nextElementSibling,"overflow")):s<0?this.addClass(e.nextElementSibling,"overflow"):(this.removeClass(e.nextElementSibling,"overflow"),this.addClass(e.nextElementSibling,"warn"));var a="<span class=chars-typed>"+this.charsTypedLabel+t+"</span>";a+="<span class=chars-remain>"+this.charsRemainLabel+s+"</span>",a+="<span class=chars-max>"+this.charsMaxLabel+this.maxChars+"</span>",e.nextElementSibling.innerHTML=a},setMaxChars:function(){this.target.setAttribute("maxlength",this.maxChars)},charsLen:function(){var e=this.createEls("span",{className:"chars-length"});e.innerHTML=this.maxChars,this.insertAfter(this.target,e),this.update()},countdown:function(){this.chopText&&this.setMaxChars(),this.charsLen(),this.target.addEventListener("keyup",this.update.bind(this),!1)}},e});
+
+/*jslint browser: true*/
+/*global define, module, exports*/
+(function (root, factory)
+{
+	"use strict";
+
+	if (typeof define === 'function' && define.amd)
+	{
+		define([], factory);
+	}
+	else if (typeof exports === 'object')
+	{
+		module.exports = factory();
+	}
+	else
+	{
+		root.VCountdown = factory();
+	}
+}(this, function ()
+{
+	"use strict";
+
+	var VCountdown = function (options)
+	{
+		if (!this || !(this instanceof VCountdown))
+		{
+			return new VCountdown(options);
+		}
+
+		if (!options)
+		{
+			options = {};
+		}
+
+		if (!options.target)
+		{
+			throw 'Provide a target to count characters';
+		}
+
+		var matches = document.querySelectorAll(options.target);
+
+		if (!matches || !matches.length)
+		{
+			return;
+		}
+
+		options.target = matches[0];
+		this.target   = options.target;
+		this.maxChars = options.maxChars || 140;
+		this.chopText = options.chopText || false;
+		this.removeMaxlength = options.removeMaxlength || false;
+		this.charsTypedLabel = Joomla.JText._(options.charsTypedLabel);
+		this.charsRemainLabel = Joomla.JText._(options.charsRemainLabel);
+		this.charsMaxLabel = Joomla.JText._(options.charsMaxLabel);
+		this.countdown();
+	};
+
+	VCountdown.prototype =
+	{
+		hasClass: function (el, name)
+		{
+			return new RegExp('(\\s|^)' + name + '(\\s|$)').test(el.className);
+		},
+
+		addClass: function (el, name)
+		{
+			if (!this.hasClass(el, name))
+			{
+				el.className += (el.className ? ' ' : '') + name;
+			}
+		},
+
+		removeClass: function (el, name)
+		{
+			if (this.hasClass(el, name))
+			{
+				el.className = el.className.replace(new RegExp('(\\s|^)' + name + '(\\s|$)'), ' ').replace(/^\s+|\s+$/g, '');
+			}
+		},
+
+		createEls: function (name, props)
+		{
+			var el = document.createElement(name), p;
+
+			for (p in props)
+			{
+				if (props.hasOwnProperty(p))
+				{
+					el[p] = props[p];
+				}
+			}
+			return el;
+		},
+
+		insertAfter: function (referenceNode, newNode)
+		{
+			referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+		},
+
+		update: function ()
+		{
+			var target = this.target,
+			currentCount = target.value.length,
+			remaining    = this.maxChars - currentCount;
+
+			if (remaining > 10)
+			{
+				this.removeClass(target.nextElementSibling, 'warn');
+				this.removeClass(target.nextElementSibling, 'overflow');
+			}
+			else if(remaining < 0)
+			{
+				this.addClass(target.nextElementSibling, 'overflow');
+			}
+			else
+			{
+				this.removeClass(target.nextElementSibling, 'overflow');
+				this.addClass(target.nextElementSibling, 'warn');
+			}
+
+			var display = `
+			<span class=chars-typed>${this.charsTypedLabel}${currentCount}</span>
+			<span class=chars-remain>${this.charsRemainLabel}${remaining}</span>
+			<span class=chars-max>${this.charsMaxLabel}${this.maxChars}</span>`;
+
+			target.nextElementSibling.innerHTML = display;
+		},
+
+		deleteMaxlength: function ()
+		{
+			console.log('remove maxlength');
+			this.target.removeAttribute('maxlength');
+		},
+
+		setMaxChars: function ()
+		{
+			this.target.setAttribute('maxlength', this.maxChars);
+		},
+
+		charsLen: function ()
+		{
+			var span = this.createEls('span', {className: 'chars-length'});
+			span.innerHTML = this.maxChars;
+			this.insertAfter(this.target, span);
+			this.update();
+		},
+
+		countdown: function ()
+		{
+			if (this.removeMaxlength)
+			{
+				this.deleteMaxlength();
+			}
+
+			if (this.chopText)
+			{
+				this.setMaxChars();
+			}
+
+			this.charsLen();
+			this.target.addEventListener('keyup', this.update.bind(this), false);
+		}
+
+    };
+
+    return VCountdown;
+}));
