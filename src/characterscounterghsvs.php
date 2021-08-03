@@ -81,32 +81,50 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 
 			foreach ($simpleJobs as $key => $value)
 			{
+				// The main Yes/No switch like 'metadesc'.
 				if (strpos($key, '_') === false)
 				{
 					if ($value)
 					{
-						$paramsJS = array(
+						$paramsJS = [
 							'target' => $value,
 							'chopText' => (boolean) $simpleJobs->{$key . '_chopText'},
 							'maxChars' => (integer) $simpleJobs->{$key . '_maxChars'},
 							'removeMaxlength' => (boolean) $this->params->get(
 								'removeMaxlength', 0),
-						);
+						];
 
+						// Add language labels if some set.
 						$paramsJS = array_merge($paramsJS, $this->labelFields);
+
+						// Configure and load counter JS.
 						HTMLHelper::_('charactercounterghsvs.charactercounter', $paramsJS);
 					}
 
-					if ($required = ($simpleJobs->{$key . '_required'} ?? 0))
+					$group = null;
+					$field = $key;
+
+					// There are combinations like 'menu-meta_description:params'.
+					if (strpos($key, ':') !== false)
 					{
-						$group = null;
+						list($field, $group) = explode(':', $key);
+					}
 
-						if (strpos($required, ':') !== false)
-						{
-							list($required, $group) = explode(':', $required);
-						}
+					// Remove Joomla's character counter. @since Joomla 4.
+					if ($this->params->get('removeCharcounter', 1))
+					{
+						$form->setFieldAttribute($field, 'charcounter', null, $group);
+					}
 
-						$form->setFieldAttribute($required, 'required', 'true', $group);
+					// Remove maxlength. THIS IS REDUNDANT! See JS. Remove there!
+					if ($this->params->get('removeMaxlength', 1))
+					{
+						$form->setFieldAttribute($field, 'maxlength', null, $group);
+					}
+
+					if ($required = ($simpleJobs->{$field . '_required'} ?? 0))
+					{
+						$form->setFieldAttribute($field, 'required', 'true', $group);
 					}
 				}
 			}

@@ -69,51 +69,52 @@
 
 <!--countersettings-simple-->
 			<fieldset name="countersettings-simple"
-				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_SIMPLE"
-				description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_SIMPLE_DESC">
+				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_SIMPLE">
+
 <!--ARTICLE EDIT-->
-<fields name="com_content:article|edit">
+				<fields name="com_content:article|edit">
 
-				<field type="spacer" name="com_content:articlespacer"
-					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_COM_CONTENT_ARTICLE_SPACER" />
+					<field type="spacer" name="com_content:articlespacer"
+						label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_COM_CONTENT_ARTICLE_SPACER" />
 
-				<field name="metadesc" type="list" default="0" filter="string"
-					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_META_DESCRIPTION"
-					description="[#jform_metadesc]">
-					<option value="0">JNO</option>
-					<option value="#jform_metadesc">JYES</option>
-				</field>
-
-				<field name="metadesc_maxChars" type="number" min="1" default="150"
-					filter="integer"
-					label="[maxChars]"
-					showon="metadesc:#jform_metadesc" />
-
-				<field name="metadesc_chopText" type="list" default="0" filter="integer"
-					label="[chopText]"
-					showon="metadesc:#jform_metadesc">
+<!--ARTICLE METADESC -->
+					<field name="metadesc" type="list" default="0" filter="string"
+						label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_META_DESCRIPTION"
+						description="[#jform_metadesc]">
 						<option value="0">JNO</option>
-						<option value="1">JYES</option>
-				</field>
+						<option value="#jform_metadesc">JYES</option>
+					</field>
 
-				<field name="metadesc_required" type="list" default="0" filter="string"
-					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED">
+					<field name="metadesc_maxChars" type="number" min="1" default="150"
+						filter="integer"
+						label="[maxChars]"
+						showon="metadesc:#jform_metadesc" />
+
+					<field name="metadesc_chopText" type="list" default="0"
+						filter="integer"
+						label="[chopText]"
+						description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_CHOPTEXT"
+						showon="metadesc:#jform_metadesc">
+							<option value="0">JNO</option>
+							<option value="1">JYES</option>
+					</field>
+
+					<field name="metadesc_required" type="list" default="0" filter="string"
+						label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
+						description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC"
+						showon="metadesc:#jform_metadesc">
 						<option value="0">JNO</option>
 						<option value="metadesc">JYES</option>
-				</field>
+					</field>
 
-				<field name="requiredspacer"
-					type="plgSystemCharactersCounterGhsvs.longdescription"
-					hidden="true"
-					additionalClass="option-description"
-					descriptiontext="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC"/>
+<!--ARTICLE METAKEY-->
+				<field type="spacer" name="metakeyspacerX" hr="true" />
 
-<field type="spacer" name="metakeyspacerX" hr="true" />
 				<field name="metakey" type="list" default="0" filter="string"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_META_KEYWORDS"
 					description="[#jform_metakey]">
-						<option value="0">JNO</option>
-						<option value="#jform_metakey">JYES</option>
+					<option value="0">JNO</option>
+					<option value="#jform_metakey">JYES</option>
 				</field>
 
 				<field name="metakey_maxChars" type="number" min="1" default="150"
@@ -121,17 +122,15 @@
 					label="[maxChars]"
 					showon="metakey:#jform_metakey" />
 
-				<field name="metakey_chopText" type="radio" default="0" filter="integer"
+				<field name="metakey_chopText" type="list" default="0" filter="integer"
 					label="[chopText]"
 					showon="metakey:#jform_metakey">
-						<option value="0">JNO</option>
-						<option value="1">JYES</option>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
 				</field>
 
-				<field name="metakey_required" type="radio" default="0"
-					class="switcher btn-group btn-group-yesno"
+				<field name="metakey_required" type="list" default="0" filter="string"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
-					description="">
 					<option value="0">JNO</option>
 					<option value="metakey">JYES</option>
 				</field>
@@ -462,8 +461,16 @@
 			<fieldset name="countersettings-basic"
 				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_BASIC">
 
-				<field type="list" name="removeMaxlength" default="0" filter="integer"
-					label="[removeMaxlength]">
+				<field type="list" name="removeCharcounter" default="1" filter="integer"
+					label="[removeCharcounter]"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REMOVECHARCOUNTER">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field type="list" name="removeMaxlength" default="1" filter="integer"
+					label="[removeMaxlength]"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REMOVEMAXLENGTH">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
