@@ -71,6 +71,13 @@ async function cleanOut (cleanOuts) {
 	);
 	await replaceXml.main(`${__dirname}/dist/${xmlFile}`, zipFilename);
 
+	xmlFile = 'release.txt';
+	await fse.copy(`./${xmlFile}`, `./dist/${xmlFile}`).then(
+		answer => console.log(chalk.yellowBright(
+			`Copied ${xmlFile} to ./dist.`))
+	);
+	await replaceXml.main(`${__dirname}/dist/${xmlFile}`, zipFilename);
+
 	// Zip it
 	const zip = new (require("adm-zip"))();
 	zip.addLocalFolder("package", false);
