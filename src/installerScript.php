@@ -25,7 +25,11 @@ class plgSystemCharacterscounterGhsvsInstallerScript extends InstallerScript
 	 * @var    array
 	 * @since  2.0
 	 */
-	protected $deleteFiles = array();
+	protected $deleteFiles = [
+		'/media/plg_system_characterscounterghsvs/css/backend-uncompressed.css',
+		'/media/plg_system_characterscounterghsvs/css/vcountdownghsvs-uncompressed.css',
+		'/media/plg_system_characterscounterghsvs/js/vcountdownghsvs-uncompressed.js',
+	];
 
 	/**
 	 * A list of folders to be deleted with method removeFiles().
@@ -33,7 +37,9 @@ class plgSystemCharacterscounterGhsvsInstallerScript extends InstallerScript
 	 * @var    array
 	 * @since  2.0
 	 */
-	protected $deleteFolders = array();
+	protected $deleteFolders = [
+		'/plugins/system/characterscounterghsvs/myforms',
+	];
 
 	public function preflight($type, $parent)
 	{
