@@ -55,8 +55,6 @@ Edited by ghsvs.de 2018.
 		this.chopText = options.chopText || false;
 		this.removeMaxlength = options.removeMaxlength || false;
 		this.charsTypedLabel = Joomla.JText._(options.charsTypedLabel);
-		this.charsRemainLabel = Joomla.JText._(options.charsRemainLabel);
-		this.charsMaxLabel = Joomla.JText._(options.charsMaxLabel);
 		this.countdown();
 	};
 
@@ -123,10 +121,10 @@ Edited by ghsvs.de 2018.
 				this.addClass(target.nextElementSibling, 'warn');
 			}
 
-			var display = `
-			<span class=chars-typed>${this.charsTypedLabel}${currentCount}</span>
-			<span class=chars-remain>${this.charsRemainLabel}${remaining}</span>
-			<span class=chars-max>${this.charsMaxLabel}${this.maxChars}</span>`;
+			var display = this.charsTypedLabel
+				.replace('{currentCount}', `<span class=chars-typed>${currentCount}</span>`)
+				.replace('{maxChars}', `<span class=chars-max>${this.maxChars}</span>`)
+				.replace('{remaining}', `<span class=chars-remain>${remaining}</span>`);
 
 			target.nextElementSibling.innerHTML = display;
 		},

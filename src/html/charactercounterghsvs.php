@@ -13,15 +13,12 @@ abstract class JHtmlCharactercounterghsvs
 	protected static $loaded = array();
 	protected static $basepath = 'plg_system_characterscounterghsvs';
 
-	public static function charactercounter(
- 		$paramsJS = array(),
-		$options = array()
+	public static function charactercounter($paramsJS = array())
+	{
+		if (!is_array($paramsJS) || empty($paramsJS) || empty($paramsJS['target'])
+			|| !($paramsJS['target'] = trim($paramsJS['target']))
 	){
-
-		if (!is_array($paramsJS) || empty($paramsJS)
-			|| empty($paramsJS['target']) || !($paramsJS['target'] = trim($paramsJS['target']))
-		){
-			return '';
+			return;
 		}
 
 		$plgParams = PluginHelper::getPlugin('system', 'characterscounterghsvs');
@@ -48,12 +45,7 @@ abstract class JHtmlCharactercounterghsvs
 
 		$maxCharsDefault = 150;
 		$paramsJS['chopText'] = empty($paramsJS['chopText']) ? false : true;
-		$paramsJS['charsTypedLabel'] = $paramsJS['charsTypedLabel'] ??
-			'PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_TYPED_LABEL';
-		$paramsJS['charsRemainLabel'] = $paramsJS['charsRemainLabel'] ??
-			'PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REMAIN_LABEL';
-		$paramsJS['charsMaxLabel'] = $paramsJS['charsMaxLabel'] ??
-			'PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_MAX_LABEL';
+		$paramsJS['charsTypedLabel'] = 'PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_TYPED_LABEL';
 		$paramsJS['maxChars'] = $paramsJS['maxChars'] ?? $maxCharsDefault;
 
 		if (! ($paramsJS['maxChars'] = (int) $paramsJS['maxChars']))
@@ -72,9 +64,6 @@ abstract class JHtmlCharactercounterghsvs
 		// Strings available for JS:
 		$jsSafe = true;
 		Text::script($paramsJS['charsTypedLabel'], $jsSafe);
-		Text::script($paramsJS['charsRemainLabel'], $jsSafe);
-		Text::script($paramsJS['charsMaxLabel'], $jsSafe);
-
 		$min = JDEBUG ? '' : '.min';
 
 		if (empty(static::$loaded[__METHOD__]['core']))

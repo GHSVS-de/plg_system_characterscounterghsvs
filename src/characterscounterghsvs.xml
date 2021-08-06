@@ -42,7 +42,6 @@
 		<folder>fields</folder>
 		<folder>html</folder>
 		<folder>language</folder>
-		<folder>myforms</folder>
 	</files>
 
 	<media folder="media" destination="{{name}}">
@@ -66,6 +65,37 @@
 					descriptiontext="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SPACERTHANKS"/>
 			</fieldset>
 <!--/thanks-->
+
+<!--countersettings-basic-->
+			<fieldset name="countersettings-basic"
+				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_BASIC">
+
+				<field type="list" name="removeCharcounter" default="1" filter="integer"
+					label="[removeCharcounter]"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REMOVECHARCOUNTER">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field type="list" name="removeMaxlength" default="1" filter="integer"
+					label="[removeMaxlength]"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REMOVEMAXLENGTH">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field type="note" name="charsTypedLabel"
+					label="[charsTypedLabel]"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_TYPED_LABEL_DESC" />
+
+				<field type="list" name="loadCSS" default="1" filter="integer"
+					label="[loadCSS] Load vcountdownghsvs.css">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+			</fieldset>
+<!--/countersettings-basic-->
 
 <!--countersettings-simple-->
 			<fieldset name="countersettings-simple"
@@ -107,8 +137,12 @@
 						<option value="metadesc">JYES</option>
 					</field>
 
+					<field type="spacer" name="hrSpacer01" hr="true"
+						class="thick"
+						showon="metadesc:#jform_metadesc" />
+
+<!--/ARTICLE METADESC -->
 <!--ARTICLE METAKEY-->
-				<field type="spacer" name="metakeyspacerX" hr="true" />
 
 				<field name="metakey" type="list" default="0" filter="string"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_META_KEYWORDS"
@@ -124,20 +158,28 @@
 
 				<field name="metakey_chopText" type="list" default="0" filter="integer"
 					label="[chopText]"
+						description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_CHOPTEXT"
 					showon="metakey:#jform_metakey">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
 
 				<field name="metakey_required" type="list" default="0" filter="string"
-					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
+						label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
+						description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC"
+						showon="metakey:#jform_metakey">
 					<option value="0">JNO</option>
 					<option value="metakey">JYES</option>
 				</field>
 
-<field type="spacer" name="titlespacerHR" hr="true" />
-				<field name="title" type="radio" default="0"
-					class="switcher btn-group btn-group-yesno"
+					<field type="spacer" name="hrSpacer05" hr="true"
+						class="thick"
+						showon="metakey:#jform_metakey" />
+
+<!--/ARTICLE METAKEY-->
+<!--ARTICLE TITLE-->
+
+					<field name="title" type="list" default="0" filter="string"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_TITLE"
 					description="[#jform_title]">
 						<option value="0">JNO</option>
@@ -145,22 +187,21 @@
 				</field>
 
 				<field name="title_maxChars" type="number" min="1" default="55"
+						filter="integer"
 					label="[maxChars]"
-					description=""
-					filter="integer"
 					showon="title:#jform_title" />
 
-				<field name="title_chopText" type="radio" default="0"
-					class="switcher btn-group btn-group-yesno"
+					<field name="title_chopText" type="list" default="0" filter="integer"
 					label="[chopText]"
-					description=""
-					filter="integer"
+						description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_CHOPTEXT"
 					showon="title:#jform_title">
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
 				</field>
 
-<field type="spacer" name="aliasspacerHR" hr="true" />
+					<field type="spacer" name="hrSpacer10" hr="true"
+						class="thick"
+						showon="title:#jform_title" />
 
 				<field name="alias" type="radio" default="0"
 					class="switcher btn-group btn-group-yesno"
@@ -176,11 +217,9 @@
 					filter="integer"
 					showon="alias:#jform_alias" />
 
-				<field name="alias_chopText" type="radio" default="0"
-					class="switcher btn-group btn-group-yesno"
+				<field name="alias_chopText" type="list" default="0" filter="integer"
 					label="[chopText]"
-					description=""
-					filter="integer"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_CHOPTEXT"
 					showon="alias:#jform_alias">
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
@@ -222,7 +261,7 @@
 				<field name="metadesc_required" type="radio" default="0"
 					class="switcher btn-group btn-group-yesno"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
-					description="">
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
 					<option value="0">JNO</option>
 					<option value="metadesc">JYES</option>
 				</field>
@@ -255,7 +294,7 @@
 				<field name="metakey_required" type="radio" default="0"
 					class="switcher btn-group btn-group-yesno"
 					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED"
-					description="">
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REQUIRED_DESC">
 					<option value="0">JNO</option>
 					<option value="metakey">JYES</option>
 				</field>
@@ -437,76 +476,13 @@
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
 				</field>
-
+				<!--ALWAYS assets at last!!!-->
+				<field type="plgSystemCharactersCounterGhsvs.assetsbe" name="assetsbe" hidden="true" />
 </fields>
 
 
 			</fieldset>
 <!--/countersettings-simple-->
-
-<!--countersettings-where-->
-<!--
-			<fieldset name="countersettings-where"
-				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_WHERE">
-
-				<field name="wheres" type="subform" min="1" max="100" multiple="true"
-					formsource="plugins/system/characterscounterghsvs/myforms/wheres-subform.xml"
-					label=""
-					description="" />
-			</fieldset>
--->
-<!--/countersettings-where-->
-
-<!--countersettings-basic-->
-			<fieldset name="countersettings-basic"
-				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FIELDSET_BASIC">
-
-				<field type="list" name="removeCharcounter" default="1" filter="integer"
-					label="[removeCharcounter]"
-					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REMOVECHARCOUNTER">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-
-				<field type="list" name="removeMaxlength" default="1" filter="integer"
-					label="[removeMaxlength]"
-					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_REMOVEMAXLENGTH">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-
-				<field type="text" name="charsTypedLabel" default=""
-					label="[charsTypedLabel]"
-					description="" />
-
-				<field type="text" name="charsRemainLabel" default=""
-					label="[charsRemainLabel]"
-					description="" />
-
-				<field type="text" name="charsMaxLabel" default=""
-					label="[charsMaxLabel]"
-					description="" />
-
-				<field type="list" name="loadCSS" default="1" filter="integer"
-					label="[loadCSS] Load vcountdownghsvs.css">
-						<option value="0">JNO</option>
-						<option value="1">JYES</option>
-				</field>
-
-			</fieldset>
-
-			<fieldset name="LongDescription"
-				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_LONG_DESCRIPTION">
-
-				<field name="LongDescriptionspacer"
-					type="plgSystemCharactersCounterGhsvs.longdescription"
-					hidden="true"
-					additionalClass="plugin-description"
-					descriptiontext="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION_LONG"/>
-
-				<!--ALWAYS assets at last!!!-->
-				<field type="plgSystemCharactersCounterGhsvs.assetsbe" name="assetsbe" hidden="true" />
-			</fieldset>
 
 		</fields>
 	</config>
