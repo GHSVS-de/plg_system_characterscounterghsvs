@@ -3,11 +3,19 @@ span.chars-length
 {
 	display:block;
 }
-span.chars-length.warn .chars-remain
+/* span.chars-length .chars-remain
 {
-	background-color: #f7a308;
-}
+	background-color: #026433;
+	color: #fff;
+} */
+/* span.chars-length.warn .chars-remain
+{
+	background-color: #64024c;
+	color: #fff;
+} */
 span.chars-length.overflow .chars-remain
 {
-	background-color: #fa788b;
+	background-color: #8f0101;
+	color: #fff;
+	font-weight: 700;
 }
