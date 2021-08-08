@@ -6,7 +6,6 @@ use Joomla\CMS\Form\Form;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Language\Text;
-use Joomla\Database\ParameterType;
 
 class PlgSystemCharacterscounterghsvs extends CMSPlugin
 {
@@ -47,15 +46,27 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 		{
 			$query = $this->db->getQuery(true)
 				->select($this->db->qn('extension_id'))
-				->from($this->db->qn('#__extensions'))
-				->where($this->db->qn('extension_id') . ' = :extension_id')
+				->from($this->db->qn('#__extensions'));
+
+			if (version_compare(JVERSION, '4', 'lt'))
+			{
+				$query->where($this->db->qn('extension_id') . ' = ' . $extension_id)
+				->where($this->db->qn('element') . ' = ' . $this->db->q($this->_name))
+				->where($this->db->qn('folder') . ' = ' . $this->db->q($this->_type))
+				->where($this->db->qn('type') . ' = ' . $this->db->q($view));
+			}
+			else
+			{
+				$query->where($this->db->qn('extension_id') . ' = :extension_id')
 				->where($this->db->qn('element') . ' = :element')
 				->where($this->db->qn('folder') . ' = :folder')
 				->where($this->db->qn('type') . ' = :type')
-				->bind(':extension_id', $extension_id, ParameterType::INTEGER)
-				->bind(':element', $this->_name, ParameterType::STRING)
-				->bind(':folder', $this->_type, ParameterType::STRING)
-				->bind(':type', $view, ParameterType::STRING);
+				->bind(':extension_id', $extension_id,
+					Joomla\Database\ParameterType::INTEGER)
+				->bind(':element', $this->_name, \Joomla\Database\ParameterType::STRING)
+				->bind(':folder', $this->_type, \Joomla\Database\ParameterType::STRING)
+				->bind(':type', $view, \Joomla\Database\ParameterType::STRING);
+			}
 
 			$this->db->setQuery($query);
 
