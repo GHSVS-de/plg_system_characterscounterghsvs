@@ -11,43 +11,23 @@
 	bugs="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues"
 >
 
-<!--PLG_SYSTEM_CHARACTERSCOUNTERGHSVS Version 2021.08.03-->
+<!--PLG_SYSTEM_CHARACTERSCOUNTERGHSVS Version 2021.08.08-dev-->
 	<changelog>
 		<element>characterscounterghsvs</element>
 		<type>plugin</type>
 		<folder>system</folder>
 		<client>site</client>
-		<version>2021.08.03</version>
+		<version>2021.08.08-dev</version>
 
 		<addition>
-			<item><![CDATA[
-				Setting <code>removeMaxlength</code>.
-			]]></item>
-			<item><![CDATA[
-				Build procedure. New repository structure.
-			]]></item>
-			<item><![CDATA[
-				Support changelog.xml. Support update server.
-			]]></item>
+
 		</addition>
 
 		<change>
 			<item><![CDATA[
-				<a href="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.05.28...2021.08.03">
-					Compare code 2021.05.28...2021.08.03
+				<a href="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.05.28...2021.08.08-dev">
+					Compare code 2021.05.28...2021.08.08-dev
 				</a>
-			]]></item>
-			<item><![CDATA[
-				Try to support Joomla 4 (RC).
-			]]></item>
-			<item><![CDATA[
-				Replace media/*-uncompressed.* files with *.* and *.min.* files.
-			]]></item>
-			<item><![CDATA[
-				Some "radio" fields (not all yet) to "list".
-			]]></item>
-			<item><![CDATA[
-				Some house-cleaning.
 			]]></item>
 		</change>
 
@@ -65,8 +45,8 @@
 			]]></item>
 
 			<item><![CDATA[
-				<a href="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.03/dist/plg_system_characterscounterghsvs-2021.08.03.zip">
-					Direct download plg_system_characterscounterghsvs-2021.08.03.zip
+				<a href="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.08-dev/dist/plg_system_characterscounterghsvs-2021.08.08-dev.zip">
+					Direct download plg_system_characterscounterghsvs-2021.08.08-dev.zip
 				</a>
 			]]></item>
 
@@ -84,9 +64,7 @@
 		</note>
 
 		<remove>
-			<item><![CDATA[
-				"fileNameSuffix" settings. Use *.min.* instead.
-			]]></item>
+
 		</remove>
 
 		<requirement>
@@ -103,7 +81,7 @@
 			]]></entry>
 
 			<entry><![CDATA[
-				maximumJoomla:
+				maximumJoomla: 
 			]]></entry>
 
 			<entry><![CDATA[
@@ -116,6 +94,6 @@
 		</security>
 
 	</changelog>
-<!--/PLG_SYSTEM_CHARACTERSCOUNTERGHSVS Version 2021.08.03-->
+<!--/PLG_SYSTEM_CHARACTERSCOUNTERGHSVS Version 2021.08.08-dev-->
 
 </changelogs>

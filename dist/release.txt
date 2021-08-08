@@ -1,7 +1,7 @@
-2021.08.03
+2021.08.08-dev
 
-Joomla system plugin CharactersCounterGhsvs 2021.08.03
+Joomla system plugin CharactersCounterGhsvs 2021.08.08-dev
 -
-- [Download plg_system_characterscounterghsvs-2021.08.03.zip](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.03/dist/plg_system_characterscounterghsvs-2021.08.03.zip)
-- [Compare releases 2021.05.28...2021.08.03](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.05.28...2021.08.03)
+- [Download plg_system_characterscounterghsvs-2021.08.08-dev.zip](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.08-dev/dist/plg_system_characterscounterghsvs-2021.08.08-dev.zip)
+- [Compare releases 2021.05.28...2021.08.08-dev](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.05.28...2021.08.08-dev)
 - [Changelogs](https://updates.ghsvs.de/changelog.php?file=plg_system_characterscounterghsvs)
