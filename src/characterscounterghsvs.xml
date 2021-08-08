@@ -54,6 +54,8 @@
 
 			<fieldset name="basic">
 				<field type="hidden" default="1" name="{{filename}}plugin" />
+				<field type="plgSystemCharactersCounterGhsvs.assetsbe" name="assetsbe"
+					hidden="true" />
 			</fieldset>
 
 <!--thanks-->
