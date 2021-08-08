@@ -11,13 +11,13 @@
 	bugs="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues"
 >
 
-<!--PLG_SYSTEM_CHARACTERSCOUNTERGHSVS Version 2021.08.08-dev-->
+<!--PLG_SYSTEM_CHARACTERSCOUNTERGHSVS Version 2021.08.08-dev-2-->
 	<changelog>
 		<element>characterscounterghsvs</element>
 		<type>plugin</type>
 		<folder>system</folder>
 		<client>site</client>
-		<version>2021.08.08-dev</version>
+		<version>2021.08.08-dev-2</version>
 
 		<addition>
 
@@ -25,8 +25,8 @@
 
 		<change>
 			<item><![CDATA[
-				<a href="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.05.28...2021.08.08-dev">
-					Compare code 2021.05.28...2021.08.08-dev
+				<a href="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.05.28...2021.08.08-dev-2">
+					Compare code 2021.05.28...2021.08.08-dev-2
 				</a>
 			]]></item>
 		</change>
@@ -45,8 +45,8 @@
 			]]></item>
 
 			<item><![CDATA[
-				<a href="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.08-dev/dist/plg_system_characterscounterghsvs-2021.08.08-dev.zip">
-					Direct download plg_system_characterscounterghsvs-2021.08.08-dev.zip
+				<a href="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.08-dev-2/dist/plg_system_characterscounterghsvs-2021.08.08-dev-2.zip">
+					Direct download plg_system_characterscounterghsvs-2021.08.08-dev-2.zip
 				</a>
 			]]></item>
 
@@ -94,6 +94,6 @@
 		</security>
 
 	</changelog>
-<!--/PLG_SYSTEM_CHARACTERSCOUNTERGHSVS Version 2021.08.08-dev-->
+<!--/PLG_SYSTEM_CHARACTERSCOUNTERGHSVS Version 2021.08.08-dev-2-->
 
 </changelogs>

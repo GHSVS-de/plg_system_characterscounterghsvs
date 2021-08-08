@@ -6,7 +6,7 @@
 	<copyright>(C) 2018, G@HService Berlin Neukölln, Volkmar Volli Schlothauer.</copyright>
 	<license>GNU General Public License version 3 or later; see LICENSE.txt.</license>
 	<authorUrl>https://www.ghsvs.de</authorUrl>
-	<version>2021.08.08-dev</version>
+	<version>2021.08.08-dev-2</version>
 	<description>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION</description>
 
 	<versionHistory>
@@ -20,11 +20,11 @@
 	<infourl>https://github.com/GHSVS-de/plg_system_characterscounterghsvs#readme</infourl>
 
 	<downloadUrl>
-	https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.08-dev/dist/plg_system_characterscounterghsvs-2021.08.08-dev.zip
+	https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.08-dev-2/dist/plg_system_characterscounterghsvs-2021.08.08-dev-2.zip
 	</downloadUrl>
 
 	<versionCompare>
-	https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.05.28...2021.08.08-dev
+	https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.05.28...2021.08.08-dev-2
 	</versionCompare>
 
 	<scriptfile>installerScript.php</scriptfile>
@@ -54,6 +54,8 @@
 
 			<fieldset name="basic">
 				<field type="hidden" default="1" name="characterscounterghsvsplugin" />
+				<field type="plgSystemCharactersCounterGhsvs.assetsbe" name="assetsbe"
+					hidden="true" />
 			</fieldset>
 
 <!--thanks-->
