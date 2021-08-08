@@ -1,0 +1,164 @@
+{
+	"com_contact:contact|edit" : {
+		"title": "contact",
+		"option": "com_contact",
+		"view": "contact",
+		"layout": "edit",
+		"fields": {
+			"metadesc": {
+				"selector": "#jform_metadesc",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+
+				}
+			},
+			"metakey": {
+				"selector": "#jform_metakey",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				}
+			},
+			"title": {
+				"selector": "#jform_title",
+				"settings": {
+					"maxChars": 55,
+					"chopText": 0
+				}
+			},
+			"alias": {
+				"selector": "#jform_alias",
+				"settings": {
+					"maxChars": 55,
+					"chopText": 0
+				}
+			}
+		}
+	},
+	"com_categories:category|edit" : {
+		"title": "category",
+		"option": "com_categories",
+		"view": "category",
+		"layout": "edit",
+		"fields": {
+			"metadesc": {
+				"selector": "#jform_metadesc",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				}
+			},
+			"metakey": {
+				"selector": "#jform_metakey",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				}
+			},
+			"title": {
+				"selector": "#jform_title",
+				"settings": {
+					"maxChars": 55,
+					"chopText": 0
+				}
+			},
+			"alias": {
+				"selector": "#jform_alias",
+				"settings": {
+					"maxChars": 55,
+					"chopText": 0
+				}
+			}
+		}
+	},
+	"com_content:article|edit" : {
+		"title": "article",
+		"option": "com_content",
+		"view": "article",
+		"layout": "edit",
+		"fields": {
+			"metadesc": {
+				"selector": "#jform_metadesc",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				}
+			},
+			"metakey": {
+				"selector": "#jform_metakey",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				}
+			},
+			"title": {
+				"selector": "#jform_title",
+				"settings": {
+					"maxChars": 55,
+					"chopText": 0
+				}
+			},
+			"alias": {
+				"selector": "#jform_alias",
+				"settings": {
+					"maxChars": 55,
+					"chopText": 0
+				}
+			}
+		}
+	},
+	"com_menus:item|edit" : {
+		"title": "menu_item",
+		"description": "PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FORMDATA_MENU_ITEM_DESC",
+		"option": "com_menus",
+		"view": "item",
+		"layout": "edit",
+		"fields": {
+			"metadesc": {
+				"selector": "#jform_params_menu_meta_description",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				},
+				"formFieldAttribs": {
+					"name": "menu-meta_description",
+					"group": "params"
+				}
+			},
+			"metakey": {
+				"selector": "#jform_params_menu_meta_keywords",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				},
+				"formFieldAttribs": {
+					"name": "menu-meta_keywords",
+					"group": "params"
+				}
+			},
+			"title": {
+				"selector": "#jform_title",
+				"settings": {
+					"maxChars": 55,
+					"chopText": 0
+				}
+			},
+			"alias": {
+				"selector": "#jform_alias",
+				"settings": {
+					"maxChars": 55,
+					"chopText": 0
+				}
+			}
+		}
+	}
+}
