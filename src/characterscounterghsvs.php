@@ -364,7 +364,7 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 
 						foreach ($myParams->{$key . '_loadXmlFields'} as $fieldFile)
 						{
-							$form->loadFile($fieldFile, $reset = false, $path = false);
+							$form->loadFile($fieldFile, $reset = true);
 						}
 					}
 
