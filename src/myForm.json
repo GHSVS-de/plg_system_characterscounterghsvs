@@ -23,7 +23,7 @@
 				}
 			},
 			"title": {
-				"selector": "#jform_title",
+				"selector": "#jform_name",
 				"settings": {
 					"maxChars": 55,
 					"chopText": 0
