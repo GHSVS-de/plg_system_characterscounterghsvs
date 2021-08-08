@@ -37,6 +37,7 @@
 	<files>
 		<filename plugin="{{filename}}">{{filename}}.php</filename>
 		<filename>installerScript.php</filename>
+		<filename>myForm.json</filename>
 		<filename>LICENSE_VCountdown.js.txt</filename>
 		<filename>LICENSE.txt</filename>
 		<folder>fields</folder>
