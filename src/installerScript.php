@@ -29,6 +29,7 @@ class plgSystemCharacterscounterGhsvsInstallerScript extends InstallerScript
 		'/media/plg_system_characterscounterghsvs/css/backend-uncompressed.css',
 		'/media/plg_system_characterscounterghsvs/css/vcountdownghsvs-uncompressed.css',
 		'/media/plg_system_characterscounterghsvs/js/vcountdownghsvs-uncompressed.js',
+		'/plugins/system/characterscounterghsvs/fields/longdescription.php'
 	];
 
 	/**
