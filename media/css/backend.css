@@ -1,4 +1,6 @@
 /* plg_system_charaterscounterghsvs backend.css */
+
+
 small.form-text.text-muted
 {
 	color:#606060 !important;
@@ -24,10 +26,31 @@ small.form-text.text-muted code
 {
 	text-transform:uppercase;
 	letter-spacing:2px;
+	color: var(--danger);
+	font-size: 1.3rem;
 }
-/* Sonst hakt description fest*/
+.sub
+{
+	text-transform:uppercase;
+	color: var(--success);
+	font-size: 1.1rem;
+}
+/* Sonst hakt description fest (J!3) */
 div.control-group .control-label
 {
 	padding-top:0;
 	padding-right:0;
+}
+
+/* Color contrast AAA */
+div.control-group .alert.alert-info a
+{
+	text-decoration: underline;
+	color: #034291;
+}
+div.control-group .alert.alert-info a:hover,
+div.control-group .alert.alert-info a:focus
+{
+	text-decoration: none;
+	outline: white solid 2px;
 }
