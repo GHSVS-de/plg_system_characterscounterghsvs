@@ -143,7 +143,10 @@
 				"formFieldAttribs": {
 					"name": "menu-meta_keywords",
 					"group": "params"
-				}
+				},
+				"loadXmlFields": [
+					"menu-meta_keywords"
+				]
 			},
 			"title": {
 				"selector": "#jform_title",

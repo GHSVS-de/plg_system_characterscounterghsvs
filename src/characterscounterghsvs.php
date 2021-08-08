@@ -23,7 +23,7 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 	{
 		parent::__construct($subject, $config);
 
-		HTMLHelper::addIncludePath(__DIR__ . '/html');
+		HTMLHelper::addIncludePath(__DIR__ . '/src/Html');
 	}
 
 	public function onContentPrepareForm(Form $form, $data)
@@ -76,7 +76,8 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 			}
 		}
 
-		$formData = json_decode(file_get_contents(__DIR__ . '/myForm.json'));
+		$formData = json_decode(file_get_contents(__DIR__
+			. '/src/Form/myForm.json'));
 		$langPrefix = 'PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_';
 
 		// We are in the plugin. Build configuration form.
@@ -86,7 +87,7 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 			$mainFields = $addform->addChild('fields');
 			$mainFields->addAttribute('name', 'params');
 
-			// Intermezzo. For easier identification. extension_id to field.
+			// Intermezzo for easier isMe detection. $extension_id to a hidden field.
 			$basic = $mainFields->addChild('fieldset');
 			$basic->addAttribute('name', 'basic');
 			$isMeField = $basic->addChild('field');
@@ -147,6 +148,29 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 					$option->addAttribute('value', $field->selector);
 					$showon = $fieldName . ':' . $field->selector;
 
+					/* Enabler for 'loadXmlFields'. E.g. metakeys are missing in menu item
+						since Joomla 4 */
+					if (!empty($field->loadXmlFields))
+					{
+						$loadXmlFields = '<code>' . implode(', ', $field->loadXmlFields)
+							. '</code>';
+						$name = $fieldName . '_forceFields';
+						$label = $langPrefix . 'FORCE_FIELDS';
+						$description = Text::sprintf($label . '_DESC', $loadXmlFields);
+						$addField = $subFields->addChild('field');
+						$addField->addAttribute('name', $name);
+						$addField->addAttribute('type', 'list');
+						$addField->addAttribute('default', '1');
+						$addField->addAttribute('filter', 'integer');
+						$addField->addAttribute('label', $label);
+						$addField->addAttribute('description', $description);
+						$option = $addField->addChild('option', 'JNO');
+						$option->addAttribute('value', 0);
+						$option = $addField->addChild('option', 'JYES');
+						$option->addAttribute('value', 1);
+						$addField->addAttribute('showon', $showon);
+					}
+
 					// Enabler for character counter.
 					$name = $fieldName . '_counter';
 					$label = $langPrefix . 'ENABLE_COUNTER';
@@ -163,7 +187,7 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 					$addField->addAttribute('showon', $showon);
 
 					// Used by the following child fields.
-					$showonCounter = $name . ':1';
+					$showonCounter = $showon . '[AND]' . $name . ':1';
 
 					// Now build the child fields. E.g. 'maxChars'.
 					foreach ($field->settings as $setting => $default)
@@ -203,7 +227,7 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 								}
 								else // required
 								{
-									// Musr be adjusted for e.g. "menu-meta_description:params".
+									// Must be adjusted for e.g. "menu-meta_description:params".
 									$requiredOptionValue = $fieldName;
 
 									if (isset($field->formFieldAttribs))
@@ -240,15 +264,15 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 		}
 
 		// E.g. <fields name="com_content:article|edit"...
-		$fieldsName = str_replace('.', ':', $context) . '|' . $layout;
+		$fieldKey = str_replace('.', ':', $context) . '|' . $layout;
 
 		// Quickie
-		if (!isset($formData->$fieldsName))
+		if (!isset($formData->$fieldKey))
 		{
 			return;
 		}
 
-		$myParams = $this->params->get($fieldsName);
+		$myParams = $this->params->get($fieldKey);
 
 		if (!is_object($myParams) || !count(get_object_vars($myParams)))
 		{
@@ -256,14 +280,14 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 		}
 
 		// ##############
-		// ##### This is very unhandy!
+		// ##### Below is all very unhandy somehow!
 		// ##############
 
 		// Clean out. Keep onöy activated fields.
-		foreach ($formData->$fieldsName->fields as $fieldName => $field)
+		foreach ($formData->$fieldKey->fields as $fieldName => $field)
 		{
 			// Not activated at all.
-			if (!$myParams->$fieldName)
+			if (empty($myParams->$fieldName))
 			{
 				foreach ($myParams as $key => $dummy)
 				{
@@ -271,11 +295,31 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 					{
 						unset($myParams->$key);
 					}
+				}
 
-					unset($myParams->$fieldName);
+				unset($myParams->$fieldName);
+			}
+			else
+			{
+				// $myParams->{$fieldName . '_fieldKey'} = $fieldKey;
+
+				if (!empty($field->loadXmlFields))
+				{
+					$myParams->{$fieldName . '_loadXmlFields'} =
+						$field->loadXmlFields;
+				}
+
+				if (!empty($field->formFieldAttribs))
+				{
+					$myParams->{$fieldName . '_formFieldAttribs'} =
+						$field->formFieldAttribs;
 				}
 			}
 		}
+
+		/* Easier handling of default values if somebody has installed but not
+			saved plugin configuration yet. */
+		// $myParamsRegistry = new Registry($myParams);
 
 		// Check for todos.
 		if (count(get_object_vars($myParams)))
@@ -304,10 +348,24 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 					$group = null;
 					$field = $key;
 
-					// There are combinations like 'menu-meta_description:params'.
-					if (strpos($key, ':') !== false)
+					if (!empty($myParams->{$key . '_formFieldAttribs'}))
 					{
-						list($field, $group) = explode(':', $key);
+						$group = $myParams->{$key . '_formFieldAttribs'}->group;
+
+						// E.g. 'menu-meta_description' is the correct form field name.
+						$field = $myParams->{$key . '_formFieldAttribs'}->name;
+					}
+
+					// Must be early.
+					if (!empty($myParams->{$key . '_loadXmlFields'})
+						&& $myParams->{$key . '_forceFields'}
+					){
+						Form::addFormPath(__DIR__ . '/src/Form');
+
+						foreach ($myParams->{$key . '_loadXmlFields'} as $fieldFile)
+						{
+							$form->loadFile($fieldFile, $reset = false, $path = false);
+						}
 					}
 
 					// Remove Joomla's character counter. @since Joomla 4.
@@ -322,7 +380,7 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 						$form->setFieldAttribute($field, 'maxlength', null, $group);
 					}
 
-					if ($required = ($myParams->{$field . '_required'} ?? 0))
+					if ($required = ($myParams->{$key . '_required'} ?? 0))
 					{
 						$form->setFieldAttribute($field, 'required', 'true', $group);
 					}

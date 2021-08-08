@@ -37,12 +37,10 @@
 	<files>
 		<filename plugin="{{filename}}">{{filename}}.php</filename>
 		<filename>installerScript.php</filename>
-		<filename>myForm.json</filename>
 		<filename>LICENSE_VCountdown.js.txt</filename>
 		<filename>LICENSE.txt</filename>
-		<folder>fields</folder>
-		<folder>html</folder>
 		<folder>language</folder>
+		<folder>src</folder>
 	</files>
 
 	<media folder="media" destination="{{name}}">
@@ -51,7 +49,7 @@
 	</media>
 
 	<config>
-		<fields name="params" addfieldpath="plugins/system/{{filename}}/fields">
+		<fields name="params" addfieldpath="plugins/system/{{filename}}/src/Field">
 
 			<fieldset name="basic">
 				<field type="hidden" default="1" name="{{filename}}plugin" />

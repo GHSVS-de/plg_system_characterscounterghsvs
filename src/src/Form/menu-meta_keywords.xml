@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params" label="COM_MENUS_LINKTYPE_OPTIONS_LABEL"
+	>
+
+		<fieldset name="metadata" label="JGLOBAL_FIELDSET_METADATA_OPTIONS">
+
+			<field
+				name="menu-meta_keywords"
+				type="textarea"
+				label="JFIELD_META_KEYWORDS_LABEL"
+				description="JFIELD_META_KEYWORDS_DESC"
+				rows="3"
+				cols="40"
+			/>
+
+		</fieldset>
+
+	</fields>
+
+</form>

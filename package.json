@@ -2,7 +2,7 @@
 	"name": "plg_system_characterscounterghsvs",
 	"nameReal": "plg_system_characterscounterghsvs",
 	"filename": "characterscounterghsvs",
-	"version": "2021.08.08-dev-2",
+	"version": "2021.08.08-dev-3",
 	"versionCompare": "2021.05.28",
 	"update": {
 		"type": "plugin",

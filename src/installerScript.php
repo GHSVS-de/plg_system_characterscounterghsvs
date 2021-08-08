@@ -29,7 +29,8 @@ class plgSystemCharacterscounterGhsvsInstallerScript extends InstallerScript
 		'/media/plg_system_characterscounterghsvs/css/backend-uncompressed.css',
 		'/media/plg_system_characterscounterghsvs/css/vcountdownghsvs-uncompressed.css',
 		'/media/plg_system_characterscounterghsvs/js/vcountdownghsvs-uncompressed.js',
-		'/plugins/system/characterscounterghsvs/fields/longdescription.php'
+		'/plugins/system/characterscounterghsvs/myForm.json',
+		'/plugins/system/characterscounterghsvs/menu-meta_keywords.xml',
 	];
 
 	/**
@@ -40,6 +41,8 @@ class plgSystemCharacterscounterGhsvsInstallerScript extends InstallerScript
 	 */
 	protected $deleteFolders = [
 		'/plugins/system/characterscounterghsvs/myforms',
+		'/plugins/system/characterscounterghsvs/html',
+		'/plugins/system/characterscounterghsvs/fields',
 	];
 
 	public function preflight($type, $parent)
