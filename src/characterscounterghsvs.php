@@ -291,7 +291,7 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 		// Meanwhile less unhandy. I try my best.
 		// ##############
 
-		/* Clean out. Keep onöy activated fields.
+		/* Clean out. Keep only activated fields.
 			$fieldName: e.g. 'metakey' */
 		foreach ($formData->$fieldKey->fields as $fieldName => $field)
 		{
