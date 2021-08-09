@@ -20,7 +20,6 @@
 ### Mainly: Preventing data loss of some fields after Joomla 3-4 migration
 
 - You are in a hurry? See headline [Quick guide for Joomla 3-4 migrations and basic purposes](#quick-guide-for-joomla-3-4-migrations-and-basic-purposes)
-
 - After migration, all data entered in Joomla 3 is still in the database of Joomla 4.
 - However, data loss can occur for some fields when saving entries/items without adapting concerned data before.
 - However, some data are not visible in full length in Joomla 4 backend. How to adapt them without searching in database?
