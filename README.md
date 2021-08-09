@@ -39,7 +39,7 @@
 - - Field <code>Title</code> or <code>Name</code> in contact.
 - - Field <code>Alias</code>
 
-### Possible settings for each field.
+### Possible settings for each field individually
 - <code>Activation</code>: YES/NO. If NO: Nothing will happen. Joomla core rules.
 - - If YES: Global settings will be used:
 - - - `[removeCharcounter]`. Remove Joomla's character counter: YES/NO. Recommended: YES.
