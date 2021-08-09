@@ -8,7 +8,7 @@
 - Edited JavaScript based upon [VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License](https://github.com/pinceladasdaweb/VCountdown)
 
 ## Restrictions
-- **Works only in back-end. Works not with frontend-editing.**
+- **Works only in back-end. Works not with frontend-editing because no time to test it.**
 - Not a11y.
 
 ## Issues, Bugs, Questions (DE or EN)
