@@ -17,7 +17,7 @@
 - After migration, all data entered in Joomla 3 is still in the database of Joomla 4.
 - However, data loss can occur for some fields when saving entries without adapting concerned data before.
 - However, some data are not visible in full length in Joomla 4 backend. How to adapt them without searching in database?
-- However, some data can't be adapted or copied because not visible anymore in Joomla's backend.
+- However, some data can't be adapted or copied because not visible anymore in Joomla's backend. How to see them and decide if still needed without searching in database before you save the concerned entry?
 
 #### The idea behind it is
 
