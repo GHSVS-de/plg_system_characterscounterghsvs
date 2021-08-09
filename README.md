@@ -11,6 +11,10 @@
 - **Works only in back-end. Works not with frontend-editing.**
 - Not a11y.
 
+## Issues, Bugs, Questions (DE or EN)
+- https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues
+- https://ghsvs.de/kontakt
+
 ## Why the revival of this plugin with Joomla 4
 ### Mainly: Preventing data loss of some fields after Joomla 3-4 migration
 
@@ -39,7 +43,7 @@
 - - Field <code>Meta Keywords</code>
 - - Field <code>Title</code> or <code>Name</code> (the latter in contact).
 - - Field <code>Alias</code>
-- Theory: Play children can adapt and test [myForm.json](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/src/src/Form/myForm.json) if they think other views are worth to get also similiar configuration features. Note that the file will be overwritten with plugin updates.
+- Theory: Play children can adapt and test [myForm.json](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/src/src/Form/myForm.json) if they think other views are worth to get also similiar configuration features. Note that the file will be overwritten with plugin updates. Make suggestions if you think a (free(!!!)) component is worth integrating into the plugin.
 
 ### Possible settings for each field individually
 - <code>Activation</code>: YES/NO. If NO: Nothing will happen. Joomla core rules.
