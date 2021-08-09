@@ -146,7 +146,12 @@
 				},
 				"loadXmlFields": [
 					"menu-meta_keywords"
-				]
+				],
+				"exclude": {
+					"type": [
+						"heading", "alias", "separator", "url"
+					]
+				}
 			},
 			"title": {
 				"selector": "#jform_title",

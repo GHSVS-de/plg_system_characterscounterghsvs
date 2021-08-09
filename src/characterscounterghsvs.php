@@ -6,6 +6,7 @@ use Joomla\CMS\Form\Form;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Language\Text;
+use Joomla\Registry\Registry;
 
 class PlgSystemCharacterscounterghsvs extends CMSPlugin
 {
@@ -283,15 +284,44 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 			return;
 		}
 
+		$thisFormData = null;
+
 		// ##############
 		// ##### Below is all very unhandy somehow!
+		// Meanwhile less unhandy. I try my best.
 		// ##############
 
-		// Clean out. Keep onöy activated fields.
+		/* Clean out. Keep onöy activated fields.
+			$fieldName: e.g. 'metakey' */
 		foreach ($formData->$fieldKey->fields as $fieldName => $field)
 		{
+			$activated = !empty($myParams->$fieldName);
+
+			if ($activated === true && !empty($field->exclude))
+			{
+				if ($thisFormData === null)
+				{
+					$thisFormData = new Registry($data);
+				}
+
+				/* $excludeKey: E.g. 'type' in menu items $data.
+					$excludeValues: E.g. ['heading', 'separator'] */
+				foreach ($field->exclude as $excludeKey => $excludeValues)
+				{
+					$excludeValues = \array_flip($excludeValues);
+
+					// Do we have match in $thisFormData?
+					if (isset($excludeValues[$thisFormData->get($excludeKey,
+						'completelyParanoid')])
+					){
+						$activated = false;
+						break;
+					}
+				}
+			}
+
 			// Not activated at all.
-			if (empty($myParams->$fieldName))
+			if ($activated === false)
 			{
 				foreach ($myParams as $key => $dummy)
 				{
@@ -305,8 +335,6 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 			}
 			else
 			{
-				// $myParams->{$fieldName . '_fieldKey'} = $fieldKey;
-
 				if (!empty($field->loadXmlFields))
 				{
 					$myParams->{$fieldName . '_loadXmlFields'} =
@@ -320,10 +348,6 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 				}
 			}
 		}
-
-		/* Easier handling of default values if somebody has installed but not
-			saved plugin configuration yet. */
-		// $myParamsRegistry = new Registry($myParams);
 
 		// Check for todos.
 		if (count(get_object_vars($myParams)))
