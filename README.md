@@ -2,7 +2,7 @@
 - If you want to test, install latest version! But not in productive environments.
 
 # plg_system_characterscounterghsvs
-- Joomla system plugin.
+- Joomla system plugin. J!3 and J!4.
 - **New:** Helps during Joomla 3-4 migration to protect data. See headline [Why the revival of this plugin with Joomla 4](#why-the-revival-of-this-plugin-with-joomla-4) below.
 - Optional: Adds characters counter to some text and textarea fields in back-end. Fully configurable.
 - Optional: Add required attribute to some fields to block saving if field empty.
@@ -12,8 +12,9 @@
 ## Restrictions
 - **Works only in back-end. Works not with frontend-editing because no time to test it.**
 - Not a11y.
+- I am my own and single tester. I tried to do my best.
 
-## Issues, Bugs, Questions (DE or EN), Suggestions
+### Issues, Bugs, Questions (DE or EN), Suggestions
 - https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues
 - https://ghsvs.de/kontakt
 
