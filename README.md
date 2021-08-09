@@ -37,7 +37,7 @@
 - On edit pages for `Article`, `Category`, `Menu Item`, `Contact` of standard Joomla:
 - - Field <code>Meta Description</code>
 - - Field <code>Meta Keywords</code>
-- - Field <code>Title</code> or <code>Name</code> in contact.
+- - Field <code>Title</code> or <code>Name</code> (the latter in contact).
 - - Field <code>Alias</code>
 
 ### Possible settings for each field individually
