@@ -54,7 +54,8 @@ Edited by ghsvs.de 2018.
 		this.maxChars = options.maxChars || 140;
 		this.chopText = options.chopText || false;
 		this.removeMaxlength = options.removeMaxlength || false;
-		this.charsTypedLabel = Joomla.JText._(options.charsTypedLabel);
+		this.charsTypedLabel = this.sanitizeHtml(
+			Joomla.JText._(options.charsTypedLabel));
 		this.countdown();
 	};
 
@@ -131,7 +132,7 @@ Edited by ghsvs.de 2018.
 
 		deleteMaxlength: function ()
 		{
-			console.log('remove maxlength');
+			// console.log('remove maxlength');
 			this.target.removeAttribute('maxlength');
 		},
 
@@ -162,7 +163,92 @@ Edited by ghsvs.de 2018.
 
 			this.charsLen();
 			this.target.addEventListener('keyup', this.update.bind(this), false);
+		},
+
+		/**
+		* @copyright  (C) 2018 Open Source Matters, Inc. <https://www.joomla.org>
+		* @license    GNU General Public License version 2 or later; see LICENSE.txt
+		* @note: Changed/edited by ghsvs.de 2021. Adapted from Joomla 4 core.js.
+		*/
+		sanitizeHtml: function (unsafeHtml, sanitizeFn)
+		{
+			const ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
+			const DATA_ATTRIBUTE_PATTERN = /^data-[\w-]*$/i;
+			const allowList = {
+				'*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN, DATA_ATTRIBUTE_PATTERN],
+				a: ['target', 'href', 'title', 'rel'],
+				area: [],
+				b: [],
+				br: [],
+				col: [],
+				code: [],
+				div: [],
+				em: [],
+				hr: [],
+				h1: [],
+				h2: [],
+				h3: [],
+				h4: [],
+				h5: [],
+				h6: [],
+				i: [],
+				img: ['src', 'srcset', 'alt', 'title', 'width', 'height'],
+				li: [],
+				ol: [],
+				p: [],
+				pre: [],
+				s: [],
+				small: [],
+				span: [],
+				sub: [],
+				sup: [],
+				strong: [],
+				u: [],
+				ul: [],
+				button: ['type'],
+				input: ['accept', 'alt', 'autocomplete', 'autofocus', 'capture', 'checked', 'dirname', 'disabled', 'height', 'list', 'max', 'maxlength', 'min', 'minlength', 'multiple', 'type', 'name', 'pattern', 'placeholder', 'readonly', 'required', 'size', 'src', 'step', 'value', 'width', 'inputmode'],
+				select: ['name'],
+				textarea: ['name'],
+				option: ['value', 'selected']
+			};
+
+			if (!unsafeHtml.length)
+			{
+				return unsafeHtml;
+			}
+
+			if (sanitizeFn && typeof sanitizeFn === 'function')
+			{
+				return sanitizeFn(unsafeHtml);
+			}
+
+			const domParser = new window.DOMParser();
+			const createdDocument = domParser.parseFromString(unsafeHtml, 'text/html');
+			const allowlistKeys = Object.keys(allowList);
+			const elements = [].concat(...createdDocument.body.querySelectorAll('*'));
+
+			for (let i = 0, len = elements.length; i < len; i++)
+			{
+				const el = elements[i];
+				const elName = el.nodeName.toLowerCase();
+
+				if (!allowlistKeys.includes(elName)) {
+					el.remove();
+					continue;
+				}
+
+				const attributeList = [].concat(...el.attributes);
+				const allowedAttributes = [].concat(allowList['*'] || [], allowList[elName] || []);
+				attributeList.forEach(attr => {
+					if (!allowedAttribute(attr, allowedAttributes)) {
+						el.removeAttribute(attr.nodeName);
+					}
+				});
+			}
+
+			return createdDocument.body.innerHTML;
 		}
+
 
     };
 
