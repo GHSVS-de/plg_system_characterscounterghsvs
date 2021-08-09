@@ -1,5 +1,5 @@
 # Be patient! Work in progress!
-- If you want to test, install latest version!
+- If you want to test, install latest version! But not in productive environments.
 
 # plg_system_characterscounterghsvs
 - Joomla system plugin. Adds characters counter to some text and textarea fields in back-end. Fully configurable.
