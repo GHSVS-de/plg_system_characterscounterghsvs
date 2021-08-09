@@ -215,12 +215,13 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 							case 'chopText':
 							case 'required':
 								$addField->addAttribute('type', 'list');
-								$option = $addField->addChild('option', 'JNO');
-								$option->addAttribute('value', 0);
+
 
 								if ($setting === 'chopText')
 								{
 									$addField->addAttribute('filter', 'integer');
+									$option = $addField->addChild('option', 'JNO');
+									$option->addAttribute('value', 0);
 									$option = $addField->addChild('option', 'JYES');
 									$option->addAttribute('value', 1);
 									$addField->addAttribute('showon', $showonCounter);
@@ -238,6 +239,9 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 									}
 
 									$addField->addAttribute('filter', 'string');
+									$option = $addField->addChild('option', $langPrefix
+										. 'JOOMLA_RULES');
+									$option->addAttribute('value', 0);
 									$option = $addField->addChild('option', 'JYES');
 									$option->addAttribute('value', $requiredOptionValue);
 									$addField->addAttribute('showon', $showon);
