@@ -13,8 +13,9 @@
 - **Works only in back-end. Works not with frontend-editing because no time to test it.**
 - Not a11y.
 - I am my own and single tester. I tried to do my best.
+- I have only moderate, slowly growing, JavaScript programming skills, if we talk about JQuery-less codes.
 
-### Issues, Bugs, Questions (DE or EN), Suggestions
+### Issues, Bugs, Questions, Suggestions: DE or EN
 - https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues
 - https://ghsvs.de/kontakt
 
