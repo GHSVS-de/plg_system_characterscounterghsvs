@@ -2,8 +2,9 @@
 - If you want to test, install latest version! But not in productive environments.
 
 # plg_system_characterscounterghsvs
-- Joomla system plugin. Adds characters counter to some text and textarea fields in back-end. Fully configurable.
-- New: Helps during Joomla 3-4 migration to protect data. See headline [Why the revival of this plugin with Joomla 4](#why-the-revival-of-this-plugin-with-joomla-4) below.
+- Joomla system plugin.
+- **New:** Helps during Joomla 3-4 migration to protect data. See headline [Why the revival of this plugin with Joomla 4](#why-the-revival-of-this-plugin-with-joomla-4) below.
+- Optionally: Adds characters counter to some text and textarea fields in back-end. Fully configurable.
 - Establishes a JHtml helper, too (not documented).
 - Edited JavaScript based upon [VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License](https://github.com/pinceladasdaweb/VCountdown)
 
@@ -11,7 +12,7 @@
 - **Works only in back-end. Works not with frontend-editing because no time to test it.**
 - Not a11y.
 
-## Issues, Bugs, Questions (DE or EN)
+## Issues, Bugs, Questions (DE or EN), Suggestions
 - https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues
 - https://ghsvs.de/kontakt
 
@@ -56,6 +57,15 @@
 - - - <code>chopText</code>: If YES, limit text length to <code>maxChars</code> characters and block further typing. Non-destructive if text loaded from database was already longer than this value before. You'll see and save it in full length. Sets a <code>maxlength</code> attribute or adjusts an existing one.
 - - <code>Required</code>: YES/`Joomla settings decide`. If YES: Saving of item is prevented if the field is empty. The vaguely named setting `Joomla settings decide` means: The plugin does nothing (as long as I haven't tested what may happen when I remove a `required` attribute where Joomla has set it consciously or just stupidly).
 - - - Not available for fields `Title/Name` and `Alias`. They are always mandatory.
+
+## Quick guide for Joomla 3-4 migrations and basic purposes
+- Install and configure the plugin in Joomla 3.
+- - **OR** install and configure the plugin in Joomla 4 before you save any entries/items.
+- Activate `[removeCharcounter]`.
+- Activate `[removeMaxlength]`.
+- In each tabulator set all main fields to YES (activate).
+- Activate sub field `Force field(s)` where available (just Menu Items > Meta Keywords at the moment.
+- `Required` and `Enable Counter` not necessary.
 
 -----------------------------------------------------
 
