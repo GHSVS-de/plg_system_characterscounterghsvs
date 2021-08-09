@@ -19,6 +19,9 @@
 - https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues
 - https://ghsvs.de/kontakt
 
+#### Known issues
+- Joomla 3 and 4: If `Force fields` is activated for `Menu Item` the field `Meta Keywords` is displayed in types `Menu Item ALias`, `ÙRL` and others where it makes absolutely no sense but also does no harm. If you have activated `Required` for this field enter an empty space.
+
 ## Why the revival of this plugin with Joomla 4
 ### Mainly: Preventing data loss of some fields after Joomla 3-4 migration
 
