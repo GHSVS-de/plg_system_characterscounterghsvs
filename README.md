@@ -39,6 +39,7 @@
 - - Field <code>Meta Keywords</code>
 - - Field <code>Title</code> or <code>Name</code> (the latter in contact).
 - - Field <code>Alias</code>
+- Theory: Play children can adapt and test [myForm.json](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/src/src/Form/myForm.json) if they think other views are worth to get also similiar configuration features. Note that the file will be overwritten with plugin updates.
 
 ### Possible settings for each field individually
 - <code>Activation</code>: YES/NO. If NO: Nothing will happen. Joomla core rules.
