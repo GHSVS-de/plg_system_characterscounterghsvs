@@ -15,7 +15,7 @@
 ### Mainly: Preventing data loss of some fields after Joomla 3-4 migration
 
 - After migration, all data entered in Joomla 3 is still in the database of Joomla 4.
-- However, data loss can occur for some fields when saving entries without adapting concerned data before.
+- However, data loss can occur for some fields when saving entries/items without adapting concerned data before.
 - However, some data are not visible in full length in Joomla 4 backend. How to adapt them without searching in database?
 - However, some data can't be adapted or copied because not visible anymore in Joomla's backend. How to see them and decide if still needed without searching in database before you save the concerned entry?
 
@@ -31,6 +31,7 @@
 - Enable the deactivation/modification of field lengths (`maxlength`).
 - Deactivate the non-configurable and restrictive Joomla 4 core character counter.
 - Avoid annoying `JLayout` overrides. Yes, this is also possible, but not really flexible to handle.
+- Avoid programming of a custom plugin that does similiar things like this one. Yes, this is also possible, but who is able to do that or has the time?
 
 ## Which fields can be configured
 - On edit pages for `Article`, `Category`, `Menu Item`, `Contact` of standard Joomla:
