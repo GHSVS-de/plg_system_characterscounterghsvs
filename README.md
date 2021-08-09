@@ -66,7 +66,7 @@
 - - Activate `[removeCharcounter]`.
 - - Activate `[removeMaxlength]`.
 - In each tabulator (Article, Contact ...) set all main fields (Meta Description, Meta Keywords ...) to YES (activate).
-- Activate sub field `Force field(s)` where available (just Menu Items > Meta Keywords at the moment.
+- Activate sub field `Force field(s)` where available (just Menu Items > Meta Keywords at the moment).
 - `Required` and `Enable Counter` not necessary.
 
 -----------------------------------------------------
