@@ -3,7 +3,7 @@
 
 # plg_system_characterscounterghsvs
 - Joomla system plugin. Adds characters counter to some text and textarea fields in back-end. Fully configurable.
-- New: Helps during Joomla 3-4 migration to protect data. See headline `Why the revival of this plugin with Joomla 4` [test](#why-the-revival-of-this-plugin-with-joomla-4) below.
+- New: Helps during Joomla 3-4 migration to protect data. See headline [Why the revival of this plugin with Joomla 4](#why-the-revival-of-this-plugin-with-joomla-4) below.
 - Establishes a JHtml helper, too (not documented).
 - Edited JavaScript based upon [VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License](https://github.com/pinceladasdaweb/VCountdown)
 
