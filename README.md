@@ -62,9 +62,10 @@
 ## Quick guide for Joomla 3-4 migrations and basic purposes
 - Install and configure the plugin in Joomla 3 before migration.
 - - **OR** install and configure the plugin in Joomla 4 after migration but before you save any entries/items.
-- Activate `[removeCharcounter]`.
-- Activate `[removeMaxlength]`.
-- In each tabulator set all main fields to YES (activate).
+- In tabulator Global settings:
+- - Activate `[removeCharcounter]`.
+- - Activate `[removeMaxlength]`.
+- In each tabulator (Article, Contact ...) set all main fields (Meta Description, Meta Keywords ...) to YES (activate).
 - Activate sub field `Force field(s)` where available (just Menu Items > Meta Keywords at the moment.
 - `Required` and `Enable Counter` not necessary.
 
