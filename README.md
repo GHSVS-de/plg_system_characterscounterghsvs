@@ -42,8 +42,8 @@
 ### Possible settings for each field individually
 - <code>Activation</code>: YES/NO. If NO: Nothing will happen. Joomla core rules.
 - - If YES: Global settings will be used:
-- - - `[removeCharcounter]`. Remove Joomla's character counter: YES/NO. Recommended: YES.
-- - - `[removeMaxlength]`. Remove `maxlength` attribute/limitation: YES/NO. Recommended: YES.
+- - - `[removeCharcounter]`. Remove Joomla's character counter: YES/NO. Recommended: YES. At least for Joomla 3-4 migration.
+- - - `[removeMaxlength]`. Remove `maxlength` attribute/limitation: YES/NO. Recommended: YES. At least for Joomla 3-4 migration.
 - - `Force field(s)`: YES/NO. Not always available. If YES: Forces loading of missing fields in Joomla 4. E.g. `meta keywords` for menu items.
 - - `Enable Counter`: YES/NO. If YES: The counter of this plugin will be used.
 - - - <code>maxChars</code>: Your recommended characters limit.
