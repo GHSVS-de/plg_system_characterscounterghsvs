@@ -30,7 +30,7 @@
 - Or simply let the plugin continue to run and continue working as usual with the settings configured in the plugin. It's up to you how many characters you allow per field or only recommend, whether you want to have a character counter, which just warns or blocks further typing and so on.
 - Enable the deactivation/modification of field lengths (`maxlength`).
 - Deactivate the non-configurable and restrictive Joomla 4 core character counter.
-- Avoid annoying JLayout overrides. Yes, this is also possible, but not really flexible to handle.
+- Avoid annoying `JLayout` overrides. Yes, this is also possible, but not really flexible to handle.
 
 ## Which fields can be configured
 - On edit pages for `Article`, `Category`, `Menu Item`, `Contact` of standard Joomla:
