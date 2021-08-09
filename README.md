@@ -4,7 +4,8 @@
 # plg_system_characterscounterghsvs
 - Joomla system plugin.
 - **New:** Helps during Joomla 3-4 migration to protect data. See headline [Why the revival of this plugin with Joomla 4](#why-the-revival-of-this-plugin-with-joomla-4) below.
-- Optionally: Adds characters counter to some text and textarea fields in back-end. Fully configurable.
+- Optional: Adds characters counter to some text and textarea fields in back-end. Fully configurable.
+- Optional: Add required attribute to some fields to block saving if field empty.
 - Establishes a JHtml helper, too (not documented).
 - Edited JavaScript based upon [VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License](https://github.com/pinceladasdaweb/VCountdown)
 
@@ -33,8 +34,10 @@
 - For example, protect `meta descriptions` in Joomla 4 from being destructively truncated if they were created longer than 160 characters in Joomla 3.
 - For example, display `meta keywords` in `menu items`. This field has been removed in Joomla 4 without replacement but comes back with this plugin if configured accordingly.
 - When saving an entry, all old data is preserved, even if you don't have time to take care of concerned meta fields yet.
-- Or simply let the plugin continue to run and continue working as usual with the settings configured in the plugin. It's up to you how many characters you allow per field or only recommend, whether you want to have a character counter, which just warns or blocks further typing and so on.
-- Enable the deactivation/modification of field lengths (`maxlength`).
+- If the work is done, whenever, uninstall the plugin and live with Joomla's settings and restrictions...
+- ...or let the plugin continue to run and continue working as usual with the settings configured in the plugin.
+- It's up to you how many characters you allow per field or only recommend, whether you want to have a character counter, which just warns or blocks further typing and so on.
+- Deactivate rude field length settings (`maxlength`). Adapt them by activating the counter for concerned fields.
 - Deactivate the non-configurable and restrictive Joomla 4 core character counter.
 - Avoid annoying `JLayout` overrides. Yes, this is also possible, but not really flexible to handle.
 - Avoid programming of a custom plugin that does similiar things like this one. Yes, this is also possible, but who is able to do that or has the time?
@@ -45,10 +48,10 @@
 - - Field <code>Meta Keywords</code>
 - - Field <code>Title</code> or <code>Name</code> (the latter in contact).
 - - Field <code>Alias</code>
-- Theory: Play children can adapt and test [myForm.json](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/src/src/Form/myForm.json) if they think other views are worth to get also similiar configuration features. Note that the file will be overwritten with plugin updates. Make suggestions if you think a (free(!!!)) component is worth integrating into the plugin.
+- Theory: Play children can adapt and test [myForm.json](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/src/src/Form/myForm.json) if they think other views or text/textarea fields are worth to get also similiar configuration features. Note that the file will be overwritten with plugin updates. Make suggestions if you think a (free(!!!)) component is worth integrating into the plugin.
 
 ### Possible settings for each field individually
-- <code>Activation</code>: YES/NO. If NO: Nothing will happen. Joomla core rules.
+- <code>Activation (named e.g. "Meta Description")</code>: YES/NO. If NO: Nothing will happen. Joomla core rules.
 - - If YES: Global settings will be used:
 - - - `[removeCharcounter]`. Remove Joomla's character counter: YES/NO. Recommended: YES. At least for Joomla 3-4 migration.
 - - - `[removeMaxlength]`. Remove `maxlength` attribute/limitation: YES/NO. Recommended: YES. At least for Joomla 3-4 migration.
