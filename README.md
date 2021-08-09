@@ -22,8 +22,8 @@
 #### The idea behind it is
 
 - Install and configure the plugin in Joomla 3.
-- Perform the Joomla 3 4 migration.
-- All data is still visible in the backend afterwards and can be edited if desired. This way you at least have the possibility to view this data in the backend and save it by copy-paste if necessary.
+- Perform the Joomla 3-4 migration.
+- All data is still visible in the backend afterwards and can be edited if desired. This way you at least have the possibility to view this data in the backend and save it by copy-paste if necessary. Or whatever matches your workflow. Freedom of choice...
 - For example, protect `meta descriptions` in Joomla 4 from being destructively truncated if they were created longer than 160 characters in Joomla 3.
 - For example, display `meta keywords` in `menu items`. This field has been removed in Joomla 4 without replacement but comes back with this plugin if configured accordingly.
 - When saving an entry, all old data is preserved, even if you don't have time to take care of concerned meta fields yet.
