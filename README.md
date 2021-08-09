@@ -19,6 +19,8 @@
 ## Why the revival of this plugin with Joomla 4
 ### Mainly: Preventing data loss of some fields after Joomla 3-4 migration
 
+- You are in a hurry? See headline [Quick guide for Joomla 3-4 migrations and basic purposes}(#quick-guide-for-joomla-3-4-migrations-and-basic-purposes)
+
 - After migration, all data entered in Joomla 3 is still in the database of Joomla 4.
 - However, data loss can occur for some fields when saving entries/items without adapting concerned data before.
 - However, some data are not visible in full length in Joomla 4 backend. How to adapt them without searching in database?
@@ -59,8 +61,8 @@
 - - - Not available for fields `Title/Name` and `Alias`. They are always mandatory.
 
 ## Quick guide for Joomla 3-4 migrations and basic purposes
-- Install and configure the plugin in Joomla 3.
-- - **OR** install and configure the plugin in Joomla 4 before you save any entries/items.
+- Install and configure the plugin in Joomla 3 before migration.
+- - **OR** install and configure the plugin in Joomla 4 after migration but before you save any entries/items.
 - Activate `[removeCharcounter]`.
 - Activate `[removeMaxlength]`.
 - In each tabulator set all main fields to YES (activate).
