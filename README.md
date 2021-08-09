@@ -44,6 +44,7 @@
 - - If YES: Global settings will be used:
 - - - `[removeCharcounter]`. Remove Joomla's character counter: YES/NO. Recommended: YES.
 - - - `[removeMaxlength]`. Remove `maxlength` attribute/limitation: YES/NO. Recommended: YES.
+- - `Force field(s)`: YES/NO. Not always available. If YES: Forces loading of missing fields in Joomla 4. E.g. `meta keywords` for menu items.
 - - `Enable Counter`: YES/NO. If YES: The counter of this plugin will be used.
 - - - <code>maxChars</code>: Your recommended characters limit.
 - - - <code>chopText</code>: If YES, limit text length to <code>maxChars</code> characters and block further typing. Non-destructive if text loaded from database was already longer than this value before. You'll see and save it in full length. Sets a <code>maxlength</code> attribute or adjusts an existing one.
