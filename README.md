@@ -3,17 +3,20 @@
 
 # plg_system_characterscounterghsvs
 - Joomla system plugin. J!3 and J!4.
-- **New:** Helps during Joomla 3-4 migration to protect data. See headline [Why the revival of this plugin with Joomla 4](#why-the-revival-of-this-plugin-with-joomla-4) below.
-- Optional: Adds characters counter to some text and textarea fields in back-end. Fully configurable.
-- Optional: Add required attribute to some fields to block saving if field empty.
-- Establishes a JHtml helper, too (not documented).
-- Edited JavaScript based upon [VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License](https://github.com/pinceladasdaweb/VCountdown)
+- Thanks, thanks, thanks: Edited JavaScript based upon [VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License](https://github.com/pinceladasdaweb/VCountdown)
+
+## New features since version 2021.08.10
+- Can help when migrating from Joomla 3 to 4 to protect meta data such as meta descriptions or meta keywords that might be unexpectedly lost after migration when saving entries. See headline [Why the revival of this plugin with Joomla 4](#why-the-revival-of-this-plugin-with-joomla-4) below for more details.
+## Other features
+- Optional: Adds character counters to some text and textarea fields in back-end. Fully configurable.
+- Optional: Add `required` attribute to some fields to block saving if field empty.
+- Establishes a `JHtml helper` (not documented).
 
 ## Restrictions
-- **Works only in back-end. Works not with frontend-editing because no time to test it.**
+- **Works only in back-end. Works not with frontend-editing because I have no time to test it.**
 - Not a11y.
 - I am my own and single tester. I tried to do my best.
-- I have only moderate, slowly growing, JavaScript programming skills, if we talk about JQuery-less codes.
+- I have only moderate, slowly growing JavaScript programming skills, if we talk about JQuery-less codes. Nevertheless, the JavsScript is only about 3kB in size.
 
 ### Issues, Bugs, Questions, Suggestions: DE or EN
 - https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues
@@ -22,11 +25,11 @@
 ## Why the revival of this plugin with Joomla 4
 ### Mainly: Preventing data loss of some fields after Joomla 3-4 migration
 
-- You are in a hurry? See headline [Quick guide for Joomla 3-4 migrations and basic purposes](#quick-guide-for-joomla-3-4-migrations-and-basic-purposes)
+- You are in a hurry? See headline [Quick guide for Joomla 3-4 migrations for basic purposes](#quick-guide-for-joomla-3-4-migrations-for-basic-purposes)
 - After migration, all data entered in Joomla 3 is still in the database of Joomla 4.
-- However, data loss can occur for some fields when saving entries/items without adapting concerned data before.
-- However, some data are not visible in full length in Joomla 4 backend. How to adapt them without searching in database?
-- However, some data can't be adapted or copied because not visible anymore in Joomla's backend. How to see them and decide if still needed without searching in database before you save the concerned entry?
+- - However, some fields may lose data if Joomla entries are saved without the affected data having been adjusted beforehand.
+- - However, some data are not visible in full length in Joomla 4 backend. How to adapt them without searching in database?
+- - However, some data is no longer displayed at all. How to see them and decide if still needed without searching in database before you save the concerned Joomla entry?
 
 #### The idea behind it is
 
@@ -42,7 +45,7 @@
 - Deactivate rude field length settings (`maxlength`). Adapt them by activating the counter for concerned fields.
 - Deactivate the non-configurable and restrictive Joomla 4 core character counter.
 - Avoid annoying `JLayout` overrides. Yes, this is also possible, but not really flexible to handle.
-- Avoid programming of a custom plugin that does similiar things like this one. Yes, this is also possible, but who is able to do that or has the time?
+- Avoid programming of a custom plugin that does similiar things like this one. Yes, this is also possible, but who is able to do that or has the time and desire?
 
 ## Which fields can be configured
 - On edit pages for `Article`, `Category`, `Menu Item`, `Contact` of standard Joomla:
@@ -53,10 +56,10 @@
 - Theory: Play children can adapt and test [myForm.json](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/src/src/Form/myForm.json) if they think other views or text/textarea fields are worth to get also similiar configuration features. Note that the file will be overwritten with plugin updates. Make suggestions if you think a (free(!!!)) component is worth integrating into the plugin.
 
 ### Possible settings for each field individually
-- <code>Activation (named e.g. "Meta Description")</code>: YES/NO. If NO: Nothing will happen. Joomla core rules.
+- <code>Activation (e.g. setting "Meta Description")</code>: YES/NO. If NO: Nothing will happen. The Joomla core rules.
 - - If YES: Global settings will be used:
-- - - `[removeCharcounter]`. Remove Joomla's character counter: YES/NO. Recommended: YES. At least for Joomla 3-4 migration.
-- - - `[removeMaxlength]`. Remove `maxlength` attribute/limitation: YES/NO. Recommended: YES. At least for Joomla 3-4 migration.
+- - - `[removeCharcounter]`. Remove Joomla's character counter: YES/NO. Recommended: YES. At least for the Joomla 3-4 migration.
+- - - `[removeMaxlength]`. Remove `maxlength` attribute/limitation: YES/NO. Recommended: YES. At least for the Joomla 3-4 migration.
 - - `Force field(s)`: YES/NO. Not always available. If YES: Forces loading of missing fields in Joomla 4. E.g. `meta keywords` for menu items.
 - - `Enable Counter`: YES/NO. If YES: The counter of this plugin will be used.
 - - - <code>maxChars</code>: Your recommended characters limit.
@@ -64,7 +67,7 @@
 - - <code>Required</code>: YES/`Joomla settings decide`. If YES: Saving of item is prevented if the field is empty. The vaguely named setting `Joomla settings decide` means: The plugin does nothing (as long as I haven't tested what may happen when I remove a `required` attribute where Joomla has set it consciously or just stupidly).
 - - - Not available for fields `Title/Name` and `Alias`. They are always mandatory.
 
-## Quick guide for Joomla 3-4 migrations and basic purposes
+## Quick guide for Joomla 3-4 migrations for basic purposes
 - Install and configure the plugin in Joomla 3 before migration.
 - - **OR** install and configure the plugin in Joomla 4 after migration but before you save any entries/items.
 - In tabulator Global settings:
