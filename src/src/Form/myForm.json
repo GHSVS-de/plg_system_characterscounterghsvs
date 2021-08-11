@@ -1,4 +1,78 @@
 {
+	"com_categories:category|edit" : {
+		"title": "category",
+		"option": "com_categories",
+		"view": "category",
+		"layout": "edit",
+		"fields": {
+			"metadesc": {
+				"selector": "#jform_metadesc",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				}
+			},
+			"metakey": {
+				"selector": "#jform_metakey",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				}
+			},
+			"title": {
+				"selector": "#jform_title",
+				"settings": {
+					"maxChars": 55,
+					"chopText": 0
+				}
+			},
+			"alias": {
+				"selector": "#jform_alias",
+				"settings": {
+					"maxChars": 55,
+					"chopText": 0
+				}
+			}
+		}
+	},
+	"com_config:application|" : {
+		"title": "configuration",
+		"description": "PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FORMDATA_CONFIGURATION_DESC",
+		"option": "com_config",
+		"view": "",
+		"layout": "",
+		"fields": {
+			"metadesc": {
+				"selector": "#jform_MetaDesc",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				},
+				"formFieldAttribs": {
+					"name": "MetaDesc",
+					"group": ""
+				}
+			},
+			"metakey": {
+				"selector": "#jform_MetaKeys",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				},
+				"loadXmlFields": [
+					"application-metaKeys"
+				],
+				"formFieldAttribs": {
+					"name": "MetaKeys",
+					"group": ""
+				}
+			}
+		}
+	},
 	"com_contact:contact|edit" : {
 		"title": "contact",
 		"option": "com_contact",
@@ -24,44 +98,6 @@
 			},
 			"title": {
 				"selector": "#jform_name",
-				"settings": {
-					"maxChars": 55,
-					"chopText": 0
-				}
-			},
-			"alias": {
-				"selector": "#jform_alias",
-				"settings": {
-					"maxChars": 55,
-					"chopText": 0
-				}
-			}
-		}
-	},
-	"com_categories:category|edit" : {
-		"title": "category",
-		"option": "com_categories",
-		"view": "category",
-		"layout": "edit",
-		"fields": {
-			"metadesc": {
-				"selector": "#jform_metadesc",
-				"settings": {
-					"maxChars": 150,
-					"chopText": 0,
-					"required": 0
-				}
-			},
-			"metakey": {
-				"selector": "#jform_metakey",
-				"settings": {
-					"maxChars": 150,
-					"chopText": 0,
-					"required": 0
-				}
-			},
-			"title": {
-				"selector": "#jform_title",
 				"settings": {
 					"maxChars": 55,
 					"chopText": 0
@@ -166,6 +202,33 @@
 					"maxChars": 55,
 					"chopText": 0
 				}
+			}
+		}
+	},
+	"com_languages:language|edit" : {
+		"title": "language",
+		"option": "com_languages",
+		"view": "language",
+		"layout": "edit",
+		"fields": {
+			"metadesc": {
+				"selector": "#jform_metadesc",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				}
+			},
+			"metakey": {
+				"selector": "#jform_metakey",
+				"settings": {
+					"maxChars": 150,
+					"chopText": 0,
+					"required": 0
+				},
+				"loadXmlFields": [
+					"language-metakey"
+				]
 			}
 		}
 	}
