@@ -21,6 +21,7 @@
 - Nicht a11y.
 - Ich bin mein eigener und einziger Tester. Ich habe versucht, mein Bestes zu geben.
 - Ich habe nur "mittelmäßige", langsam wachsende JavaScript-Programmierkenntnisse, wenn wir über JQuery-losen Code sprechen. Trotzdem hat das JavsScript nur eine Größe von ca. 3kB.
+- Dieses Plugin bringt nicht die Funktionaliäten in Joomla 4 zurück, Meta-schlüsselworte im Frontend in die Seite einzubauen!
 
 ### Probleme, Bugs, Fragen, Vorschläge: EN oder DE
 - https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues

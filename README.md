@@ -7,17 +7,21 @@
 - Thanks, thanks, thanks: Edited JavaScript based upon [VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License](https://github.com/pinceladasdaweb/VCountdown)
 
 ## New features since version 2021.08.10
-- Can help when migrating from Joomla 3 to 4 to protect meta data such as meta descriptions or meta keywords that might be unexpectedly lost after migration when saving entries. See headline [Why the revival of this plugin with Joomla 4](#why-the-revival-of-this-plugin-with-joomla-4) below for more details.
+- Can help when migrating from Joomla 3 to 4 to protect meta data such as meta descriptions or meta keywords that are no longer displayed at all or might be unexpectedly lost after migration when saving Joomla entries.
+- See headline [Why the revival of this plugin with Joomla 4](#why-the-revival-of-this-plugin-with-joomla-4) below for more details.
+- See headline [Quick guide for Joomla 3-4 migrations for basic purposes](#quick-guide-for-joomla-3-4-migrations-for-basic-purposes) below.
+
 ## Other features
-- Optional: Adds character counters to some text and textarea fields in back-end. Fully configurable.
-- Optional: Add `required` attribute to some fields to block saving if field empty.
+- Optional: Adds character counters to some text and textarea fields in back-end. Individually configurable.
+- Optional: Add `required` attribute to some fields to block saving if field is empty.
 - Establishes a `JHtml helper` (not documented).
 
 ## Restrictions
 - **Works only in back-end. Works not with frontend-editing because I have no time to test it.**
 - Not a11y.
 - I am my own and single tester. I tried to do my best.
-- I have only moderate, slowly growing JavaScript programming skills, if we talk about JQuery-less codes. Nevertheless, the JavsScript is only about 3kB in size.
+- I have only "moderate", slowly growing JavaScript programming skills, if we talk about JQuery-less codes. Nevertheless, the JavsScript is only about 3kB in size.
+- This plugin does not bring back the functionality in Joomla 4 to add meta keywords in the frontend of the page!
 
 ### Issues, Bugs, Questions, Suggestions: DE or EN
 - https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues
@@ -26,17 +30,19 @@
 ## Why the revival of this plugin with Joomla 4
 ### Mainly: Preventing data loss of some fields after Joomla 3-4 migration
 
-- You are in a hurry? See headline [Quick guide for Joomla 3-4 migrations for basic purposes](#quick-guide-for-joomla-3-4-migrations-for-basic-purposes)
+- You are in a hurry? See headline [Quick guide for Joomla 3-4 migrations for basic purposes](#quick-guide-for-joomla-3-4-migrations-for-basic-purposes).
 - After migration, all data entered in Joomla 3 is still in the database of Joomla 4.
 - - However, some fields may lose data if Joomla entries are saved without the affected data having been adjusted beforehand.
 - - However, some data are not visible in full length in Joomla 4 backend. How to adapt them without searching in database?
 - - However, some data is no longer displayed at all. How to see them and decide if still needed without searching in database before you save the concerned Joomla entry?
+- Affected are all meta descriptions in Joomla's own components that are longer than 160 characters.
+- Affected are the meta keywords of menu items that have been removed entirely in Joomla 4.
 
 #### The idea behind it is
 
-- Install and configure the plugin in Joomla 3.
+- Install and configure the plugin in Joomla 3. [See Quick guide](#quick-guide-for-joomla-3-4-migrations-for-basic-purposes).
 - Perform the Joomla 3-4 migration.
-- All data is still visible in the backend afterwards and can be edited if desired. This way you at least have the possibility to view this data in the backend and save it by copy-paste if necessary. Or whatever matches your workflow. Freedom of choice...
+- All data entered in Joomla 3 is still visible in the backend afterwards and can be edited. So you have the possibility to edit, shorten or copy-paste them somewhere ... whatever suits your workflow. Freedom of choice...
 - For example, protect `meta descriptions` in Joomla 4 from being destructively truncated if they were created longer than 160 characters in Joomla 3.
 - For example, display `meta keywords` in `menu items`. This field has been removed in Joomla 4 without replacement but comes back with this plugin if configured accordingly.
 - When saving an entry, all old data is preserved, even if you don't have time to take care of concerned meta fields yet.
@@ -49,11 +55,13 @@
 - Avoid programming of a custom plugin that does similiar things like this one. Yes, this is also possible, but who is able to do that or has the time and desire?
 
 ## Which fields can be configured
-- On edit pages for `Article`, `Category`, `Menu Item`, `Contact` of standard Joomla:
+- On edit pages for `Global Configuration`, `Article`, `Category`, `Menu Item`, `Contact` of standard Joomla:
 - - Field <code>Meta Description</code>
 - - Field <code>Meta Keywords</code>
+- <code>Title/Name</code>, <code>Alias</code> only on pages where it makes sense:
 - - Field <code>Title</code> or <code>Name</code> (the latter in contact).
 - - Field <code>Alias</code>
+
 - Theory: Play children can adapt and test [myForm.json](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/src/src/Form/myForm.json) if they think other views or text/textarea fields are worth to get also similiar configuration features. Note that the file will be overwritten with plugin updates. Make suggestions if you think a (free(!!!)) component is worth integrating into the plugin.
 
 ### Possible settings for each field individually
@@ -65,18 +73,18 @@
 - - `Enable Counter`: YES/NO. If YES: The counter of this plugin will be used.
 - - - <code>maxChars</code>: Your recommended characters limit.
 - - - <code>chopText</code>: If YES, limit text length to <code>maxChars</code> characters and block further typing. Non-destructive if text loaded from database was already longer than this value before. You'll see and save it in full length. Sets a <code>maxlength</code> attribute or adjusts an existing one.
-- - <code>Required</code>: YES/`Joomla settings decide`. If YES: Saving of item is prevented if the field is empty. The vaguely named setting `Joomla settings decide` means: The plugin does nothing (as long as I haven't tested what may happen when I remove a `required` attribute where Joomla has set it consciously or just stupidly).
+- - <code>Required</code>: YES/`Joomla defaults decide`. If YES: Saving of item is prevented if the field is empty. The vaguely named setting `Joomla settings decide` means: The plugin does nothing (as long as I haven't tested what may happen when I remove a `required` attribute where Joomla has set it consciously or just stupidly).
 - - - Not available for fields `Title/Name` and `Alias`. They are always mandatory.
 
 ## Quick guide for Joomla 3-4 migrations for basic purposes
 - Install and configure the plugin in Joomla 3 before migration.
 - - **OR** install and configure the plugin in Joomla 4 after migration but before you save any entries/items.
 - In tabulator Global settings:
-- - Activate `[removeCharcounter]`.
-- - Activate `[removeMaxlength]`.
-- In each tabulator (Article, Contact ...) set all main fields (Meta Description, Meta Keywords ...) to YES (activate).
-- Activate sub field `Force field(s)` where available (just Menu Items > Meta Keywords at the moment).
-- `Required` and `Enable Counter` not necessary.
+- - Set `[removeCharcounter]` to YES to disable Joomla's restrictive character counter in all enabled fields.
+- - Set `[removeMaxlength]` to YES to disable Joomla's restrictive field lengths in all enabled fields.
+- In each tabulator (Article, Contact ...) set all main fields (Meta Description, Meta Keywords ...) to YES (= activation).
+- Enable `Force Field(s)` subfields where one is available to display meta keyword fields that have been removed in Joomla 4.
+- `Required` and `Enable Counter` settings not necessary.
 
 -----------------------------------------------------
 
