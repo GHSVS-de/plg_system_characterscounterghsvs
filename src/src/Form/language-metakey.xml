@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="metadata">
+
+		<field
+			name="metakey"
+			type="textarea"
+			label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_METAKEYS"
+			rows="3"
+			cols="30"
+		/>
+
+	</fieldset>
+</form>

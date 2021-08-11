@@ -8,8 +8,7 @@
 			<field
 				name="menu-meta_keywords"
 				type="textarea"
-				label="JFIELD_META_KEYWORDS_LABEL"
-				description="JFIELD_META_KEYWORDS_DESC"
+				label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_METAKEYS"
 				rows="3"
 				cols="40"
 			/>
