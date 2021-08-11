@@ -18,10 +18,10 @@
 
 ## Restrictions
 - **Works only in back-end. Works not with frontend-editing because I have no time to test it.**
+- This plugin does not bring back the functionality in Joomla 4 to add meta keywords in the frontend of the page! It only saves them from deletion.
 - Not a11y.
 - I am my own and single tester. I tried to do my best.
 - I have only "moderate", slowly growing JavaScript programming skills, if we talk about JQuery-less codes. Nevertheless, the JavsScript is only about 3kB in size.
-- This plugin does not bring back the functionality in Joomla 4 to add meta keywords in the frontend of the page!
 
 ### Issues, Bugs, Questions, Suggestions: DE or EN
 - https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues
@@ -55,26 +55,24 @@
 - Avoid programming of a custom plugin that does similiar things like this one. Yes, this is also possible, but who is able to do that or has the time and desire?
 
 ## Which fields can be configured
-- On edit pages for `Global Configuration`, `Article`, `Category`, `Menu Item`, `Contact` of standard Joomla:
+- On edit pages for `Global Configuration`, `Article`, `Category`, `Menu Item`, `Contact`, `Content language` of standard Joomla:
 - - Field <code>Meta Description</code>
 - - Field <code>Meta Keywords</code>
 - <code>Title/Name</code>, <code>Alias</code> only on pages where it makes sense:
 - - Field <code>Title</code> or <code>Name</code> (the latter in contact).
 - - Field <code>Alias</code>
 
-- Theory: Play children can adapt and test [myForm.json](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/src/src/Form/myForm.json) if they think other views or text/textarea fields are worth to get also similiar configuration features. Note that the file will be overwritten with plugin updates. Make suggestions if you think a (free(!!!)) component is worth integrating into the plugin.
-
 ### Possible settings for each field individually
-- <code>Activation (e.g. setting "Meta Description")</code>: YES/NO. If NO: Nothing will happen. The Joomla core rules.
-- - If YES: Global settings will be used:
-- - - `[removeCharcounter]`. Remove Joomla's character counter: YES/NO. Recommended: YES. At least for the Joomla 3-4 migration.
-- - - `[removeMaxlength]`. Remove `maxlength` attribute/limitation: YES/NO. Recommended: YES. At least for the Joomla 3-4 migration.
-- - `Force field(s)`: YES/NO. Not always available. If YES: Forces loading of missing fields in Joomla 4. E.g. `meta keywords` for menu items.
-- - `Enable Counter`: YES/NO. If YES: The counter of this plugin will be used.
-- - - <code>maxChars</code>: Your recommended characters limit.
-- - - <code>chopText</code>: If YES, limit text length to <code>maxChars</code> characters and block further typing. Non-destructive if text loaded from database was already longer than this value before. You'll see and save it in full length. Sets a <code>maxlength</code> attribute or adjusts an existing one.
-- - <code>Required</code>: YES/`Joomla defaults decide`. If YES: Saving of item is prevented if the field is empty. The vaguely named setting `Joomla settings decide` means: The plugin does nothing (as long as I haven't tested what may happen when I remove a `required` attribute where Joomla has set it consciously or just stupidly).
-- - - Not available for fields `Title/Name` and `Alias`. They are always mandatory.
+- <code>Activation (e.g. setting "Meta Description")</code>. If NO: Nothing will happen. The Joomla core rules.
+- If YES: Global settings of this plugin will be used:
+- - `[removeCharcounter]`. Remove Joomla's character counter. Recommended: YES. At least for the Joomla 3-4 migration.
+- - `[removeMaxlength]`. Remove `maxlength` attribute/limitation. Recommended: YES. At least for the Joomla 3-4 migration.
+- `Force field(s)`. Not always available. If YES: Forces loading of missing fields in Joomla 4. E.g. `meta keywords` for menu items.
+- `Enable Counter`. If YES: The character counter of this plugin will be used.
+- - <code>maxChars</code>: Your recommended characters limit.
+- - <code>chopText</code>: If YES, limit text length to <code>maxChars</code> characters and block further typing. Non-destructive if text loaded from database was already longer than this value before. You'll see and save it in full length. Sets a <code>maxlength</code> attribute or adjusts an existing one.
+- <code>Required</code>. If YES: Saving of item is prevented if the field is empty. The vaguely named setting `Joomla defaults decide` means: The plugin does nothing (as long as I haven't tested what may happen when I remove a `required` attribute where Joomla has set it consciously or just stupidly).
+- - Not available for fields `Title/Name` and `Alias`. They are always mandatory.
 
 ## Quick guide for Joomla 3-4 migrations for basic purposes
 - Install and configure the plugin in Joomla 3 before migration.
