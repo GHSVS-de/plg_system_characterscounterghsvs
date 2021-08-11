@@ -18,7 +18,7 @@
 
 ## Einschränkungen
 - Dieses Plugin bringt nicht die Funktionaliäten in Joomla 4 zurück, Meta-Schlüsselworte im Frontend in die Seite einzubauen! Es bewahrt sie lediglich vor Löschung.
-- **Arbeitet nur im Backend. Funktioniert nicht mit Frontend-Bearbeitung, da keine Zeit zum Testen.
+- **Arbeitet nur im Backend. Funktioniert nicht mit Frontend-Bearbeitung**, da keine Zeit zum Testen.
 - Nicht a11y.
 - Ich bin mein eigener und einziger Tester. Ich habe versucht, mein Bestes zu geben.
 - Ich habe nur "mittelmäßige", langsam wachsende JavaScript-Programmierkenntnisse, wenn wir über JQuery-losen Code sprechen. Trotzdem hat das JavsScript nur eine Größe von ca. 3kB.
