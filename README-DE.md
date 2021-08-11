@@ -36,26 +36,26 @@
 - - Allerdings werden einige Daten gar nicht mehr angezeigt. Wie kann man sie sehen und entscheiden, ob sie noch benötigt werden, ohne in der Datenbank zu suchen, bevor man den betreffenden Joomla-Eintrag speichert?
 
 #### Betroffen sind folgende Felder
-- Alle Metabeschreibungen in Joomla-eigenen Komponenten, die länger als 160 Zeichen sind.
+- Alle Metabeschreibungen in joomlaeigenen Komponenten, die länger als 160 Zeichen sind.
 - Die Meta-Schlüsselworte von Menüeinträgen, die in Joomla 4 ganz entfernt wurden.
 - Die Meta-Schlüsselworte der Globalen Joomla-Konfiguration, die in Joomla 4 ganz entfernt wurden.
 - Die Meta-Schlüsselworte der Inhalts-Sprachen, die in Joomla 4 ganz entfernt wurden.
 
-#### Die Idee dahinter ist
+#### Die Idee bezüglich Migration ist
 
 - Installieren und konfigurieren Sie das Plugin in Joomla 3. [Siehe Kurzanleitung](#kurzanleitung-bei-joomla-3-4-migrationen-und-grundlegende-zwecke)
 - Führen Sie die Joomla 3-4 Migration durch.
-- Alle in Joomla 3 eingegebenen Daten sind danach noch im Backend sichtbar und können bearbeitet werden. So haben Sie die Möglichkeit diese zu bearbeiten, zu kürzen oder per Copy-Paste irgendwo zu sichern ... was auch immer Ihrem Arbeitsablauf entspricht. Freiheit der Wahl...
+- Alle in Joomla 3 eingegebenen Daten sind danach noch im Backend sichtbar. So haben Sie die Möglichkeit diese zu bearbeiten, zu kürzen oder per Copy-Paste irgendwo zu sichern ... was auch immer Ihrem Arbeitsablauf entspricht. Freiheit der Wahl...
 - Schützen Sie z.B. `Meta-Beschreibungen` in Joomla 4 davor, dass sie destruktiv abgeschnitten werden, wenn sie in Joomla 3 länger als 160 Zeichen angelegt wurden.
-- Weiterhin Anzeige von `Meta-Schlüsselwörtern` in Menü-Einträgen, Joomla-Konfiguration, Inhaltssprachen.
+- Weiterhin Anzeige von Meta-Schlüsselwörtern in Menü-Einträgen, Joomla-Konfiguration, Inhaltssprachen.
 - Beim Speichern eines Joomla-Eintrags bleiben alle alten Daten erhalten, auch wenn Sie noch keine Zeit haben, sich um die betreffenden Meta-Felder zu kümmern.
 - Wenn die Arbeit getan ist, wann auch immer, deinstallieren Sie das Plugin und leben Sie mit den Einstellungen und Einschränkungen von Joomla...
-- ...oder lassen Sie das Plugin weiterlaufen und arbeiten Sie wie gewohnt mit den im Plugin konfigurierten Einstellungen weiter.
-- Es liegt an Ihnen, wie viele Zeichen Sie pro Feld erlauben oder nur empfehlen, ob Sie einen Zeichenzähler haben wollen, der nur warnt oder weitere Eingaben blockiert und so weiter.
-- Deaktivieren Sie harte Feldlängeneinstellungen (`maxlength`). Oder passen Sie sie an, indem Sie den Zähler für die betroffenen Felder und `Erforderlich` aktivieren.
-- Deaktivieren Sie den nicht konfigurierbaren und restriktiven Joomla-4-Core-Zeichenzähler.
-- Vermeiden Sie lästige `JLayout`-Overrides. Ja, auch das ist möglich, aber nicht wirklich flexibel zu handhaben.
-- Vermeiden Sie die Programmierung eines eigenen Plugins, das ähnliche Dinge wie dieses tut. Ja, das ist auch möglich, aber wer kann das schon oder hat die Zeit und Lust dazu?
+- ...oder lassen Sie das Plugin weiterlaufen und arbeiten mit den im Plugin konfigurierten Einstellungen weiter.
+- - Es liegt an Ihnen, wie viele Zeichen Sie pro Feld erlauben oder nur empfehlen, ob Sie einen Zeichenzähler haben wollen, der nur warnt oder weitere Eingaben blockiert und so weiter.
+- - Deaktivieren Sie harte Feldlängeneinstellungen (`maxlength`). Oder passen Sie sie an, indem Sie den Zähler für die betroffenen Felder und `Erforderlich` aktivieren.
+- - Deaktivieren Sie den nicht konfigurierbaren und restriktiven Joomla-4-Core-Zeichenzähler.
+- - Vermeiden Sie lästige `JLayout`-Overrides. Ja, auch das ist möglich, aber nicht wirklich flexibel zu handhaben.
+- - Vermeiden Sie die Programmierung eines eigenen Plugins, das ähnliche Dinge wie dieses tut. Ja, das ist auch möglich, aber wer kann das schon oder hat die Zeit und Lust dazu?
 
 ## Welche Felder können konfiguriert werden
 - Auf Bearbeitungsseiten für `Joomla-Konfiguration`, `Artikel`, `Kategorie`, `Menü-Eintrag`, `Kontakt`, `Inhalts-Sprache` vom Standard-Joomla:
@@ -66,16 +66,17 @@
 - - Feld <code>Alias</code>
 
 ### Mögliche Einstellungen für jedes Feld einzeln
-- <code>Aktivierung (z.B. Einstellfeld "Meta Beschreibung")</code>: JA/NEIN. Wenn NEIN: Es wird nichts passieren. Der Joomla-Core hat die Kontrolle.
-- Wenn JA: Es werden die globalen Plugin-Einstellungen verwendet:
-- - `[removeCharcounter]`. Joomla's Zeichenzähler entfernen. Empfohlen: JA. Zumindest für die Joomla-3-4-Migration.
-- - `[removeMaxlength]`. Entferne `maxlength`-Attribut/Beschränkung. Empfohlen: JA. Zumindest für die Joomla-3-4-Migration.
+- <code>Aktivierung (z.B. Einstellfeld "Meta Beschreibung")</code>.
+- - Wenn NEIN: Das Plugin tut nichts. Der Joomla-Core hat die Kontrolle.
+- - Wenn JA: Es werden die globalen Plugin-Einstellungen verwendet:
+- - - `[removeCharcounter]`. Joomla's Zeichenzähler entfernen. Empfohlen: JA. Zumindest für die Joomla-3-4-Migration.
+- - - `[removeMaxlength]`. Entferne `maxlength`-Attribut/Beschränkung. Empfohlen: JA. Zumindest für die Joomla-3-4-Migration.
 - `Feld(er) erzwingen`. Nicht immer verfügbar. Wenn JA: Erzwingt das Laden von fehlenden Feldern in Joomla 4. Z.B. `Meta-Schlüsselworte` für Menü-Einträge usw.
 - `Zähler aktivieren`. Wenn JA: Der Zeichen-Zähler wird verwendet.
-- - <code>maxChars</code>: Ihre empfohlene Zeichenbegrenzung.
-- - <code>chopText</code>: Wenn JA: Begrenzt die Textlänge auf <code>maxChars</code> Zeichen und blockiere die weitere Eingabe. Nicht-destruktiv, wenn der aus der Datenbank geladene Text schon vorher länger als dieser Wert war. Sie werden ihn in voller Länge sehen und speichern können. Setzt ein <code>maxlength</code> Attribut oder passt ein bestehendes an.
+- - <code>[maxChars]</code>: Ihre empfohlene Zeichenbegrenzung.
+- - <code>[chopText]</code>: Wenn JA: Begrenzt die Textlänge auf <code>[maxChars]</code> Zeichen und blockiere die weitere Eingabe. Nicht-destruktiv, wenn der aus der Datenbank geladene Text schon vorher länger als dieser Wert war. Sie werden ihn in voller Länge sehen und speichern können. Setzt ein <code>maxlength</code> Attribut oder passt ein bestehendes an.
 - <code>Erforderlich</code>. Wenn JA: Das Speichern eines Eintrags wird verhindert, wenn das Feld leer ist. Die vage benannte Einstellung `Joomla-Vorgaben entscheiden` bedeutet: Das Plugin macht nichts (solange ich nicht getestet habe, was passieren kann, wenn ich ein `required`-Attribut entferne, wo Joomla es bewusst oder einfach dummerweise gesetzt hat).
-- - Nicht verfügbar für die Felder `Titel/Name` und `Alias`. Sie sind immer obligatorisch.
+- - Nicht verfügbar für die Felder `Titel/Name` und `Alias`. Die sind immer obligatorisch.
 
 ## Kurzanleitung bei Joomla 3-4 Migrationen und grundlegende Zwecke
 - Installieren und konfigurieren Sie das Plugin in Joomla 3 vor der Migration.

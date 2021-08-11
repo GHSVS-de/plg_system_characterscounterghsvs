@@ -37,21 +37,21 @@
 - Affected are all meta descriptions in Joomla's own components that are longer than 160 characters.
 - Affected are the meta keywords of menu items that have been removed entirely in Joomla 4.
 
-#### The idea behind it is
+#### The idea regarding migration is
 
 - Install and configure the plugin in Joomla 3. [See Quick guide](#quick-guide-for-joomla-3-4-migrations-for-basic-purposes).
 - Perform the Joomla 3-4 migration.
-- All data entered in Joomla 3 is still visible in the backend afterwards and can be edited. So you have the possibility to edit, shorten or copy-paste them somewhere ... whatever suits your workflow. Freedom of choice...
+- All data entered in Joomla 3 is still visible in the backend afterwards. So you have the possibility to edit, shorten or copy-paste them somewhere ... whatever suits your workflow. Freedom of choice...
 - For example, protect `meta descriptions` in Joomla 4 from being destructively truncated if they were created longer than 160 characters in Joomla 3.
 - For example, display `meta keywords` in `menu items`. This field has been removed in Joomla 4 without replacement but comes back with this plugin if configured accordingly.
 - When saving an entry, all old data is preserved, even if you don't have time to take care of concerned meta fields yet.
 - If the work is done, whenever, uninstall the plugin and live with Joomla's settings and restrictions...
 - ...or let the plugin continue to run and continue working as usual with the settings configured in the plugin.
-- It's up to you how many characters you allow per field or only recommend, whether you want to have a character counter, which just warns or blocks further typing and so on.
-- Deactivate rude field length settings (`maxlength`). Adapt them by activating the counter for concerned fields.
-- Deactivate the non-configurable and restrictive Joomla 4 core character counter.
-- Avoid annoying `JLayout` overrides. Yes, this is also possible, but not really flexible to handle.
-- Avoid programming of a custom plugin that does similiar things like this one. Yes, this is also possible, but who is able to do that or has the time and desire?
+- - It's up to you how many characters you allow per field or only recommend, whether you want to have a character counter, which just warns or blocks further typing and so on.
+- - Deactivate rude field length settings (`maxlength`). Adapt them by activating the counter for concerned fields.
+- - Deactivate the non-configurable and restrictive Joomla 4 core character counter.
+- - Avoid annoying `JLayout` overrides. Yes, this is also possible, but not really flexible to handle.
+- - Avoid programming of a custom plugin that does similiar things like this one. Yes, this is also possible, but who is able to do that or has the time and desire?
 
 ## Which fields can be configured
 - On edit pages for `Global Configuration`, `Article`, `Category`, `Menu Item`, `Contact`, `Content language` of standard Joomla:
@@ -62,14 +62,15 @@
 - - Field <code>Alias</code>
 
 ### Possible settings for each field individually
-- <code>Activation (e.g. setting "Meta Description")</code>. If NO: Nothing will happen. The Joomla core rules.
-- If YES: Global settings of this plugin will be used:
-- - `[removeCharcounter]`. Remove Joomla's character counter. Recommended: YES. At least for the Joomla 3-4 migration.
-- - `[removeMaxlength]`. Remove `maxlength` attribute/limitation. Recommended: YES. At least for the Joomla 3-4 migration.
+- <code>Activation (e.g. setting "Meta Description")</code>.
+- - If NO: The plugin does nothing. The Joomla core has control.
+- - If YES: Global settings of this plugin will be used:
+- - - `[removeCharcounter]`. Remove Joomla's character counter. Recommended: YES. At least for the Joomla 3-4 migration.
+- - - `[removeMaxlength]`. Remove `maxlength` attribute/limitation. Recommended: YES. At least for the Joomla 3-4 migration.
 - `Force field(s)`. Not always available. If YES: Forces loading of missing fields in Joomla 4. E.g. `meta keywords` for menu items.
 - `Enable Counter`. If YES: The character counter of this plugin will be used.
-- - <code>maxChars</code>: Your recommended characters limit.
-- - <code>chopText</code>: If YES, limit text length to <code>maxChars</code> characters and block further typing. Non-destructive if text loaded from database was already longer than this value before. You'll see and save it in full length. Sets a <code>maxlength</code> attribute or adjusts an existing one.
+- - <code>[maxChars]</code>: Your recommended characters limit.
+- - <code>[chopText]</code>: If YES, limit text length to <code>[maxChars]</code> characters and block further typing. Non-destructive if text loaded from database was already longer than this value before. You'll see and save it in full length. Sets a <code>maxlength</code> attribute or adjusts an existing one.
 - <code>Required</code>. If YES: Saving of item is prevented if the field is empty. The vaguely named setting `Joomla defaults decide` means: The plugin does nothing (as long as I haven't tested what may happen when I remove a `required` attribute where Joomla has set it consciously or just stupidly).
 - - Not available for fields `Title/Name` and `Alias`. They are always mandatory.
 
