@@ -272,7 +272,8 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 		$fieldKey = str_replace('.', ':', $context) . '|' . $layout;
 
 		// Quickie
-		if (!isset($formData->$fieldKey))
+		if (!property_exists($formData, $fieldKey)
+			|| !count(get_object_vars($formData->$fieldKey)))
 		{
 			return;
 		}
@@ -388,11 +389,12 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 					if (!empty($myParams->{$key . '_loadXmlFields'})
 						&& $myParams->{$key . '_forceFields'}
 					){
-						Form::addFormPath(__DIR__ . '/src/Form');
+						//Form::addFormPath(__DIR__ . '/src/Form');
+						$formsPath = __DIR__ . '/src/Form/';
 
 						foreach ($myParams->{$key . '_loadXmlFields'} as $fieldFile)
 						{
-							$form->loadFile($fieldFile, $reset = true);
+							$form->loadFile($formsPath . $fieldFile . '.xml', $reset = true);
 						}
 					}
 
