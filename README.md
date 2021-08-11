@@ -1,5 +1,6 @@
-# Be patient! Work in progress!
-- If you want to test, install latest version! But not in productive environments.
+# Be patient! Work in progress.
+
+- [Deutsche Beschreibung](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/README-DE.md#plg_system_characterscounterghsvs)
 
 # plg_system_characterscounterghsvs
 - Joomla system plugin. J!3 and J!4.
