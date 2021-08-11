@@ -21,7 +21,6 @@
 - **Works only in back-end. Works not with frontend-editing** because I have no time to test it.
 - Not a11y.
 - I am my own and single tester. I tried to do my best.
-- I have only "moderate", slowly growing JavaScript programming skills, if we talk about JQuery-less codes. Nevertheless, the JavsScript is only about 3kB in size.
 
 ### Issues, Bugs, Questions, Suggestions: DE or EN
 - https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues
