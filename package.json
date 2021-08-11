@@ -2,7 +2,7 @@
 	"name": "plg_system_characterscounterghsvs",
 	"nameReal": "plg_system_characterscounterghsvs",
 	"filename": "characterscounterghsvs",
-	"version": "2021.08.09-1-dev",
+	"version": "2021.08.09-2-dev",
 	"versionCompare": "2021.05.28",
 	"update": {
 		"type": "plugin",
@@ -11,11 +11,14 @@
 		"tag": "stable",
 		"targetplatform": ".*"
 	},
+	"releaseTxt": {
+		"title": "Joomla system plugin CharactersCounterGhsvs"
+	},
 	"changelog": {
 		"projecturl": "https://github.com/GHSVS-de/plg_system_characterscounterghsvs",
-		"infosDE": "",
+		"infosDE": "https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/README-DE.md#plg_system_characterscounterghsvs",
 		"infosEN": "https://github.com/GHSVS-de/plg_system_characterscounterghsvs#readme",
-		"docsDE": "",
+		"docsDE": "https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/README-DE.md#plg_system_characterscounterghsvs",
 		"docsEN": "https://github.com/GHSVS-de/plg_system_characterscounterghsvs#readme",
 		"lastTests": [
 			"PHP8",

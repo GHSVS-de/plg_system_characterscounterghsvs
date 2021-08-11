@@ -21,5 +21,6 @@
 		<maintainerurl>{{maintainerurl}}</maintainerurl>
 		<targetplatform name="joomla" version="{{targetplatform}}" />
 		<php_minimum>{{php_minimum}}</php_minimum>
+		{{checksum}}
 	</update>
 <!--/{{nameUpper}} Version {{version}}-->
