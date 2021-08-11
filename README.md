@@ -17,8 +17,8 @@
 - Establishes a `JHtml helper` (not documented).
 
 ## Restrictions
-- **Works only in back-end. Works not with frontend-editing because I have no time to test it.**
-- This plugin does not bring back the functionality in Joomla 4 to add meta keywords in the frontend of the page! It only saves them from deletion.
+- This plugin does not bring back the Joomla 3 functionalities in Joomla 4 to add meta keywords in the frontend of the page! It only saves them from deletion.
+- **Works only in back-end. Works not with frontend-editing** because I have no time to test it.
 - Not a11y.
 - I am my own and single tester. I tried to do my best.
 - I have only "moderate", slowly growing JavaScript programming skills, if we talk about JQuery-less codes. Nevertheless, the JavsScript is only about 3kB in size.
