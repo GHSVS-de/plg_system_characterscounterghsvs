@@ -4,7 +4,7 @@ Joomla system plugin CharactersCounterGhsvs 2021.08.13
 
 Checksum entities: `&lt;sha256&gt;4195a8ee86aa9c523c91083cfe940303e7da51b960049b9a7cda72b87ab91e9d&lt;/sha256&gt;`
 
--
+- This version is a complete rework with many changes. Open the activated(!) plugin in backend, check configuration and save it.
 - [Download plg_system_characterscounterghsvs-2021.08.13.zip](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.13/dist/plg_system_characterscounterghsvs-2021.08.13.zip)
 - [Compare releases 2021.05.28...2021.08.13](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.05.28...2021.08.13)
 - [Changelogs](https://updates.ghsvs.de/changelog.php?file=plg_system_characterscounterghsvs)
