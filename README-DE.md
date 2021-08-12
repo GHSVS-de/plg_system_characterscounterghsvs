@@ -9,6 +9,9 @@
 - Joomla-System-Plugin. J!3 und J!4.
 - Danke, Danke, Danke: Bearbeitetes JavaScript basierend auf [VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License](https://github.com/pinceladasdaweb/VCountdown)
 
+## Um es früh zu erwähnen
+- **Sie müssen das Plugin aktivieren, um alle Tabulatoren in der Plugin-Konfiguration zu sehen.** Aber keine Sorge! Solange keine Felder in der Plugin-Konfiguration aktiviert sind, tut das Plugin nichts.
+
 ## Neue Funktionen seit Version 2021.08.10
 - Kann bei der Migration von Joomla 3 nach 4 helfen, um Meta-Daten wie Meta-Beschreibungen oder Meta-Schlüsselworte zu schützen, die nach der Migration gar nicht mehr angezeigt werden oder beim Speichern von Joomla-Einträgen unerwartet verloren gehen könnten.
 - Siehe Überschrift [Warum die Wiederbelebung dieses Plugins mit Joomla 4](#warum-die-wiederbelebung-dieses-plugins-mit-joomla-4) unten.

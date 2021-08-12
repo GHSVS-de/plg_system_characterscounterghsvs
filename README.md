@@ -8,6 +8,9 @@
 - Joomla system plugin. J!3 and J!4.
 - Thanks, thanks, thanks: Edited JavaScript based upon [VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License](https://github.com/pinceladasdaweb/VCountdown)
 
+## To have mentioned it early
+- **You must activate the plugin to see all tabulators in plugin configuration.** But relax! As long as no fields are activated in the plugin configuration, the plugin does nothing.
+
 ## New features since version 2021.08.10
 - Can help when migrating from Joomla 3 to 4 to protect meta data such as meta descriptions or meta keywords that are no longer displayed at all or might be unexpectedly lost after migration when saving Joomla entries.
 - See headline [Why the revival of this plugin with Joomla 4](#why-the-revival-of-this-plugin-with-joomla-4) below for more details.
@@ -41,7 +44,7 @@
 
 #### The idea regarding migration is
 
-- Install and configure the plugin in Joomla 3. [See Quick guide](#quick-guide-for-joomla-3-4-migrations-for-basic-purposes).
+- Install, activate(!) and configure the plugin in Joomla 3. [See Quick guide](#quick-guide-for-joomla-3-4-migrations-for-basic-purposes).
 - Perform the Joomla 3-4 migration.
 - All data entered in Joomla 3 is still visible in the backend afterwards. So you have the possibility to edit, shorten or copy-paste them somewhere ... whatever suits your workflow. Freedom of choice...
 - For example, protect `meta descriptions` in Joomla 4 from being destructively truncated if they were created longer than 160 characters in Joomla 3.
@@ -77,8 +80,8 @@
 - - Not available for fields `Title/Name` and `Alias`. They are always mandatory.
 
 ## Quick guide for Joomla 3-4 migrations for basic purposes
-- Install and configure the plugin in Joomla 3 before migration.
-- - **OR** install and configure the plugin in Joomla 4 after migration but before you save any entries/items.
+- Install, activate(!) and configure the plugin in Joomla 3 before migration.
+- - **OR** install, activate(!) and configure the plugin in Joomla 4 after migration but before you save any entries/items.
 - In tabulator Global settings:
 - - Set `[removeCharcounter]` to YES to disable Joomla's restrictive character counter in all enabled fields.
 - - Set `[removeMaxlength]` to YES to disable Joomla's restrictive field lengths in all enabled fields.
