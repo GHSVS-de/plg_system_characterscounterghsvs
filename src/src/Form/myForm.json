@@ -207,6 +207,7 @@
 	},
 	"com_languages:language|edit" : {
 		"title": "language",
+		"description": "PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_FORMDATA_LANGUAGE_DESC",
 		"option": "com_languages",
 		"view": "language",
 		"layout": "edit",

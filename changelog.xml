@@ -61,6 +61,10 @@
 					All releases page
 				</a>
 			]]></item>
+
+			<item><![CDATA[
+				Checksum: <span style="word-wrap:anywhere;">{{checksumEntity}}</span>
+			]]></item>
 		</note>
 
 		<remove>
