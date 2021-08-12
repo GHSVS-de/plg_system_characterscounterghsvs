@@ -59,11 +59,11 @@
 - - Avoid programming of a custom plugin that does similiar things like this one. Yes, this is also possible, but who is able to do that or has the time and desire?
 
 ## Which fields can be configured
-- On edit pages for `Global Configuration`, `Article`, `Category`, `Menu Item`, `Contact`, `Content language` of standard Joomla:
+- On edit pages for `Global Configuration`, `Article`, `Category`, `Menu Item`, `Contact`, `Content language`, `Newsfeed`, `Tag` of standard Joomla:
 - - Field <code>Meta Description</code>
 - - Field <code>Meta Keywords</code>
 - <code>Title/Name</code>, <code>Alias</code> only on pages where it makes sense:
-- - Field <code>Title</code> or <code>Name</code> (the latter in contact).
+- - Field <code>Title</code> or <code>Name</code> (the latter in contact and newsfeed).
 - - Field <code>Alias</code>
 
 ### Possible settings for each field individually

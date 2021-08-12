@@ -64,7 +64,7 @@
 - - Vermeiden Sie die Programmierung eines eigenen Plugins, das ähnliche Dinge wie dieses tut. Ja, das ist auch möglich, aber wer kann das schon oder hat die Zeit und Lust dazu?
 
 ## Welche Felder können konfiguriert werden
-- Auf Bearbeitungsseiten für `Joomla-Konfiguration`, `Artikel`, `Kategorie`, `Menü-Eintrag`, `Kontakt`, `Inhalts-Sprache` vom Standard-Joomla:
+- Auf Bearbeitungsseiten für `Joomla-Konfiguration`, `Beitrag`, `Kategorie`, `Menü-Eintrag`, `Kontakt`, `Inhalts-Sprache`, `Newsfeed`, `Schlagort` vom Standard-Joomla:
 - - Feld <code>Meta-Beschreibung</code>
 - - Feld <code>Meta-Schlüsselworte</code>
 - <code>Titel/Name</code>, <code>Alias</code> nur auf Seiten, wo sinnvoll:
