@@ -2,7 +2,7 @@
 	"name": "plg_system_characterscounterghsvs",
 	"nameReal": "plg_system_characterscounterghsvs",
 	"filename": "characterscounterghsvs",
-	"version": "2021.08.12",
+	"version": "2021.08.13",
 	"versionCompare": "2021.05.28",
 	"update": {
 		"type": "plugin",
@@ -24,6 +24,7 @@
 			"PHP8",
 			"J3.9.29-dev",
 			"J4.0.0-rc7-dev",
+			"J3.10.0-rc3-dev",
 			"Vivaldi",
 			"Firefox"
 		]
