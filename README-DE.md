@@ -48,7 +48,7 @@
 
 #### Die Idee bezüglich Migration ist
 
-- Installieren und konfigurieren Sie das Plugin in Joomla 3. [Siehe Kurzanleitung](#kurzanleitung-bei-joomla-3-4-migrationen-und-grundlegende-zwecke)
+- Installieren. aktivieren(!) und konfigurieren Sie das Plugin in Joomla 3. [Siehe Kurzanleitung](#kurzanleitung-bei-joomla-3-4-migrationen-und-grundlegende-zwecke)
 - Führen Sie die Joomla 3-4 Migration durch.
 - Alle in Joomla 3 eingegebenen Daten sind danach noch im Backend sichtbar. So haben Sie die Möglichkeit diese zu bearbeiten, zu kürzen oder per Copy-Paste irgendwo zu sichern ... was auch immer Ihrem Arbeitsablauf entspricht. Freiheit der Wahl...
 - Schützen Sie z.B. `Meta-Beschreibungen` in Joomla 4 davor, dass sie destruktiv abgeschnitten werden, wenn sie in Joomla 3 länger als 160 Zeichen angelegt wurden.
@@ -84,8 +84,8 @@
 - - Nicht verfügbar für die Felder `Titel/Name` und `Alias`. Die sind immer obligatorisch.
 
 ## Kurzanleitung bei Joomla 3-4 Migrationen und grundlegende Zwecke
-- Installieren und konfigurieren Sie das Plugin in Joomla 3 vor der Migration.
-- - **Oder** installieren und konfigurieren Sie das Plugin in Joomla 4 nach der Migration, aber bevor Sie irgendwelche Joomla-Einträge speichern.
+- Installieren, aktivieren(!) und konfigurieren Sie das Plugin in Joomla 3 vor der Migration.
+- - **Oder** installieren, aktivieren(!) und konfigurieren Sie das Plugin in Joomla 4 nach der Migration, aber bevor Sie irgendwelche Joomla-Einträge speichern.
 - Im Plugin-Tabulator `Globale Einstellungen`:
 - - Setzen Sie `[removeCharcounter]` auf JA, um Joomlas restriktiven Zeichenzähler in allen aktivierten Felder zu deaktivieren.
 - - Setzen Sie `[removeMaxlength]` auf JA, um Joomlas restriktive Feldlängen in allen aktivierten Felder zu deaktivieren.
