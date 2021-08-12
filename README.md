@@ -1,9 +1,8 @@
-- [Deutsche Beschreibung](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/README-DE.md#plg_system_characterscounterghsvs)
-- [Download](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/releases)
-
 # plg_system_characterscounterghsvs
 - Joomla system plugin. J!3 and J!4.
 - Thanks, thanks, thanks: Edited JavaScript based upon [VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License](https://github.com/pinceladasdaweb/VCountdown)
+- [Deutsche Beschreibung](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/blob/master/README-DE.md#plg_system_characterscounterghsvs)
+- [Download](https://github.com/GHSVS-de/plg_system_characterscounterghsvs/releases)
 
 ## To have mentioned it early
 - **You must activate the plugin to see all tabulators in plugin configuration.** But relax! As long as no fields are activated in the plugin configuration, the plugin does nothing.
