@@ -17,3 +17,5 @@ _______SCHAU-DIR-DAS-AN
 src/vendor/bin/pscss
 src/vendor/scssphp/scssphp/bin/pscss
 build/build-svgs - Kopie.js
+/dist/*.xml
+/dist/*.txt
