@@ -54,3 +54,8 @@ div.control-group .alert.alert-info a:focus
 	text-decoration: none;
 	outline: white solid 2px;
 }
+
+div.control-group .noteAlert
+{
+	margin: 0;
+}

@@ -11,13 +11,13 @@
 	bugs="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/issues"
 >
 
-<!--PLG_SYSTEM_CHARACTERSCOUNTERGHSVS Version 2021.08.13-->
+<!--PLG_SYSTEM_CHARACTERSCOUNTERGHSVS Version 2021.08.14-->
 	<changelog>
 		<element>characterscounterghsvs</element>
 		<type>plugin</type>
 		<folder>system</folder>
 		<client>site</client>
-		<version>2021.08.13</version>
+		<version>2021.08.14</version>
 
 		<addition>
 
@@ -25,8 +25,8 @@
 
 		<change>
 			<item><![CDATA[
-				<a href="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.05.28...2021.08.13">
-					Compare code 2021.05.28...2021.08.13
+				<a href="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.08.13...2021.08.14">
+					Compare code 2021.08.13...2021.08.14
 				</a>
 			]]></item>
 		</change>
@@ -45,14 +45,14 @@
 			]]></item>
 
 			<item><![CDATA[
-				<a href="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.13/dist/plg_system_characterscounterghsvs-2021.08.13.zip">
-					Direct download plg_system_characterscounterghsvs-2021.08.13.zip
+				<a href="https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.14/dist/plg_system_characterscounterghsvs-2021.08.14.zip">
+					Direct download plg_system_characterscounterghsvs-2021.08.14.zip
 				</a>
 			]]></item>
 
 			<item><![CDATA[
 				<a href="https://updates.ghsvs.de/changelog.php?file=plg_system_characterscounterghsvs">
-					All changelogs with more infos
+					All changelogs
 				</a>
 			]]></item>
 
@@ -63,7 +63,7 @@
 			]]></item>
 
 			<item><![CDATA[
-				Checksum: <span style="word-wrap:anywhere;">&lt;sha256&gt;4195a8ee86aa9c523c91083cfe940303e7da51b960049b9a7cda72b87ab91e9d&lt;/sha256&gt;</span>
+				Checksum: <span style="word-wrap:anywhere;">&lt;sha256&gt;a1546256dee5e37d572716bc4210092c3266981f23cab12e8fea06f109ec8f94&lt;/sha256&gt;</span>
 			]]></item>
 		</note>
 
@@ -98,6 +98,6 @@
 		</security>
 
 	</changelog>
-<!--/PLG_SYSTEM_CHARACTERSCOUNTERGHSVS Version 2021.08.13-->
+<!--/PLG_SYSTEM_CHARACTERSCOUNTERGHSVS Version 2021.08.14-->
 
 </changelogs>

@@ -6,7 +6,7 @@
 	<copyright>(C) 2018, G@HService Berlin Neukölln, Volkmar Volli Schlothauer.</copyright>
 	<license>GNU General Public License version 3 or later; see LICENSE.txt.</license>
 	<authorUrl>https://www.ghsvs.de</authorUrl>
-	<version>2021.08.13</version>
+	<version>2021.08.14</version>
 	<description>PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_XML_DESCRIPTION</description>
 
 	<versionHistory>
@@ -20,11 +20,11 @@
 	<infourl>https://github.com/GHSVS-de/plg_system_characterscounterghsvs#readme</infourl>
 
 	<downloadUrl>
-	https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.13/dist/plg_system_characterscounterghsvs-2021.08.13.zip
+	https://github.com/GHSVS-de/plg_system_characterscounterghsvs/raw/2021.08.14/dist/plg_system_characterscounterghsvs-2021.08.14.zip
 	</downloadUrl>
 
 	<versionCompare>
-	https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.05.28...2021.08.13
+	https://github.com/GHSVS-de/plg_system_characterscounterghsvs/compare/2021.08.13...2021.08.14
 	</versionCompare>
 
 	<scriptfile>installerScript.php</scriptfile>
@@ -52,9 +52,24 @@
 		<fields name="params" addfieldpath="plugins/system/characterscounterghsvs/src/Field">
 
 			<fieldset name="basic">
+
 				<field type="hidden" default="1" name="characterscounterghsvsplugin" />
+
+				<field type="note" name="allowDeactivationSpacer"
+					class="alert alert-danger noteAlert"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_ALLOWDEACTIVATION"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_ALLOWDEACTIVATION_DESC"/>
+
+				<!--Ja, STRING hier! -->
+				<field type="list" name="allowDeactivation" default="0" filter="string"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_ALLOWDEACTIVATION">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
 				<field type="plgSystemCharactersCounterGhsvs.assetsbe" name="assetsbe"
 					hidden="true" />
+
 			</fieldset>
 
 <!--thanks-->
@@ -92,6 +107,25 @@
 					label="[loadCSS] Load vcountdownghsvs.css">
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
+				</field>
+
+				<field type="note" name="doNothingSpacer"
+					class="alert alert-info noteAlert"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SLEEP_MODE"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SLEEP_MODE_DESC"/>
+
+				<field type="list" name="doNothing" default="0" filter="integer"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SLEEP_MODE">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field type="list" name="doNothingInfo" default="1" filter="integer"
+					label="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SLEEP_MODE_SHOW_INFO"
+					description="PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SLEEP_MODE_SHOW_INFO_DESC"
+					showon="doNothing:1">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
 				</field>
 
 			</fieldset>

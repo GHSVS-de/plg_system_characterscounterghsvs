@@ -84,6 +84,11 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 		// We are in the plugin. Build configuration form.
 		if ($isMe === true)
 		{
+			if (is_object($data))
+			{
+				$data->params['allowDeactivation'] = '0';
+			}
+
 			$addform = new SimpleXMLElement('<form />');
 			$mainFields = $addform->addChild('fields');
 			$mainFields->addAttribute('name', 'params');
@@ -257,6 +262,24 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 			}
 
 			$form->load($addform, $reset=false, $path=false);
+
+			if (
+				$this->params->get('doNothing', 0)
+				&& $this->params->get('doNothingInfo', 0)
+
+				// This orders the message after the danger warning.
+				&& !in_array($jinput->get('task', ''), ['apply', 'save'])
+			){
+				$this->app->enqueueMessage(
+					Text::_('PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SLEEP_MODE_ACTIVE'),
+						'info');
+			}
+
+			return;
+		}
+
+		if ($this->params->get('doNothing', 0))
+		{
 			return;
 		}
 
@@ -415,6 +438,27 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 						$form->setFieldAttribute($field, 'required', 'true', $group);
 					}
 				}
+			}
+		}
+	}
+
+	public function onExtensionBeforeSave($context, $table, $isNew)
+	{
+		// Should be enough
+		if (($isMe = !empty($table->params)
+			&& $table->element === $this->_name
+			&& $table->folder === $this->_type)
+			&& strpos($table->params, '"characterscounterghsvsplugin":') !== false
+			&& strpos($table->params, '"isMe":') !== false
+		){
+			if (
+				$table->enabled == 0
+				&& strpos($table->params, '"allowDeactivation":"0"') !== false
+			){
+				$this->app->enqueueMessage(
+					Text::_('PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_ALLOWDEACTIVATION_ERROR'),
+						'error');
+				$table->enabled = 1;
 			}
 		}
 	}
