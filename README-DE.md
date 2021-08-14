@@ -5,7 +5,7 @@
 - Danke, Danke, Danke: Bearbeitetes JavaScript basierend auf [VCountdown 0.0.3 | (c) 2016 Pedro Rogério | MIT License](https://github.com/pinceladasdaweb/VCountdown)
 
 ## Um es früh zu erwähnen
-- **<span color="red">Sie müssen das Plugin aktivieren, um alle Tabulatoren in der Plugin-Konfiguration zu sehen.</span>** Aber keine Sorge! Solange keine Felder in der Plugin-Konfiguration aktiviert sind, tut das Plugin nichts.
+- **<span color="red">Sie müssen das Plugin aktivieren, um alle Tabulatoren in der Plugin-Konfiguration zu sehen.</span>** Aber keine Sorge! Seit Verion `2021.08.14` gibt es einen "Schlafmodus": Das aktivierte Plugin tut nichts, selbst, wenn es bereits durchkonfiguriert ist.
 
 ## Inhalt
 
