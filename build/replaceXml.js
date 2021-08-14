@@ -14,6 +14,7 @@ const {
 	creationDate,
 	description,
 	name,
+	nameReal,
 	filename,
 	version,
 	versionCompare,
@@ -64,6 +65,7 @@ module.exports.main = async (xmlFile, zipFilename, checksum) =>
 		xml = xml.replace(/{{minimumJoomla}}/g, minimumJoomla);
 		xml = xml.replace(/{{minimumPhp}}/g, minimumPhp);
 		xml = xml.replace(/{{name}}/g, name);
+		xml = xml.replace(/{{nameReal}}/g, nameReal);
 		xml = xml.replace(/{{nameUpper}}/g, name.toUpperCase());
 		xml = xml.replace(/{{php_minimum}}/g, minimumPhp);
 		xml = xml.replace(/{{projecturl}}/g, changelog.projecturl);
