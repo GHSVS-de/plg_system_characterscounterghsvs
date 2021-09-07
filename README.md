@@ -104,7 +104,7 @@
 - New, installable ZIP is in `./dist` afterwards.
 - All packed files for this ZIP can be seen in `./package`. **But only if you disable deletion of this folder at the end of `build.js`**.s
 
-#### For Joomla update server
+### For Joomla update and changelog server
 - Create new release with new tag.
-- Get download link for new `dist/plg_blahaba_blubber...zip` **from newly created tag branch** and add to release description.
-- Extracts(!) of the update and changelog XML for update and changelog servers are in `./dist` as well. Check for necessary additions! Then copy/paste.
+- - See release description in `dist/release.txt`.
+- Extracts(!) of the update and changelog XML for update and changelog servers are in `./dist` as well. Copy/paste and necessary additions.
