@@ -2,8 +2,8 @@
 	"name": "plg_system_characterscounterghsvs",
 	"nameReal": "plg_system_characterscounterghsvs",
 	"filename": "characterscounterghsvs",
-	"version": "2021.08.14",
-	"versionCompare": "2021.08.13",
+	"version": "2021.08.15",
+	"versionCompare": "2021.08.14",
 	"update": {
 		"type": "plugin",
 		"folder": "system",
@@ -69,15 +69,12 @@
 		"g-npm-update-check": "ncu",
 		"g-ncu-override-json": "ncu -u"
 	},
-	"dependencies": {
-		"clipboard": "^2.0.8",
-		"prismjs": "^1.24.1"
-	},
+	"dependencies": {},
 	"devDependencies": {
-		"adm-zip": "0.5.5",
+		"adm-zip": "0.5.6",
 		"chalk": "^4.1.2",
 		"fs-extra": "10.0.0",
-		"npm-check-updates": "^11.8.3",
+		"npm-check-updates": "^11.8.5",
 		"rimraf": "3.0.2"
 	},
 	"peerDependencies": {},
