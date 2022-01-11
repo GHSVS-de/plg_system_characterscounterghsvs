@@ -21,7 +21,8 @@
 - Establishes a `JHtml helper` (not documented).
 
 ## Restrictions
-- This plugin does not bring back the Joomla 3 functionalities in Joomla 4 to add meta keywords in the frontend of the page! It only saves them from deletion.
+- This plugin does not bring back the Joomla 3 functionalities in Joomla 4 to add meta keywords in the frontend of the page (related META tags in page source code)! It only saves them from deletion and lets you edit them.
+- - I would use a system plugin for integrating these META tags in page source code if needed.
 - **Works only in back-end. Works not with frontend-editing** because I have no time to test it.
 - Not a11y.
 - I am my own and single tester. I tried to do my best.
