@@ -11,11 +11,8 @@
 
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Factory;
-use Joomla\CMS\Installer\Installer;
 use Joomla\CMS\Installer\InstallerScript;
 use Joomla\CMS\Log\Log;
-use Joomla\CMS\Language\Text;
 
 class plgSystemCharacterscounterGhsvsInstallerScript extends InstallerScript
 {

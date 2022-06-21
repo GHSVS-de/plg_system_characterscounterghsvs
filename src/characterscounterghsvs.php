@@ -1,16 +1,16 @@
 <?php
 defined('_JEXEC') or die;
 
-use Joomla\CMS\Factory;
 use Joomla\CMS\Form\Form;
 use Joomla\CMS\HTML\HTMLHelper;
-use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Registry\Registry;
 
 class PlgSystemCharacterscounterghsvs extends CMSPlugin
 {
 	protected $app;
+
 	protected $db;
 
 	// 2019-01-10: $autoloadLanguage is buggy in current J4 alpha7.
@@ -20,7 +20,7 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 
 	protected static $basepath = 'plg_system_characterscounterghsvs';
 
-	function __construct(&$subject, $config = array())
+	function __construct(&$subject, $config = [])
 	{
 		parent::__construct($subject, $config);
 
@@ -62,8 +62,11 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 				->where($this->db->qn('element') . ' = :element')
 				->where($this->db->qn('folder') . ' = :folder')
 				->where($this->db->qn('type') . ' = :type')
-				->bind(':extension_id', $extension_id,
-					Joomla\Database\ParameterType::INTEGER)
+				->bind(
+					':extension_id',
+					$extension_id,
+					Joomla\Database\ParameterType::INTEGER
+				)
 				->bind(':element', $this->_name, \Joomla\Database\ParameterType::STRING)
 				->bind(':folder', $this->_type, \Joomla\Database\ParameterType::STRING)
 				->bind(':type', $view, \Joomla\Database\ParameterType::STRING);
@@ -121,8 +124,10 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 				// Tabulator-Description?
 				if (!empty($tabData->description))
 				{
-					$tabFieldset->addAttribute('description',
-						Text::_($tabData->description));
+					$tabFieldset->addAttribute(
+						'description',
+						Text::_($tabData->description)
+					);
 				}
 
 				$subFields = $tabFieldset->addChild('fields');
@@ -222,7 +227,6 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 							case 'required':
 								$addField->addAttribute('type', 'list');
 
-
 								if ($setting === 'chopText')
 								{
 									$addField->addAttribute('filter', 'integer');
@@ -232,8 +236,8 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 									$option->addAttribute('value', 1);
 									$addField->addAttribute('showon', $showonCounter);
 								}
-								else // required
-								{
+								else
+								{ // required
 									// Must be adjusted for e.g. "menu-meta_description:params".
 									$requiredOptionValue = $fieldName;
 
@@ -269,10 +273,11 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 
 				// This orders the message after the danger warning.
 				&& !in_array($jinput->get('task', ''), ['apply', 'save'])
-			){
+			) {
 				$this->app->enqueueMessage(
 					Text::_('PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_SLEEP_MODE_ACTIVE'),
-						'info');
+					'info'
+				);
 			}
 
 			return;
@@ -332,12 +337,14 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 					$excludeValues: E.g. ['heading', 'separator'] */
 				foreach ($field->exclude as $excludeKey => $excludeValues)
 				{
-					$excludeValues = \array_flip($excludeValues);
+					$excludeValues = array_flip($excludeValues);
 
 					// Do we have match in $thisFormData?
-					if (isset($excludeValues[$thisFormData->get($excludeKey,
-						'completelyParanoid')])
-					){
+					if (isset($excludeValues[$thisFormData->get(
+						$excludeKey,
+						'completelyParanoid'
+					)])
+					) {
 						$activated = false;
 						break;
 					}
@@ -390,7 +397,9 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 							'chopText' => (boolean) $myParams->{$key . '_chopText'},
 							'maxChars' => (integer) $myParams->{$key . '_maxChars'},
 							'removeMaxlength' => (boolean) $this->params->get(
-								'removeMaxlength', 0),
+								'removeMaxlength',
+								0
+							),
 						];
 
 						// Configure and load counter JS.
@@ -411,7 +420,7 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 					// Must be early.
 					if (!empty($myParams->{$key . '_loadXmlFields'})
 						&& $myParams->{$key . '_forceFields'}
-					){
+					) {
 						//Form::addFormPath(__DIR__ . '/src/Form');
 						$formsPath = __DIR__ . '/src/Form/';
 
@@ -450,14 +459,15 @@ class PlgSystemCharacterscounterghsvs extends CMSPlugin
 			&& $table->folder === $this->_type)
 			&& strpos($table->params, '"characterscounterghsvsplugin":') !== false
 			&& strpos($table->params, '"isMe":') !== false
-		){
+		) {
 			if (
 				$table->enabled == 0
 				&& strpos($table->params, '"allowDeactivation":"0"') !== false
-			){
+			) {
 				$this->app->enqueueMessage(
 					Text::_('PLG_SYSTEM_CHARACTERSCOUNTERGHSVS_ALLOWDEACTIVATION_ERROR'),
-						'error');
+					'error'
+				);
 				$table->enabled = 1;
 			}
 		}

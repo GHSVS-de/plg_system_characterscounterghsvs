@@ -1,5 +1,5 @@
 <?php
-\defined('_JEXEC') or die;
+defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
@@ -9,15 +9,15 @@ use Joomla\Registry\Registry;
 
 abstract class JHtmlCharactercounterghsvs
 {
+	protected static $loaded = [];
 
-	protected static $loaded = array();
 	protected static $basepath = 'plg_system_characterscounterghsvs';
 
-	public static function charactercounter($paramsJS = array())
+	public static function charactercounter($paramsJS = [])
 	{
 		if (!is_array($paramsJS) || empty($paramsJS) || empty($paramsJS['target'])
 			|| !($paramsJS['target'] = trim($paramsJS['target']))
-	){
+	) {
 			return;
 		}
 
@@ -54,7 +54,7 @@ abstract class JHtmlCharactercounterghsvs
 		}
 
 		ksort($paramsJS);
-		$sig = md5(serialize(array($paramsJS)));
+		$sig = md5(serialize([$paramsJS]));
 
 		if (!empty(static::$loaded[__METHOD__][$sig]))
 		{
@@ -70,10 +70,12 @@ abstract class JHtmlCharactercounterghsvs
 		{
 			$file = static::$basepath . '/vcountdownghsvs' . $min . '.js';
 
-			HTMLHelper::_('script', $file,
+			HTMLHelper::_(
+				'script',
+				$file,
 				[
 					//Allow template overrides in js/plg_system_charactercounterghsvs:
-					'relative' => true, 'version' => $min ? 'auto' : time()
+					'relative' => true, 'version' => $min ? 'auto' : time(),
 				]
 			);
 
@@ -81,11 +83,12 @@ abstract class JHtmlCharactercounterghsvs
 			{
 				$file = static::$basepath . '/vcountdownghsvs' . $min . '.css';
 
-				HTMLHelper::_('stylesheet',
+				HTMLHelper::_(
+					'stylesheet',
 					$file,
 					[
 						//Allow template overrides in css/plg_system_charactercounterghsvs:
-						'relative' => true, 'version' => $min ? 'auto' : time()
+						'relative' => true, 'version' => $min ? 'auto' : time(),
 					]
 				);
 			}
@@ -103,6 +106,7 @@ JS;
 		Factory::getDocument()->addScriptDeclaration($js);
 
 		static::$loaded[__METHOD__][$sig] = true;
+
 		return;
 	}
 }
