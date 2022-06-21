@@ -92,13 +92,25 @@
 -----------------------------------------------------
 
 # My personal build procedure (WSL 1, Debian, Win 10)
+
+**@since v2022.06.21: Build procedure uses local repo fork of https://github.com/GHSVS-de/buildKramGhsvs**
+
 - Prepare/adapt `./package.json`.
 - `cd /mnt/z/git-kram/plg_system_characterscounterghsvs`
 
 ## node/npm updates/installation
-- `npm run g-npm-update-check` or (faster) `ncu`
-- `npm run g-ncu-override-json` (if needed) or (faster) `ncu -u`
-- `npm install` (if needed)
+- `npm install` (if never done before)
+
+### Update dependencies
+- `npm run updateCheck` or (faster) `npm outdated`
+- `npm run update` (if needed) or (faster) `npm update --save-dev`
+
+## PHP Codestyle
+If you think it's worth it.
+- `cd /mnt/z/git-kram/php-cs-fixer-ghsvs`
+- `npm run plg_system_characterscounterghsvsDry` (= dry test run).
+- `npm run plg_system_characterscounterghsvs` (= cleans code).
+- `cd /mnt/z/git-kram/plg_system_characterscounterghsvs` (back to this repo).
 
 ## Build installable ZIP package
 - `node build.js`
@@ -107,5 +119,5 @@
 
 ### For Joomla update and changelog server
 - Create new release with new tag.
-- - See release description in `dist/release.txt`.
+  - See release description in `dist/release.txt`.
 - Extracts(!) of the update and changelog XML for update and changelog servers are in `./dist` as well. Copy/paste and necessary additions.
