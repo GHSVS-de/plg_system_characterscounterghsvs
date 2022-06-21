@@ -2,8 +2,8 @@
 	"name": "plg_system_characterscounterghsvs",
 	"nameReal": "plg_system_characterscounterghsvs",
 	"filename": "characterscounterghsvs",
-	"version": "2021.08.15",
-	"versionCompare": "2021.08.14",
+	"version": "2022.06.21",
+	"versionCompare": "2021.08.15",
 	"update": {
 		"type": "plugin",
 		"folder": "system",
@@ -18,7 +18,7 @@
 	"releaseTxt": {
 		"title": "Joomla system plugin CharactersCounterGhsvs",
 		"requires": [],
-		"uses": [],
+		"uses": ["https://github.com/pinceladasdaweb/VCountdown"],
 		"language": [
 			"de-DE",
 			"en-GB"
