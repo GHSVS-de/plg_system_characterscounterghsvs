@@ -47,7 +47,7 @@
 		<folder>css</folder>
 		<folder>js</folder>
 	</media>
-
+	{{namespace}}
 	<config>
 		<fields name="params" addfieldpath="plugins/system/{{filename}}/src/Field">
 
