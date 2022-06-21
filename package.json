@@ -3,7 +3,7 @@
 	"nameReal": "plg_system_characterscounterghsvs",
 	"filename": "characterscounterghsvs",
 	"version": "2022.06.21",
-	"versionCompare": "2021.08.15",
+	"versionCompare": "2021.08.14",
 	"update": {
 		"type": "plugin",
 		"folder": "system",
