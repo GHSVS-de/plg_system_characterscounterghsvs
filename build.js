@@ -39,27 +39,18 @@ const pathMedia = `./media`;
 
 	from = pathMedia;
 	to = `./package/media`;
-	await fse.copy(from, to
-	).then(
-		answer => console.log(
-			pc.yellow(pc.bold(`Copied "${from}" to "${to}".`))
-		)
-	);
+	await helper.copy(from, to)
 
 	from = `./src`;
 	to = `./package`;
-	await fse.copy(from, to
-	).then(
-		answer => console.log(
-			pc.yellow(pc.bold(`Copied "${from}" to "${to}".`))
-		)
-	);
+	await helper.copy(from, to)
 
-	if (!(await fse.exists("./dist")))
+	to = './dist';
+	if (!(await fse.exists(to)))
 	{
-		await fse.mkdir("./dist"
+		await fse.mkdir(to
 		).then(
-			answer => console.log(pc.yellow(pc.bold(`Created "./dist".`)))
+			answer => console.log(pc.yellow(pc.bold(`Created ${to}.`)))
 		);
   }
 
@@ -73,10 +64,9 @@ const pathMedia = `./media`;
 	};
 
 	await replaceXml.main(replaceXmlOptions);
-	await fse.copy(`${Manifest}`, `./dist/${manifestFileName}`).then(
-		answer => console.log(pc.yellow(pc.bold(
-			`Copied "${manifestFileName}" to "./dist".`)))
-	);
+	from = Manifest;
+	to = `./dist/${manifestFileName}`;
+	await helper.copy(from, to)
 
 	// ## Create zip file and detect checksum then.
 	const zipFilePath = path.resolve(`./dist/${zipFilename}`);
@@ -110,12 +100,7 @@ const pathMedia = `./media`;
 	{
 		from = file;
 		to = `./dist/${path.win32.basename(file)}`;
-		await fse.copy(from, to
-		).then(
-			answer => console.log(
-				pc.yellow(pc.bold(`Copied "${from}" to "${to}".`))
-			)
-		);
+		await helper.copy(from, to)
 
 		replaceXmlOptions.xmlFile = path.resolve(to);
 		await replaceXml.main(replaceXmlOptions);
